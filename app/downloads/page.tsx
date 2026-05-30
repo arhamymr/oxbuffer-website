@@ -8,7 +8,7 @@ import { Apple, Monitor, Download } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Downloads — 0xbuffer",
-  description: "Download 0xbuffer for Windows and macOS.",
+  description: "Download 0xbuffer for macOS. Windows coming soon.",
 };
 
 const downloads = [
@@ -26,11 +26,12 @@ const downloads = [
     os: "Windows",
     icon: Monitor,
     arch: "x64",
-    version: "v0.1.0",
-    size: "~72 MB",
+    version: "Coming Soon",
+    size: "—",
     requirements: "Windows 10 or later",
     href: "#",
-    latest: true,
+    latest: false,
+    comingSoon: true,
   },
 ];
 
@@ -46,7 +47,7 @@ export default function Downloads() {
           </p>
 
           <div className="space-y-6">
-            {downloads.map(({ os: osName, icon: Icon, arch, version, size, requirements, href, latest }) => (
+            {downloads.map(({ os: osName, icon: Icon, arch, version, size, requirements, href, latest, comingSoon }) => (
               <Card key={osName}>
                 <CardContent className="pt-6">
                   <div className="flex items-start justify-between gap-4">
@@ -69,10 +70,16 @@ export default function Downloads() {
                         <p className="text-xs text-muted-foreground mt-1">{requirements}</p>
                       </div>
                     </div>
-                    <Button size="lg" className="gap-2 shrink-0">
-                      <Download className="size-4" />
-                      Download
-                    </Button>
+                    {comingSoon ? (
+                      <Button size="lg" className="gap-2 shrink-0" disabled>
+                        Coming Soon
+                      </Button>
+                    ) : (
+                      <Button size="lg" className="gap-2 shrink-0">
+                        <Download className="size-4" />
+                        Download
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>

@@ -34,15 +34,13 @@ export function CtaSection() {
               Download for macOS
             </Button>
           )}
-          {(os === null || os === "windows") && (
-            <Button size="lg" className="gap-2">
-              Download for Windows
-            </Button>
-          )}
+          <Button size="lg" className="gap-2" disabled>
+            Windows — Coming Soon
+          </Button>
         </div>
         <p className="mt-4">
           <a href="/downloads" className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground transition-colors">
-            Available for Windows & macOS
+            Available for macOS — Windows coming soon
           </a>
         </p>
       </div>
