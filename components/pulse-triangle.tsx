@@ -10,6 +10,15 @@ const pulseTriangleSizes: Record<PulseTriangleSize, string> = {
   large: "size-6",
 };
 
+const pulseTriangleAnimation =
+  "animate-[triangle-pulse_2.8s_cubic-bezier(0.45,0,0.2,1)_infinite] motion-reduce:animate-[triangle-pulse_4s_cubic-bezier(0.45,0,0.2,1)_infinite]";
+const pulseTriangleIconBase =
+  "absolute inset-0 block origin-center will-change-[opacity,transform]";
+const pulseTriangleSolidAnimation =
+  "animate-[triangle-solid_2.8s_cubic-bezier(0.45,0,0.2,1)_infinite] motion-reduce:animate-[triangle-solid_4s_cubic-bezier(0.45,0,0.2,1)_infinite]";
+const pulseTriangleDashedAnimation =
+  "animate-[triangle-dashed_2.8s_cubic-bezier(0.45,0,0.2,1)_infinite] motion-reduce:animate-[triangle-dashed_4s_cubic-bezier(0.45,0,0.2,1)_infinite]";
+
 type PulseTriangleProps = {
   size?: PulseTriangleSize;
   className?: string;
@@ -20,18 +29,25 @@ export function PulseTriangle({ size = "medium", className }: PulseTriangleProps
 
   return (
     <span
-      className={cn("pulse-triangle-root relative inline-flex shrink-0", sizeClass, className)}
+      className={cn(
+        "relative inline-flex shrink-0",
+        pulseTriangleAnimation,
+        sizeClass,
+        className
+      )}
       aria-hidden="true"
     >
       <Triangle
         className={cn(
-          "pulse-triangle-solid absolute inset-0",
+          pulseTriangleIconBase,
+          pulseTriangleSolidAnimation,
           sizeClass
         )}
       />
       <TriangleDashed
         className={cn(
-          "pulse-triangle-dashed absolute inset-0",
+          pulseTriangleIconBase,
+          pulseTriangleDashedAnimation,
           sizeClass
         )}
       />

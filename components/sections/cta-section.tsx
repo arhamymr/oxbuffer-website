@@ -26,7 +26,7 @@ export function CtaSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {(os === null || os === "macos") && (
             <Button size="lg" className="gap-2" asChild>
-              <a href={process.env.NEXT_PUBLIC_DIST_URL} target="_blank">
+              <a href={"/downloads"}>
                 Download for macOS
               </a>
             </Button>

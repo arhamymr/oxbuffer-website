@@ -10,7 +10,19 @@ export function InstallCommand() {
   const [copied, setCopied] = useState(false);
 
   async function copyInstallCommand() {
-    await navigator.clipboard.writeText(installCommand);
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(installCommand);
+    } else {
+      const textArea = document.createElement("textarea");
+      textArea.value = installCommand;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+    }
+
     setCopied(true);
     window.setTimeout(() => setCopied(false), 2000);
   }

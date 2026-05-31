@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { PulseTriangle } from "@/components/pulse-triangle";
+import { Asterisk } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <div className="mb-3 flex items-center justify-center gap-2 text-green-500 lg:justify-start">
-              <PulseTriangle />
+              <Asterisk className="animate-spin [animation-duration:2s]"/>
               <p>
                 Security Testing, Recon, and Reporting in One App
               </p>

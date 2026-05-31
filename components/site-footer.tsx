@@ -4,7 +4,7 @@ export function SiteFooter() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-md">0xbuffer  ✦  @{new Date().getFullYear()}</span>
+            <span className="font-mono text-sm">0xbuffer  ✦  @{new Date().getFullYear()}</span>
           </div>
           <p className="text-sm text-muted-foreground">
             Security Testing, Recon, and Reporting in One App
