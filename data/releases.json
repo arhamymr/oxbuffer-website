@@ -1,8 +1,15 @@
 [
   {
-    "version": "v2026.1.0",
+    "version": "v2026.1.1",
     "date": "May 2026",
     "latest": true,
+    "changes": [
+      "Automatically update your Tauri app with an update server "
+    ]
+  },
+  {
+    "version": "v2026.1.0",
+    "date": "May 2026",
     "changes": [
       "Initial public release of 0xbuffer.",
       "Real-time HTTP/HTTPS traffic interception and inspection.",
