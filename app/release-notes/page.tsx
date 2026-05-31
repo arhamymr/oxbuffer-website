@@ -3,34 +3,12 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import releases from "@/data/releases.json";
 
 export const metadata: Metadata = {
   title: "Release Notes — 0xbuffer",
   description: "See what's new in 0xbuffer — the all-in-one security testing workstation.",
 };
-
-interface Release {
-  version: string;
-  date: string;
-  latest?: boolean;
-  changes: string[];
-}
-
-const releases: Release[] = [
-  {
-    version: "v0.1.0",
-    date: "May 2026",
-    latest: true,
-    changes: [
-      "Initial public release of 0xbuffer.",
-      "Real-time HTTP/HTTPS traffic interception and inspection.",
-      "Manual request crafting with raw HTTP editor.",
-      "Automated attack modules for common vulnerability classes.",
-      "Integrated proxy listener with upstream routing.",
-      "Dark and light theme support.",
-    ],
-  },
-];
 
 export default function ReleaseNotes() {
   return (
