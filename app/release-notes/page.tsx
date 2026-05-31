@@ -7,8 +7,8 @@ import { Separator } from "@/components/ui/separator";
 import releases from "@/data/releases.json";
 
 export const metadata: Metadata = {
-  title: "Release Notes — 0xbufferr",
-  description: "See what's new in 0xbufferr — the all-in-one security testing workstation.",
+  title: "Release Notes — 0xbuffer",
+  description: "See what's new in 0xbuffer — the all-in-one security testing workstation.",
 };
 
 export default function ReleaseNotes() {
@@ -20,7 +20,7 @@ export default function ReleaseNotes() {
           <PageBreadcrumb current="Release Notes" />
           <h1 className="text-4xl font-normal mb-2 mt-10">Release Notes</h1>
           <p className="text-muted-foreground mb-12">
-            Track what&apos;s new and improved in each version of 0xbufferr.
+            Track what&apos;s new and improved in each version of 0xbuffer.
           </p>
 
           <div className="space-y-12">

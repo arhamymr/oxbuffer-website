@@ -21,7 +21,7 @@ export function CtaSection() {
     <section className="py-24 px-4 border-t border-border">
       <div className="container mx-auto max-w-3xl text-center">
         <h2 className="text-3xl md:text-4xl font-normal mb-15">
-          0xbufferr is getting better and better day after day and we are happy to share our results with you.
+          0xbuffer is getting better and better day after day and we are happy to share our results with you.
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {(os === null || os === "macos") && (

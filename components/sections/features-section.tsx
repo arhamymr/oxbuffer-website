@@ -57,7 +57,7 @@ export function FeaturesSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-normal mb-4">What Can You Do?</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Modern web security testing is fragmented. 0xbufferr brings all of that into one seamless workspace.
+            Modern web security testing is fragmented. 0xbuffer brings all of that into one seamless workspace.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

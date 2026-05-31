@@ -20,7 +20,7 @@ export function HeroSection() {
               From Recon to Report,<br />All in One Place
             </h1>
             <p className="text-md md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10">
-              0xbufferr brings web app recon, testing, and documentation into one focused desktop app.
+              0xbuffer brings web app recon, testing, and documentation into one focused desktop app.
             </p>
             <Button size="lg" className="gap-2" asChild>
               <Link href="/downloads">Download Now</Link>
@@ -29,7 +29,7 @@ export function HeroSection() {
           <div className="hidden md:block relative w-[1000px] h-[570px] border border-border rounded-md overflow-hidden">
             <Image
               src="/assets/image.png"
-              alt="0xbufferr Interface"
+              alt="0xbuffer Interface"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="dark:hidden"
@@ -37,7 +37,7 @@ export function HeroSection() {
             />
             <Image
               src="/assets/image-dark.png"
-              alt="0xbufferr Interface"
+              alt="0xbuffer Interface"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="hidden dark:block"

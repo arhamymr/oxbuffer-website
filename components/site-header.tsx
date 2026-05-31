@@ -7,7 +7,7 @@ export function SiteHeader() {
     <header className="border-b fixed top-0 border-border w-full z-10 bg-background">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="font-semibold font-mono text-md">0xbufferr</span>
+          <span className="font-semibold font-mono text-md">0xbuffer</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>

@@ -5,8 +5,8 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "Downloads — 0xbufferr",
-  description: "Download 0xbufferr for macOS. Windows coming soon.",
+  title: "Downloads — 0xbuffer",
+  description: "Download 0xbuffer for macOS. Windows coming soon.",
 };
 
 export default function Downloads() {

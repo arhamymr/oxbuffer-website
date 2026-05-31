@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "0xbufferr",
+  title: "0xbuffer",
   description: "See everything, Break everything. Document everything.",
   icons: {
     icon: [
