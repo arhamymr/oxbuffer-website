@@ -1,24 +1,26 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import releases from "@/data/releases.json";
 
 export const metadata: Metadata = {
-  title: "Release Notes — 0xbuffer",
-  description: "See what's new in 0xbuffer — the all-in-one security testing workstation.",
+  title: "Release Notes — 0xbufferr",
+  description: "See what's new in 0xbufferr — the all-in-one security testing workstation.",
 };
 
 export default function ReleaseNotes() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-16 pb-24 px-4">
+      <main className="pt-16 pb-24 px-4 min-h-[100vh]">
         <div className="container mx-auto max-w-3xl">
-          <h1 className="text-4xl font-normal mb-2">Release Notes</h1>
+          <PageBreadcrumb current="Release Notes" />
+          <h1 className="text-4xl font-normal mb-2 mt-10">Release Notes</h1>
           <p className="text-muted-foreground mb-12">
-            Track what's new and improved in each version of 0xbuffer.
+            Track what&apos;s new and improved in each version of 0xbufferr.
           </p>
 
           <div className="space-y-12">

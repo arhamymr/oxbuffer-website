@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "Downloads — 0xbuffer",
-  description: "Download 0xbuffer for macOS. Windows coming soon.",
+  title: "Downloads — 0xbufferr",
+  description: "Download 0xbufferr for macOS. Windows coming soon.",
 };
 
 export default function Downloads() {
@@ -14,6 +15,7 @@ export default function Downloads() {
       <SiteHeader />
       <main className="pt-16 pb-24 px-4 min-h-[100vh]">
         <div className="container mx-auto max-w-3xl">
+          <PageBreadcrumb current="Downloads" />
           <h1 className="text-4xl mb-2 mt-20">Downloads</h1>
           <p className="text-muted-foreground mb-8">
             Choose your platform and start testing.
@@ -22,8 +24,9 @@ export default function Downloads() {
           <ul className="space-y-3 text-lg">
             <li className="flex items-center gap-3">
               <a
-                href="https://dist.0xbuffer.com/0xbuffer_0.1.0_aarch64.dmg"
+                href={process.env.NEXT_PUBLIC_DIST_URL}
                 className="underline underline-offset-4 hover:text-primary transition-colors"
+                target="_blank"
               >
                 macOS Download
               </a>

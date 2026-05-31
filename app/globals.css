@@ -146,6 +146,77 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
+@keyframes triangle-solid {
+  0%, 34% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  66%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes triangle-dashed {
+  0%, 34% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  66%, 100% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes triangle-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.pulse-triangle-root {
+  animation: triangle-pulse 2.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.pulse-triangle-solid,
+.pulse-triangle-dashed {
+  display: block;
+  transform-origin: center;
+  will-change: opacity, transform;
+}
+
+.pulse-triangle-solid {
+  animation: triangle-solid 2.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.pulse-triangle-dashed {
+  animation: triangle-dashed 2.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-triangle-root,
+  .pulse-triangle-solid,
+  .pulse-triangle-dashed {
+    animation-duration: 4s;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

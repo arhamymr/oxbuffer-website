@@ -4,7 +4,7 @@
     "date": "May 2026",
     "latest": true,
     "changes": [
-      "Initial public release of 0xbuffer.",
+      "Initial public release of 0xbufferr.",
       "Real-time HTTP/HTTPS traffic interception and inspection.",
       "Manual request crafting with raw HTTP editor.",
       "Integrated proxy listener with upstream routing.",

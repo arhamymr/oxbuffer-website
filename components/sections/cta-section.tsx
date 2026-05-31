@@ -21,12 +21,12 @@ export function CtaSection() {
     <section className="py-24 px-4 border-t border-border">
       <div className="container mx-auto max-w-3xl text-center">
         <h2 className="text-3xl md:text-4xl font-normal mb-15">
-          0xBuffer is getting better and better day after day and we are happy to share our results with you.
+          0xbufferr is getting better and better day after day and we are happy to share our results with you.
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {(os === null || os === "macos") && (
             <Button size="lg" className="gap-2" asChild>
-              <a href="https://dist.0xbuffer.com/0xbuffer_0.1.0_aarch64.dmg">
+              <a href={process.env.NEXT_PUBLIC_DIST_URL} target="_blank">
                 Download for macOS
               </a>
             </Button>
