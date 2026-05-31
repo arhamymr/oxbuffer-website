@@ -15,7 +15,9 @@ export function SiteHeader() {
           <Link href="/release-notes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Release Notes</Link>
           <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
           <ThemeToggle />
-          <Button size="sm">Download</Button>
+          <Button size="sm" asChild>
+            <Link href="/downloads">Download</Link>
+          </Button>
         </nav>
       </div>
     </header>

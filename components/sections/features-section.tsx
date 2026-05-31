@@ -69,7 +69,7 @@ export function FeaturesSection() {
                 </div>
                 <CardTitle className="text-lg flex items-center gap-2">
                   {feature.title}
-                  {i === 4 || i === 5 || i === 6 ? (
+                  {i === 3 || i === 4 || i === 5 || i === 6 || i === 7 || i === 8 ? (
                     <Badge variant="outline" className="text-xs border-accent-dim/50 text-accent-dim">Coming Soon</Badge>
                   ) : null}
                 </CardTitle>

@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Apple, Monitor } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 type OS = "macos" | "windows" | "linux" | null;
@@ -16,16 +15,12 @@ function detectOS(): OS {
 }
 
 export function CtaSection() {
-  const [os, setOS] = useState<OS>(null);
-
-  useEffect(() => {
-    setOS(detectOS());
-  }, []);
+  const [os] = useState<OS>(() => detectOS());
 
   return (
-    <section className="py-24 px-4">
+    <section className="py-24 px-4 border-t border-border">
       <div className="container mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-normal mb-4">
+        <h2 className="text-3xl md:text-4xl font-normal mb-15">
           0xBuffer is getting better and better day after day and we are happy to share our results with you.
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

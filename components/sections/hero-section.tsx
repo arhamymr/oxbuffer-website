@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
@@ -15,8 +16,8 @@ export function HeroSection() {
             <p className="text-md md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10">
               0xbuffer is a desktop application that puts a complete security testing toolkit at your fingertips.
             </p>
-            <Button size="lg" className="gap-2">
-              Download Now
+            <Button size="lg" className="gap-2" asChild>
+              <Link href="/downloads">Download Now</Link>
             </Button>
           </div>
           <div className="hidden md:block relative w-[1000px] h-[570px] border border-border rounded-md overflow-hidden">
