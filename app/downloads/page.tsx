@@ -19,7 +19,7 @@ const downloads = [
     version: "v0.1.0",
     size: "~85 MB",
     requirements: "macOS 12 (Monterey) or later",
-    href: "#",
+    href: "https://dist.0xbuffer.com/0xbuffer_0.1.0_aarch64.dmg",
     latest: true,
   },
   {
@@ -75,9 +75,11 @@ export default function Downloads() {
                         Coming Soon
                       </Button>
                     ) : (
-                      <Button size="lg" className="gap-2 shrink-0">
-                        <Download className="size-4" />
-                        Download
+                      <Button size="lg" className="gap-2 shrink-0" asChild>
+                        <a href={href}>
+                          <Download className="size-4" />
+                          Download
+                        </a>
                       </Button>
                     )}
                   </div>

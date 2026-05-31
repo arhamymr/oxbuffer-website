@@ -30,8 +30,10 @@ export function CtaSection() {
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {(os === null || os === "macos") && (
-            <Button size="lg" className="gap-2">
-              Download for macOS
+            <Button size="lg" className="gap-2" asChild>
+              <a href="https://dist.0xbuffer.com/0xbuffer_0.1.0_aarch64.dmg">
+                Download for macOS
+              </a>
             </Button>
           )}
           <Button size="lg" className="gap-2" disabled>
