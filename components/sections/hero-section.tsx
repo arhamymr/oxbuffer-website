@@ -9,8 +9,8 @@ export function HeroSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <div className="mb-3 flex items-center justify-center gap-2 text-green-500 lg:justify-start">
-              <Asterisk className="animate-spin [animation-duration:2s]"/>
+            <div className="mb-3 flex items-center justify-center gap-1 text-green-500 lg:justify-start">
+              <Asterisk className="animate-spin size-5 [animation-duration:2s]"/>
               <p>
                 Security Testing, Recon, and Reporting in One App
               </p>
