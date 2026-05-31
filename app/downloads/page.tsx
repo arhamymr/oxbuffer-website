@@ -3,10 +3,11 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Badge } from "@/components/ui/badge";
+import { InstallCommand } from "./install-command";
 
 export const metadata: Metadata = {
   title: "Downloads — 0xbuffer",
-  description: "Download 0xbuffer for macOS. Windows coming soon.",
+  description: "Download 0xbuffer with the official install script.",
 };
 
 export default function Downloads() {
@@ -18,20 +19,18 @@ export default function Downloads() {
           <PageBreadcrumb current="Downloads" />
           <h1 className="text-4xl mb-2 mt-20">Downloads</h1>
           <p className="text-muted-foreground mb-8">
-            Choose your platform and start testing.
+            Install the latest 0xbuffer distribution from the terminal.
           </p>
 
-          <ul className="space-y-3 text-lg">
-            <li className="flex items-center gap-3">
-              <a
-                href={process.env.NEXT_PUBLIC_DIST_URL}
-                className="underline underline-offset-4 hover:text-primary transition-colors"
-                target="_blank"
-              >
-                macOS Download
-              </a>
+          <div className="mb-8">
+            <div className="mb-3 flex items-center gap-3">
+              <h2 className="text-lg">macOS</h2>
               <Badge variant="secondary">Latest</Badge>
-            </li>
+            </div>
+            <InstallCommand />
+          </div>
+
+          <ul className="space-y-3 text-lg">
             <li className="flex items-center gap-3">
               <span className="text-muted-foreground">Windows</span>
               <Badge variant="secondary">Coming soon</Badge>
