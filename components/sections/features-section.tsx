@@ -1,4 +1,4 @@
-import { Eye, Edit, Zap, Wifi, Bot, Brain, FileText, Wrench } from "lucide-react";
+import { Eye, Edit, Zap, Wifi, Bot, Brain, FileText, Wrench, Hexagon } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -19,7 +19,7 @@ const features = [
     description: "Manually compose HTTP requests from scratch and send them to any endpoint."
   },
   {
-    icon: Wifi,
+    icon: Hexagon,
     title: "Automate Attacks",
     description: "Run high-speed brute force and fuzzing campaigns with marked payload positions."
   },
@@ -52,7 +52,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-24 px-4 bg-muted/30">
+    <section id="features" className="py-24 px-4 bg-muted/30 border-t border-border">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-normal mb-4">What Can You Do?</h2>
@@ -63,7 +63,7 @@ export function FeaturesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, i) => (
             <Card key={i} className="border-border/50">
-              <CardHeader className="flex gap-2 items-center">
+              <CardHeader className="flex gap-1 items-center">
                 <div className="size-10 rounded-lg bg-accent-dim/10 flex items-center justify-center">
                   <feature.icon className="size-5 text-accent-dim" />
                 </div>

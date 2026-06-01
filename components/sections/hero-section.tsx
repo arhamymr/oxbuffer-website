@@ -10,13 +10,13 @@ export function HeroSection() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <div className="mb-3 flex items-center justify-center gap-1 text-green-500 lg:justify-start">
-              <Asterisk className="animate-spin size-5 [animation-duration:2s]"/>
-              <p>
+              <Asterisk className="hidden animate-spin size-5 [animation-duration:2s]"/>
+              <p className="text-sm md:text-md">
                 Security Testing, Recon, and Reporting in One App
               </p>
             </div>
           
-            <h1 className="text-4xl md:text-4xl lg:text-5xl !font-normal tracking-tight mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl !font-normal tracking-tight mb-6">
               From Recon to Report,<br />All in One Place
             </h1>
             <p className="text-md md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10">

@@ -1,9 +1,12 @@
+import { PulseTriangle } from "./pulse-triangle";
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border py-6 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
+            <PulseTriangle size="small" />
             <span className="font-mono text-sm">0xbuffer  ✦  @{new Date().getFullYear()}</span>
           </div>
           <p className="text-sm text-muted-foreground">

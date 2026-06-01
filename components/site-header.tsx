@@ -26,7 +26,7 @@ export function SiteHeader() {
           onClick={() => setMenuOpen(false)}
         >
           <PulseTriangle size="small" />
-          <span className="truncate font-mono text-md font-semibold">0xbuffer</span>
+          <span className="truncate font-mono text-sm font-semibold">0xbuffer</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

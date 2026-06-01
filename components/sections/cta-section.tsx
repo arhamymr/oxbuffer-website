@@ -1,21 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-type OS = "macos" | "windows" | "linux" | null;
-
-function detectOS(): OS {
-  if (typeof navigator === "undefined") return null;
-  const ua = navigator.userAgent.toLowerCase();
-  if (ua.includes("mac")) return "macos";
-  if (ua.includes("win")) return "windows";
-  if (ua.includes("linux")) return "linux";
-  return null;
-}
 
 export function CtaSection() {
-  const [os] = useState<OS>(() => detectOS());
 
   return (
     <section className="py-24 px-4 border-t border-border">
@@ -24,13 +12,13 @@ export function CtaSection() {
           0xbuffer is getting better and better day after day and we are happy to share our results with you.
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {(os === null || os === "macos") && (
-            <Button size="lg" className="gap-2" asChild>
-              <a href={"/downloads"}>
-                Download for macOS
-              </a>
-            </Button>
-          )}
+
+          <Button size="lg" className="gap-2" asChild>
+            <a href={"/downloads"}>
+              Download for macOS
+            </a>
+          </Button>
+
           <Button size="lg" className="gap-2" disabled>
             Windows — Coming Soon
           </Button>
