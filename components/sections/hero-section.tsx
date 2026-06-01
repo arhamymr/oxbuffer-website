@@ -26,7 +26,7 @@ export function HeroSection() {
               <Link href="/downloads">Download Now</Link>
             </Button>
           </div>
-          <div className="hidden md:block relative w-[1000px] h-[570px] border border-border rounded-md overflow-hidden">
+          <div className="hidden md:block relative w-[1000px] h-[620px] border border-border rounded-md overflow-hidden">
             <Image
               src="/assets/image.png"
               alt="0xbuffer Interface"
