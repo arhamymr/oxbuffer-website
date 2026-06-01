@@ -1,4 +1,5 @@
 import { PulseTriangle } from "./pulse-triangle";
+import Link from "next/link";
 
 export function SiteFooter() {
   return (
@@ -9,18 +10,25 @@ export function SiteFooter() {
             <PulseTriangle size="small" />
             <span className="font-mono text-sm">0xbuffer  ✦  @{new Date().getFullYear()}</span>
           </div>
-          <p className="text-sm text-muted-foreground">
-            Security Testing, Recon, and Reporting in One App
-          </p>
-          <span className="text-sm text-muted-foreground">
-            Build by{" "}
-            <a
-              href="mailto:arhamymr@gmail.com"
-              className="underline underline-offset-4 transition-colors hover:text-foreground"
+          <div className="flex gap-2 items-center h-5">
+            <span className="text-sm text-muted-foreground">
+              Help & Support :   {" "}
+              <a
+                href="mailto:arhamymr@gmail.com"
+                className="underline underline-offset-4 transition-colors hover:text-foreground"
+              >
+                arhamymr@gmail.com
+              </a>
+            </span>
+            <span className="text-sm">✦</span>
+            <p> <Link
+              href={"/about"}
+              className="rounded-md text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
-              arhamymr@gmail.com
-            </a>
-          </span>
+              About
+            </Link></p>
+          </div>
+
         </div>
       </div>
     </footer>

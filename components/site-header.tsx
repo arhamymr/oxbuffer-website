@@ -11,7 +11,6 @@ const navItems = [
   { label: "Features", href: "/#features" },
   { label: "Who Is It For", href: "/#audience" },
   { label: "Release Notes", href: "/release-notes" },
-  { label: "About", href: "/about" },
 ];
 
 export function SiteHeader() {
