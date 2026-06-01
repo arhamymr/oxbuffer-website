@@ -24,11 +24,11 @@ export default function ReleaseNotes() {
           </p>
 
           <div className="space-y-12">
-            {releases.map((release) => (
+            {releases.map((release, index) => (
               <div key={release.version}>
                 <div className="flex items-center gap-3 mb-4">
                   <h2 className="text-2xl font-semibold">{release.version}</h2>
-                  {release.latest && <Badge variant="secondary">Latest</Badge>}
+                  {index === 0 && <Badge variant="secondary">Latest</Badge>}
                   <span className="text-sm text-muted-foreground">{release.date}</span>
                 </div>
                 <ul className="space-y-2">
