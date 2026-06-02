@@ -12,7 +12,7 @@ export function SiteFooter() {
           </div>
           <div className="flex gap-2 items-center h-5 text-muted-foreground">
             <span className="text-sm ">
-              Help & Support :   {" "}
+              Contact Support :   {" "}
               <a
                 href="mailto:arhamymr@gmail.com"
                 className="underline underline-offset-4 transition-colors hover:text-foreground"
