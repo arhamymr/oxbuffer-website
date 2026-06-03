@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
+// import { ThemeToggle } from "@/components/theme-toggle";
 import { PulseTriangle } from "@/components/pulse-triangle";
 
 const navItems = [
@@ -38,14 +38,14 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <Button variant={"outline"} size="sm" asChild>
               <Link href="/downloads">Download</Link>
             </Button>
           </nav>
 
           <div className="flex items-center gap-1 md:hidden">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <Button
               variant="ghost"
               size="icon"

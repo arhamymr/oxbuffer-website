@@ -68,7 +68,7 @@ export function FeaturesSection() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group flex gap-4 rounded-xl border border-border/50 bg-card/40 p-4 transition-colors hover:border-border hover:bg-card/70"
+              className="group flex gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-border hover:bg-card/70"
             >
               <div className="size-10 shrink-0 rounded-lg bg-muted flex items-center justify-center mt-0.5">
                 <feature.icon className="size-5 text-muted-foreground" />

@@ -17,7 +17,7 @@ export function CtaSection() {
       </div>
 
       <div className="container mx-auto max-w-4xl relative">
-        <div className="rounded-2xl border border-border bg-card p-10 md:p-14">
+        <div className="rounded-xl border border-border bg-card p-10 md:p-14">
           <div className="grid md:grid-cols-[1fr_auto] gap-10 items-center">
             {/* Left: copy */}
             <div>

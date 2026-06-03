@@ -38,7 +38,7 @@ export function AudienceSection() {
           {audience.map((item) => (
             <div
               key={item.title}
-              className="group rounded-xl border border-border/50 bg-card/40 p-5 transition-colors hover:border-border hover:bg-card/70"
+              className="group rounded-xl border border-border bg-card p-5 transition-colors hover:border-border hover:bg-card/70"
             >
               <item.icon className="size-5 text-muted-foreground mb-2" />
               <h3 className="font-medium text-foreground mb-1">{item.title}</h3>

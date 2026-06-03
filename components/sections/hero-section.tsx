@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section className="py-16 px-4 mt-10 overflow-hidden">
       <div className="container mx-auto max-w-4xl">
-        <div className="rounded-2xl relative border border-border h-130 overflow-hidden bg-card p-8 md:p-12">
+        <div className="rounded-xl relative border border-border h-130 overflow-hidden bg-card p-8 md:p-12">
 
             <div className="flex items-start flex-col justify-center h-full">
               <div className="mb-3 flex items-center justify-center gap-1 text-green-500 lg:justify-start">
