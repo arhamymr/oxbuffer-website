@@ -19,28 +19,28 @@ export default function About() {
           <PageBreadcrumb current="About" />
           <section className="text-center mb-16 min-h-[100vh]">
             <div className="border border-border rounded-xl bg-card pb-20">
- <h1 className="text-4xl font-normal mb-4 mt-20">About Me</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I&apos;m Arham, a Software Developer building 0xbuffer as my personal project.
-              It is a space for experimenting with practical web application security workflows,
-              developer tooling, and ideas that make technical work feel clearer and faster.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button asChild>
-                <a href="https://github.com/arhamymr" target="_blank" rel="noreferrer">
-                  <ExternalLink className="size-4" />
-                  GitHub
-                </a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="https://www.threads.com/@arhamymr" target="_blank" rel="noreferrer">
-                  <MessageCircle className="size-4" />
-                  Threads
-                </a>
-              </Button>
+              <h1 className="text-4xl font-normal mb-4 mt-20">About Me</h1>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                I&apos;m Arham, a Software Developer building 0xbuffer as my personal project.
+                It is a space for experimenting with practical web application security workflows,
+                developer tooling, and ideas that make technical work feel clearer and faster.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Button asChild>
+                  <a href="https://github.com/arhamymr" target="_blank" rel="noreferrer">
+                    <ExternalLink className="size-4" />
+                    GitHub
+                  </a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a href="https://www.threads.com/@arhamymr" target="_blank" rel="noreferrer">
+                    <MessageCircle className="size-4" />
+                    Threads
+                  </a>
+                </Button>
+              </div>
             </div>
-            </div>
-           
+
           </section>
         </div>
       </main>
