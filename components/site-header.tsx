@@ -17,8 +17,8 @@ export function SiteHeader() {
 
   return (
     <header className="fixed top-0 z-10 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="flex max-w-4xl mx-auto">
-        <div className="container mx-auto flex min-h-13 items-center justify-between px-4 py-2">
+      <div className="mx-auto flex w-full max-w-4xl flex-col">
+        <div className="flex min-h-13 items-center justify-between px-4 py-2">
           <Link
             href="/"
             className="flex min-w-0 items-center gap-2"
@@ -39,7 +39,7 @@ export function SiteHeader() {
               </Link>
             ))}
             {/* <ThemeToggle /> */}
-            <Button variant={"outline"} size="sm" asChild>
+            <Button size="sm" asChild>
               <Link href="/downloads">Download</Link>
             </Button>
           </nav>
@@ -62,10 +62,11 @@ export function SiteHeader() {
 
         <nav
           id="mobile-navigation"
-          className={`border-t border-border bg-background px-4 py-3 md:hidden ${menuOpen ? "block" : "hidden"
-            }`}
+          className={`border-t border-border bg-background px-4 py-3 md:hidden ${
+            menuOpen ? "block" : "hidden"
+          }`}
         >
-          <div className="container mx-auto flex flex-col gap-1">
+          <div className="flex flex-col gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -84,7 +85,6 @@ export function SiteHeader() {
           </div>
         </nav>
       </div>
-
     </header>
   );
 }

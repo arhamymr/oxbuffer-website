@@ -13,7 +13,7 @@ export function HeroSection() {
               <div className="mb-3 flex items-center justify-center gap-1 text-green-500 lg:justify-start">
                 <Asterisk className="hidden md:block animate-spin size-5 [animation-duration:2s]"/>
                 <p className="text-sm md:text-md">
-                  Security Testing, Recon, and Reporting in One App
+                  Testing, Recon, and Reporting
                 </p>
               </div>
             
@@ -24,7 +24,7 @@ export function HeroSection() {
                 0xbuffer brings web app recon, testing, and documentation into one focused desktop app.
               </p>
               <Button size="lg" className="gap-2" asChild>
-                <Link href="/downloads">Download Now</Link>
+                <Link href="/#features">See Features</Link>
              
               </Button>
             </div>
