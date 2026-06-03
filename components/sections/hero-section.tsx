@@ -1,49 +1,37 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Asterisk } from "lucide-react";
+import { TrafficIllustration } from "@/components/traffic-illustration";
 
 export function HeroSection() {
   return (
     <section className="py-16 px-4 mt-10 overflow-hidden">
-      <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
-            <div className="mb-3 flex items-center justify-center gap-1 text-green-500 lg:justify-start">
-              <Asterisk className="hidden animate-spin size-5 [animation-duration:2s]"/>
-              <p className="text-sm md:text-md">
-                Security Testing, Recon, and Reporting in One App
+      <div className="container mx-auto max-w-4xl">
+        <div className="rounded-2xl relative border border-border h-130 overflow-hidden bg-card p-8 md:p-12">
+
+            <div className="flex items-start flex-col justify-center h-full">
+              <div className="mb-3 flex items-center justify-center gap-1 text-green-500 lg:justify-start">
+                <Asterisk className="hidden md:block animate-spin size-5 [animation-duration:2s]"/>
+                <p className="text-sm md:text-md">
+                  Security Testing, Recon, and Reporting in One App
+                </p>
+              </div>
+            
+              <h1 className="text-3xl lg:text-4xl !font-normal tracking-tight mb-6">
+                From Recon to Report,<br />All in One Place
+              </h1>
+              <p className="text-md md:text-lg text-muted-foreground max-w-sm mx-auto lg:mx-0 mb-10">
+                0xbuffer brings web app recon, testing, and documentation into one focused desktop app.
               </p>
+              <Button size="lg" className="gap-2" asChild>
+                <Link href="/downloads">Download Now</Link>
+             
+              </Button>
+            </div>
+            <div className="hidden md:block absolute w-[1000px] h-[620px] scale-[0.8] top-0 -right-[480px]">
+              <TrafficIllustration />
             </div>
           
-            <h1 className="text-3xl md:text-4xl lg:text-5xl !font-normal tracking-tight mb-6">
-              From Recon to Report,<br />All in One Place
-            </h1>
-            <p className="text-md md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10">
-              0xbuffer brings web app recon, testing, and documentation into one focused desktop app.
-            </p>
-            <Button size="lg" className="gap-2" asChild>
-              <Link href="/downloads">Download Now</Link>
-            </Button>
-          </div>
-          <div className="hidden md:block relative w-[1000px] h-[620px] border border-border rounded-md overflow-hidden">
-            <Image
-              src="/assets/image.png"
-              alt="0xbuffer Interface"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="dark:hidden"
-              priority
-            />
-            <Image
-              src="/assets/image-dark.png"
-              alt="0xbuffer Interface"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="hidden dark:block"
-              priority
-            />
-          </div>
         </div>
       </div>
     </section>

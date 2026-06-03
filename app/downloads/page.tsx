@@ -14,8 +14,8 @@ export default function Downloads() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-16 pb-24 px-4 min-h-[100vh]">
-        <div className="container mx-auto max-w-3xl">
+      <main className="pt-16 pb-24 px-4 min-h-[100vh] mt-5">
+        <div className="container mx-auto max-w-4xl">
           <PageBreadcrumb current="Downloads" />
           <h1 className="text-4xl mb-2 mt-20">Downloads</h1>
           <p className="text-muted-foreground mb-8">

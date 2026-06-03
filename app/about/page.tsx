@@ -14,11 +14,12 @@ export default function About() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-16 pb-24 px-4">
+      <main className="pt-16 pb-24 px-4 mt-5">
         <div className="container mx-auto max-w-4xl">
           <PageBreadcrumb current="About" />
           <section className="text-center mb-16 min-h-[100vh]">
-            <h1 className="text-4xl font-normal mb-4 mt-20">About Me</h1>
+            <div className="border border-border rounded-xl bg-card pb-20">
+ <h1 className="text-4xl font-normal mb-4 mt-20">About Me</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               I&apos;m Arham, a Software Developer building 0xbuffer as my personal project.
               It is a space for experimenting with practical web application security workflows,
@@ -38,6 +39,8 @@ export default function About() {
                 </a>
               </Button>
             </div>
+            </div>
+           
           </section>
         </div>
       </main>

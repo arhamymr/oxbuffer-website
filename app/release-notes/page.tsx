@@ -15,8 +15,8 @@ export default function ReleaseNotes() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-16 pb-24 px-4 min-h-[100vh]">
-        <div className="container mx-auto max-w-3xl">
+      <main className="pt-16 pb-24 px-4 mt-5 min-h-[100vh]">
+        <div className="container mx-auto max-w-4xl">
           <PageBreadcrumb current="Release Notes" />
           <h1 className="text-4xl font-normal mb-2 mt-10">Release Notes</h1>
           <p className="text-muted-foreground mb-12">
