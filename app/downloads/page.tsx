@@ -31,13 +31,15 @@ export default function Downloads() {
             <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-muted-foreground">
               <h3 className="mb-2 font-medium text-foreground">macOS security notice</h3>
               <p>
-                0xbuffer is currently distributed without Apple Developer ID signing or notarization.
-                macOS may show a warning when opening the app, and Apple cannot verify the publisher identity.
+                0xbuffer is currently distributed without Apple Developer ID signing or notarization. The
+                terminal installer copies the app into /Applications, but it does not make the app
+                Apple-verified. Depending on how the app is installed and your macOS security settings,
+                macOS may or may not show an unidentified developer warning.
               </p>
               <p className="mt-2">
-                The installer checks the downloaded DMG with SHA256 to detect accidental corruption, but
-                this is not the same protection as Apple notarization or a detached developer signature.
-                Only install 0xbuffer from the official release source.
+                The installer verifies the downloaded DMG with SHA256 to detect corruption or incomplete
+                downloads. The checksum is served from the same official release source, so only install
+                0xbuffer from the official website.
               </p>
             </div>
           </div>
