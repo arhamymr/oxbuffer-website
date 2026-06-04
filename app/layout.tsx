@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "0xbuffer",
-  description: "See everything, Break everything. Document everything.",
+  title: "0xbuffer — The All-in-One Security Testing Workstation",
+  description:
+    "0xbuffer is a desktop application for web security testing, traffic interception, request crafting, automated recon, and professional report building.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
