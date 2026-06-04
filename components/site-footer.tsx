@@ -10,7 +10,13 @@ export function SiteFooter() {
             <PulseTriangle size="small" />
             <span className="font-mono text-sm">0xbuffer  ✦  @{new Date().getFullYear()}</span>
           </div>
-          <div className="flex gap-2 items-center h-5 text-muted-foreground">
+          <div className="flex flex-col items-center gap-2 text-muted-foreground sm:flex-row sm:gap-4">
+            <Link
+              href="/privacy-policy"
+              className="text-sm underline-offset-4 transition-colors hover:text-foreground hover:underline"
+            >
+              Privacy Policy
+            </Link>
             <span className="text-sm ">
               Contact Support :   {" "}
               <a
