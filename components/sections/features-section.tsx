@@ -20,13 +20,11 @@ const features = [
     icon: Hexagon,
     title: "Automate Attacks",
     description: "Run high-speed brute force and fuzzing campaigns with marked payload positions.",
-    soon: true,
   },
   {
     icon: Globe,
     title: "Automate Browser",
     description: "Let AI drive a browser to crawl target websites on your behalf.",
-    soon: true,
   },
   {
     icon: Brain,
