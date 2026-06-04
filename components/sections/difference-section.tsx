@@ -2,7 +2,7 @@ import { PulseTriangle } from "@/components/pulse-triangle";
 
 export function DifferenceSection() {
   return (
-    <section className="py-24 px-4 bg-muted/30">
+    <section className="py-24 px-4 bg-muted/30 border-t border-border">
       <div className="container mx-auto max-w-4xl text-center">
         <div className="size-12 rounded-lg bg-accent-dim/10 flex items-center justify-center mx-auto mb-6">
           <PulseTriangle size="large" className="text-accent-dim" />

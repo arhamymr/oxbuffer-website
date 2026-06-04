@@ -1,4 +1,4 @@
-import { Eye, Edit, Zap, Wifi, Bot, Brain, FileText, Wrench, Hexagon } from "lucide-react";
+import { Eye, Edit, Zap, Globe, Brain, FileText, Wrench, Hexagon } from "lucide-react";
 
 const features = [
   {
@@ -23,13 +23,7 @@ const features = [
     soon: true,
   },
   {
-    icon: Wifi,
-    title: "Sniff Raw Packets",
-    description: "Capture raw network traffic. View hex dumps, reconstruct TCP streams.",
-    soon: true,
-  },
-  {
-    icon: Bot,
+    icon: Globe,
     title: "Automate Browser",
     description: "Let AI drive a browser to crawl target websites on your behalf.",
     soon: true,
