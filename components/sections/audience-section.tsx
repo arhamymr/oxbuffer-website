@@ -38,13 +38,18 @@ export function AudienceSection() {
           {audience.map((item) => (
             <div
               key={item.title}
-              className="group rounded-xl border border-border bg-card p-5 transition-colors hover:border-border hover:bg-card/70"
+              className="group flex gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-border hover:bg-card/70"
             >
-              <item.icon className="size-5 text-muted-foreground mb-2" />
-              <h3 className="font-medium text-foreground mb-1">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {item.desc}
-              </p>
+              <div className="size-10 shrink-0 rounded-md border border-border bg-muted flex items-center justify-center mt-0.5">
+                <item.icon className="size-5 text-muted-foreground" />
+              </div>
+              <div>
+
+                <h3 className="font-medium text-foreground mb-1">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

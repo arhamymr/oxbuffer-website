@@ -21,10 +21,6 @@ export function CtaSection() {
           <div className="grid md:grid-cols-[1fr_auto] gap-10 items-center">
             {/* Left: copy */}
             <div>
-              <p className="text-sm text-green-500 mb-3 flex items-center gap-1.5">
-                <span className="size-1.5 rounded-full bg-green-500 animate-pulse" />
-                Built with care
-              </p>
               <h2 className="text-2xl md:text-3xl font-normal tracking-tight mb-3">
                 Try 0xbuffer on your next target.
               </h2>
