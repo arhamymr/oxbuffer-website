@@ -9,6 +9,7 @@ import { PulseTriangle } from "@/components/pulse-triangle";
 
 const navItems = [
   { label: "Features", href: "/#features" },
+  { label: "License", href: "/payment" },
   // { label: "Release Notes", href: "/release-notes" },
 ];
 
