@@ -147,7 +147,7 @@ export function GenerateForm() {
               id="maxDevices"
               name="maxDevices"
               type="number"
-              defaultValue={3}
+              defaultValue={1}
               min={1}
               max={10}
             />

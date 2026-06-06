@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Copy, Check, Search, Ban, ExternalLink } from "lucide-react";
+import { Copy, Check, Search, Ban, ExternalLink, UserCheck, UserX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -87,6 +87,9 @@ export function LicenseTable({ licenses, compact = false }: LicenseTableProps) {
                 Status
               </th>
               <th className="px-3 py-2.5 font-medium text-muted-foreground">
+                Claimed
+              </th>
+              <th className="px-3 py-2.5 font-medium text-muted-foreground">
                 Devices
               </th>
               <th className="px-3 py-2.5 font-medium text-muted-foreground">
@@ -101,7 +104,7 @@ export function LicenseTable({ licenses, compact = false }: LicenseTableProps) {
             {displayed.length === 0 ? (
               <tr>
                 <td
-                  colSpan={7}
+                  colSpan={8}
                   className="px-3 py-10 text-center text-sm text-muted-foreground"
                 >
                   No licenses found.
@@ -193,6 +196,19 @@ function LicenseRow({
         >
           {license.status}
         </Badge>
+      </td>
+      <td className="px-3 py-2.5">
+        {license.activationCount > 0 ? (
+          <span className="inline-flex items-center gap-1 text-xs text-primary">
+            <UserCheck className="size-3" />
+            Claimed
+          </span>
+        ) : (
+          <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+            <UserX className="size-3" />
+            Unclaimed
+          </span>
+        )}
       </td>
       <td className="px-3 py-2.5 font-mono text-xs text-muted-foreground">
         {license.activationCount}/{license.maxDevices}

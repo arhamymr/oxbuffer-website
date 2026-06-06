@@ -12,6 +12,12 @@ import {
   revokeLicenseByKey,
 } from "./db";
 
+async function requireAuth(): Promise<string> {
+  const apiKey = await getAdminApiKey();
+  if (!apiKey || !verifyAdmin(apiKey)) redirect("/admin/login");
+  return apiKey;
+}
+
 export type LoginResult =
   | { success: true }
   | { success: false; error: string };
@@ -50,12 +56,11 @@ export async function generateLicense(
   _prev: GenerateResult | null,
   formData: FormData
 ): Promise<GenerateResult> {
-  const apiKey = await getAdminApiKey();
-  if (!apiKey) redirect("/admin/login");
+  await requireAuth();
 
   const email = String(formData.get("email") ?? "").trim() || undefined;
   const plan = String(formData.get("plan") ?? "lifetime");
-  const maxDevices = Number(formData.get("maxDevices") ?? 3);
+  const maxDevices = Number(formData.get("maxDevices") ?? 1);
 
   try {
     const result = await dbCreateLicense({ email, plan, maxDevices });
@@ -84,8 +89,7 @@ export async function revokeLicenseAction(
   _prev: RevokeResult | null,
   key: string
 ): Promise<RevokeResult> {
-  const apiKey = await getAdminApiKey();
-  if (!apiKey) redirect("/admin/login");
+  await requireAuth();
 
   try {
     await revokeLicenseByKey(key);

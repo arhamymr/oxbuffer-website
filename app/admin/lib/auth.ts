@@ -1,4 +1,5 @@
 import { cookies } from "next/headers";
+import { timingSafeEqual } from "crypto";
 
 const COOKIE_NAME = "admin_session";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
@@ -25,5 +26,10 @@ export async function clearAdminApiKey(): Promise<void> {
 }
 
 export function verifyAdmin(key: string): boolean {
-  return key === process.env.ADMIN_API_KEY;
+  const expected = process.env.ADMIN_API_KEY;
+  if (!expected) return false;
+  const a = Buffer.from(key);
+  const b = Buffer.from(expected);
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
 }

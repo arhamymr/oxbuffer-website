@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getAdminApiKey } from "../../lib/auth";
+import { getAdminApiKey, verifyAdmin } from "../../lib/auth";
 import { getLicenseByKey } from "../../lib/db";
 import { LicenseDetail } from "../../components/license-detail";
 
@@ -23,7 +23,7 @@ export default async function LicenseDetailPage({
 }) {
   const { key } = await params;
   const apiKey = await getAdminApiKey();
-  if (!apiKey) redirect("/admin/login");
+  if (!apiKey || !verifyAdmin(apiKey)) redirect("/admin/login");
 
   const license = await getLicenseByKey(decodeURIComponent(key));
 

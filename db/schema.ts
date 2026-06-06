@@ -15,7 +15,7 @@ export const licenses = pgTable(
     key: varchar("key", { length: 32 }).notNull().unique(),
     email: varchar("email", { length: 255 }),
     plan: varchar("plan", { length: 50 }).notNull().default("lifetime"),
-    maxDevices: integer("max_devices").notNull().default(3),
+    maxDevices: integer("max_devices").notNull().default(1),
     status: varchar("status", { length: 20 }).notNull().default("active"),
     createdAt: timestamp("created_at").notNull().defaultNow(),
   },

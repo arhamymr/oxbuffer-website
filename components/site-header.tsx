@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 // import { ThemeToggle } from "@/components/theme-toggle";
 import { PulseTriangle } from "@/components/pulse-triangle";
 
 const navItems = [
   { label: "Features", href: "/#features" },
-  { label: "License", href: "/payment" },
+  { label: "Buy License", href: "/payment" },
   // { label: "Release Notes", href: "/release-notes" },
 ];
 
@@ -27,6 +28,8 @@ export function SiteHeader() {
           >
             <PulseTriangle />
             <span className="truncate font-mono text-sm font-semibold">0xbuffer</span>
+            <span className="text-[10px] border border-border font-medium uppercase tracking-wider text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
+              Early version</span>
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex">
@@ -63,9 +66,8 @@ export function SiteHeader() {
 
         <nav
           id="mobile-navigation"
-          className={`border-t border-border bg-background px-4 py-3 md:hidden ${
-            menuOpen ? "block" : "hidden"
-          }`}
+          className={`border-t border-border bg-background px-4 py-3 md:hidden ${menuOpen ? "block" : "hidden"
+            }`}
         >
           <div className="flex flex-col gap-1">
             {navItems.map((item) => (

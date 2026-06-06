@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
-import { getAdminApiKey } from "../lib/auth";
+import { getAdminApiKey, verifyAdmin } from "../lib/auth";
 import { getAllLicenses } from "../lib/db";
 import { LicenseTable } from "../components/license-table";
 
@@ -14,7 +14,7 @@ export const metadata = {
 
 export default async function AllLicensesPage() {
   const apiKey = await getAdminApiKey();
-  if (!apiKey) redirect("/admin/login");
+  if (!apiKey || !verifyAdmin(apiKey)) redirect("/admin/login");
 
   const licenses = await getAllLicenses();
 

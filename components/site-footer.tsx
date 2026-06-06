@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { PulseTriangle } from "./pulse-triangle";
 import Link from "next/link";
 
@@ -9,6 +10,8 @@ export function SiteFooter() {
           <div className="flex items-center gap-2">
             <PulseTriangle size="small" />
             <span className="font-mono text-sm">0xbuffer  ✦  @{new Date().getFullYear()}</span>
+            <span className="text-[10px] border border-border font-medium uppercase tracking-wider text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
+                     Early version</span>
           </div>
           <div className="flex flex-col items-center gap-2 text-muted-foreground sm:flex-row sm:gap-4">
             <Link
@@ -18,12 +21,11 @@ export function SiteFooter() {
               Privacy Policy
             </Link>
             <span className="text-sm ">
-              Contact Support :   {" "}
               <a
                 href="mailto:arhamymr@gmail.com"
                 className="underline-offset-4 transition-colors hover:text-foreground"
               >
-                arhamymr@gmail.com
+                Feedback and Support
               </a>
             </span>
           </div>

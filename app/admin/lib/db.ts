@@ -112,7 +112,7 @@ export async function createLicense(params: {
       key,
       email: params.email || null,
       plan: params.plan || "lifetime",
-      maxDevices: params.maxDevices || 3,
+      maxDevices: params.maxDevices || 1,
     })
     .returning();
 
