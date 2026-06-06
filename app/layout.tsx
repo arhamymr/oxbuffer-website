@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import SideRays from "@/components/siderays";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "0xbuffer — The All-in-One Security Testing Workstation",
+  title: "0xbuffer — The All-in-One Testing Tools",
   description:
     "0xbuffer is a desktop application for web security testing, traffic interception, request crafting, automated recon, and professional report building.",
   icons: {
@@ -41,7 +43,9 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <SideRays />
       </body>
+      <GoogleAnalytics gaId="G-1C8QL0CLB9" />
     </html>
   );
 }

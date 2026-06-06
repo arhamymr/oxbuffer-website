@@ -2,12 +2,14 @@ import { Triangle, TriangleDashed } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-type PulseTriangleSize = "small" | "medium" | "large";
+type PulseTriangleSize = "small" | "medium" | "large" | "xlarge" | "xxlarge";
 
 const pulseTriangleSizes: Record<PulseTriangleSize, string> = {
   small: "size-3",
-  medium: "size-4",
-  large: "size-6",
+  medium: "size-3.5",
+  large: "size-4",
+  xlarge: "size-4.5",
+  xxlarge: "size-5",
 };
 
 const pulseTriangleAnimation =
