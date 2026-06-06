@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Asterisk } from "lucide-react";
 import { TrafficIllustration } from "@/components/traffic-illustration";
+import { ShinyText } from "@/components/shiny-text";
 
 export function HeroSection() {
   return (
@@ -12,9 +13,12 @@ export function HeroSection() {
             <div className="flex items-start flex-col justify-center h-full">
               <div className="mb-3 flex items-center justify-center gap-1 text-green-500 lg:justify-start">
                 <Asterisk className="hidden md:block animate-spin size-5 [animation-duration:2s]"/>
-                <p className="text-sm md:text-md">
-                  Testing, Recon, and Reporting
-                </p>
+                <ShinyText
+                  text="Testing, Recon, and Reporting"
+                  className="text-sm md:text-md"
+                  speed={2}
+                  shineColor="#bbf7d0"
+                />
               </div>
             
               <h1 className="text-3xl lg:text-4xl !font-normal tracking-tight mb-6">
