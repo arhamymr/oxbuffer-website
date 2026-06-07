@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
@@ -41,6 +42,17 @@ export default function BrowserAutomationDoc() {
             points of interest. Use the results to decide where to test next,
             then review notes and activity as the crawl runs.
           </p>
+
+          <div className="mb-12 overflow-hidden rounded-lg border border-border">
+            <Image
+              src="/docs/overview-browser.png"
+              alt="Browser Automation overview"
+              width={1200}
+              height={675}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
 
           {/* Safety Notice */}
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-5 mb-12">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
@@ -31,6 +32,17 @@ export default function LiveTrafficDoc() {
             to spot interesting requests, narrow noisy sessions, and inspect
             the full request and response when something needs a closer look.
           </p>
+
+          <div className="mb-12 overflow-hidden rounded-lg border border-border">
+            <Image
+              src="/docs/overview-live-traffic.png"
+              alt="Live Traffic overview"
+              width={1200}
+              height={675}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
 
           {/* Overview */}
           <section className="mb-16">

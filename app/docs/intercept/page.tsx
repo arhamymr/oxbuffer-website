@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
@@ -39,6 +40,17 @@ export default function InterceptDoc() {
             change request or response content when needed, then forward it,
             drop it, or pause the response for another check.
           </p>
+
+          <div className="mb-12 overflow-hidden rounded-lg border border-border">
+            <Image
+              src="/docs/overview-intercept.png"
+              alt="Intercept overview"
+              width={1200}
+              height={675}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
 
           {/* Overview */}
           <section className="mb-16">
