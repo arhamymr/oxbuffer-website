@@ -1,6 +1,6 @@
 import { db } from "@/db";
-import { licenses, activations } from "@/db/schema";
-import { eq, desc, sql, count } from "drizzle-orm";
+import { licenses, activations, articles } from "@/db/schema";
+import { eq, desc, sql, count, and } from "drizzle-orm";
 
 export interface LicenseWithActivations {
   id: string;
@@ -177,4 +177,72 @@ export async function getRecentLicenses(
     .limit(limit);
 
   return result;
+}
+
+// ---------------------------------------------------------------------------
+// Articles
+// ---------------------------------------------------------------------------
+
+export type Article = typeof articles.$inferSelect;
+
+export async function getAllArticles(): Promise<Article[]> {
+  return db.select().from(articles).orderBy(desc(articles.createdAt));
+}
+
+export async function getArticleById(id: string): Promise<Article | null> {
+  const [row] = await db.select().from(articles).where(eq(articles.id, id)).limit(1);
+  return row ?? null;
+}
+
+export async function getArticleBySlug(slug: string): Promise<Article | null> {
+  const [row] = await db.select().from(articles).where(eq(articles.slug, slug)).limit(1);
+  return row ?? null;
+}
+
+export async function getPublishedArticles(): Promise<Article[]> {
+  return db
+    .select()
+    .from(articles)
+    .where(eq(articles.status, "published"))
+    .orderBy(desc(articles.publishedAt));
+}
+
+export async function createArticle(params: {
+  title: string;
+  slug: string;
+  excerpt?: string;
+  content: string;
+  status?: string;
+}): Promise<Article> {
+  const now = new Date();
+  const [row] = await db
+    .insert(articles)
+    .values({
+      title: params.title,
+      slug: params.slug,
+      excerpt: params.excerpt || null,
+      content: params.content,
+      status: params.status || "draft",
+      publishedAt: params.status === "published" ? now : null,
+      createdAt: now,
+      updatedAt: now,
+    })
+    .returning();
+  return row;
+}
+
+export async function updateArticle(
+  id: string,
+  params: Partial<Pick<Article, "title" | "slug" | "excerpt" | "content" | "status" | "publishedAt" | "updatedAt">>
+): Promise<Article | null> {
+  const [row] = await db
+    .update(articles)
+    .set({ ...params, updatedAt: new Date() })
+    .where(eq(articles.id, id))
+    .returning();
+  return row ?? null;
+}
+
+export async function deleteArticle(id: string): Promise<void> {
+  await db.delete(articles).where(eq(articles.id, id));
 }

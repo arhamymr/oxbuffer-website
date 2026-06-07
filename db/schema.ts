@@ -2,6 +2,7 @@ import {
   pgTable,
   uuid,
   varchar,
+  text,
   integer,
   timestamp,
   jsonb,
@@ -41,5 +42,25 @@ export const activations = pgTable(
   (table) => [
     index("activations_license_id_idx").on(table.licenseId),
     index("activations_fingerprint_idx").on(table.machineFingerprint),
+  ]
+);
+
+export const articles = pgTable(
+  "articles",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    slug: varchar("slug", { length: 200 }).notNull().unique(),
+    title: varchar("title", { length: 300 }).notNull(),
+    excerpt: varchar("excerpt", { length: 500 }),
+    content: text("content").notNull(),
+    status: varchar("status", { length: 20 }).notNull().default("draft"),
+    publishedAt: timestamp("published_at"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+  },
+  (table) => [
+    index("articles_slug_idx").on(table.slug),
+    index("articles_status_idx").on(table.status),
+    index("articles_published_at_idx").on(table.publishedAt),
   ]
 );

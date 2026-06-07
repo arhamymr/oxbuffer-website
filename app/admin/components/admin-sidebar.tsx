@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   KeyRound,
   PlusCircle,
+  FileText,
   LogOut,
   Menu,
   X,
@@ -19,6 +20,7 @@ const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "All Licenses", href: "/admin/licenses", icon: KeyRound },
   { label: "Generate", href: "/admin/licenses/new", icon: PlusCircle },
+  { label: "Blog", href: "/admin/blog", icon: FileText },
 ];
 
 export function AdminSidebar() {
