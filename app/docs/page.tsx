@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
-import { Eye, Globe, Pause, Wrench, ArrowRight } from "lucide-react";
+import { Eye, Globe, Pause, Wrench, Crosshair, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Documentation — 0xbuffer",
@@ -31,6 +31,13 @@ const docs = [
     description:
       "Pause selected traffic, edit requests or responses, then forward or drop them while testing application behavior.",
     href: "/docs/intercept",
+  },
+  {
+    icon: Crosshair,
+    title: "Invoker",
+    description:
+      "High-speed parameter mining and fuzzing. Mark payload positions, load wordlists, and run concurrent attacks.",
+    href: "/docs/invoker",
   },
   {
     icon: Wrench,
