@@ -5,6 +5,7 @@ import { FeaturesSection } from "@/components/sections/features-section";
 import { DifferenceSection } from "@/components/sections/difference-section";
 import { AudienceSection } from "@/components/sections/audience-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import { OfflineSection } from "@/components/sections/offline-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <FeaturesSection />
         <DifferenceSection />
         <AudienceSection />
+        <OfflineSection />
         <CtaSection />
       </main>
       <SiteFooter />

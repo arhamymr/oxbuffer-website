@@ -12,6 +12,7 @@ const navItems = [
   { label: "Features", href: "/#features" },
   { label: "Docs", href: "/docs" },
   { label: "Buy License", href: "/payment" },
+  { label: "Blogs", href: "/blogs" }
   // { label: "Release Notes", href: "/release-notes" },
 ];
 

@@ -35,7 +35,7 @@ export default async function BlogPage() {
               {articles.map((article) => (
                 <Link
                   key={article.id}
-                  href={`/blog/${article.slug}`}
+                  href={`/blogs/${article.slug}`}
                   className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40 hover:bg-card/70"
                 >
                   <h2 className="flex items-center gap-2 text-lg font-medium text-foreground mb-2">
