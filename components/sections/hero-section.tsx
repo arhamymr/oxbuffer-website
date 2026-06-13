@@ -1,13 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Asterisk, Box } from "lucide-react";
 import { TrafficIllustration } from "@/components/traffic-illustration";
 import { ShinyText } from "@/components/shiny-text";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export function HeroSection() {
   return (
     <section className="py-16 px-4 mt-10 overflow-hidden">
       <div className="container mx-auto max-w-4xl">
+        <ScrollReveal>
         <div className="rounded-xl relative border border-border h-120 overflow-hidden bg-card p-8 md:p-12">
 
           <div className="flex items-start flex-col justify-center h-full z-10">
@@ -38,6 +42,7 @@ export function HeroSection() {
           </div>
 
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

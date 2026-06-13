@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, Hexagon } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const highlights = [
   { icon: Hexagon, label: "Always improving" },
@@ -17,6 +18,7 @@ export function CtaSection() {
       </div>
 
       <div className="container mx-auto max-w-4xl relative">
+        <ScrollReveal>
         <div className="rounded-xl border border-border bg-card p-10 md:p-14">
           <div className="grid md:grid-cols-[1fr_auto] gap-10 items-center">
             {/* Left: copy */}
@@ -57,6 +59,7 @@ export function CtaSection() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,4 +1,7 @@
+"use client";
+
 import { Eye, Edit, Zap, Globe, Brain, FileText, Wrench, Hexagon, Bot, Sparkles, LoaderPinwheel, Astroid, Box, RotateCw, PauseCircle } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const features = [
   {
@@ -40,6 +43,7 @@ const features = [
     icon: LoaderPinwheel,
     title: "Automate Workflows",
     description: "Chain tools together into automated pipelines. Schedule scans, trigger alerts, and let 0xbuffer handle the repetitive work.",
+    soon: true,
   },
   {
     icon: Astroid,
@@ -52,6 +56,7 @@ export function FeaturesSection() {
   return (
     <section id="features" className="py-24 px-4 border-t border-border">
       <div className="container mx-auto max-w-4xl">
+        <ScrollReveal>
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-normal mb-3">What Can You Do?</h2>
           <p className="text-muted-foreground max-w-md mx-auto">
@@ -60,9 +65,9 @@ export function FeaturesSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-3">
-          {features.map((feature) => (
+          {features.map((feature, i) => (
+            <ScrollReveal key={feature.title} delay={i * 0.08}>
             <div
-              key={feature.title}
               className="group flex gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-border hover:bg-card/70"
             >
               <div className="size-10 shrink-0 rounded-md border border-border bg-muted flex items-center justify-center mt-0.5">
@@ -82,8 +87,10 @@ export function FeaturesSection() {
                 </p>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

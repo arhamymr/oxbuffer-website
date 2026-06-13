@@ -1,4 +1,7 @@
+"use client";
+
 import { Crosshair, Bug, Microscope, Wrench } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const audience = [
   {
@@ -27,6 +30,7 @@ export function AudienceSection() {
   return (
     <section id="audience" className="py-24 px-4 border-t border-border">
       <div className="container mx-auto max-w-4xl">
+        <ScrollReveal>
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-normal mb-3">Who Is It For?</h2>
           <p className="text-muted-foreground max-w-md mx-auto">
@@ -35,9 +39,9 @@ export function AudienceSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-4">
-          {audience.map((item) => (
+          {audience.map((item, i) => (
+            <ScrollReveal key={item.title} delay={i * 0.1}>
             <div
-              key={item.title}
               className="group flex gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-border hover:bg-card/70"
             >
               <div className="size-10 shrink-0 rounded-md border border-border bg-muted flex items-center justify-center mt-0.5">
@@ -51,8 +55,10 @@ export function AudienceSection() {
                 </p>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );
