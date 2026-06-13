@@ -1,4 +1,4 @@
-import { Eye, Edit, Zap, Globe, Brain, FileText, Wrench, Hexagon } from "lucide-react";
+import { Eye, Edit, Zap, Globe, Brain, FileText, Wrench, Hexagon, Bot, Sparkles, LoaderPinwheel, Astroid, Box, RotateCw, PauseCircle } from "lucide-react";
 
 const features = [
   {
@@ -7,18 +7,18 @@ const features = [
     description: "See every HTTP request and response in real time. Filter by URL, method, status, or custom tags.",
   },
   {
-    icon: Edit,
+    icon: PauseCircle,
     title: "Intercept & Tamper",
     description: "Pause traffic mid-flight. Edit raw HTTP before it reaches the server — or drop it entirely.",
   },
   {
-    icon: Zap,
+    icon: RotateCw,
     title: "Repeat & Craft Requests",
     description: "Compose HTTP requests from scratch and send them to any endpoint.",
   },
   {
     icon: Hexagon,
-    title: "Automate Attacks",
+    title: "Automate Request",
     description: "Run high-speed brute force and fuzzing campaigns with marked payload positions.",
   },
   {
@@ -27,21 +27,24 @@ const features = [
     description: "Let AI drive a browser to crawl target websites on your behalf.",
   },
   {
-    icon: Brain,
-    title: "Analyze with AI",
-    description: "Review discovered assets against OWASP Top 10 frameworks.",
-    soon: true,
-  },
-  {
     icon: FileText,
     title: "Build Recon Reports",
     description: "Document findings as you work. Create structured reports with markdown sections.",
-    soon: true,
   },
   {
-    icon: Wrench,
+    icon: Box,
     title: "Utility Toolkit",
     description: "Encoder/decoder, hash generators, subdomain enumeration, port scanning, and more.",
+  },
+  {
+    icon: LoaderPinwheel,
+    title: "Automate Workflows",
+    description: "Chain tools together into automated pipelines. Schedule scans, trigger alerts, and let 0xbuffer handle the repetitive work.",
+  },
+  {
+    icon: Astroid,
+    title: "AI Assistant",
+    description: "Get contextual suggestions, payload ideas, and guided remediation steps powered by an AI security analyst.",
   },
 ];
 
