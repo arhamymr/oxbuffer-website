@@ -42,7 +42,7 @@ export function AudienceSection() {
           {audience.map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 0.1}>
             <div
-              className="group flex gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-border hover:bg-card/70"
+              className="group min-h-25 flex gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-border hover:bg-card/70"
             >
               <div className="size-10 shrink-0 rounded-md border border-border bg-muted flex items-center justify-center mt-0.5">
                 <item.icon className="size-5 text-muted-foreground" />

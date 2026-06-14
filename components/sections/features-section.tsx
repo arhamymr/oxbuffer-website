@@ -42,7 +42,7 @@ const features = [
   {
     icon: LoaderPinwheel,
     title: "Automate Workflows",
-    description: "Chain tools together into automated pipelines. Schedule scans, trigger alerts, and let 0xbuffer handle the repetitive work.",
+    description: "Chain tools together into automated pipelines. let 0xbuffer handle the repetitive work.",
     soon: true,
   },
   {
