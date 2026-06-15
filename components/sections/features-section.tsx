@@ -48,7 +48,7 @@ const features = [
   {
     icon: Astroid,
     title: "AI Assistant",
-    description: "Get contextual suggestions, payload ideas, and guided remediation steps powered by an AI security analyst.",
+    description: "Get contextual suggestions, payload ideas, and guided remediation steps powered by an AI.",
   },
   {
     icon: Binary,
