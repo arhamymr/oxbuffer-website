@@ -11,9 +11,9 @@ const interSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "0xbuffer — Web Security Testing Tools",
+  title: "hexbuffer — Web Security Testing Tools",
   description:
-    "0xbuffer is a desktop application for web security testing, traffic interception, request crafting, automated recon, and professional report building.",
+    "hexbuffer is a desktop application for web security testing, traffic interception, request crafting, automated recon, and professional report building.",
   icons: {
     icon: [
       { url: "/favicon.ico" },

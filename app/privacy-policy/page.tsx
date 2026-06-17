@@ -7,8 +7,8 @@ import { SiteHeader } from "@/components/site-header";
 import { MarkdownContent } from "@/lib/markdown";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — 0xbuffer",
-  description: "Read the 0xbuffer privacy policy.",
+  title: "Privacy Policy — hexbuffer",
+  description: "Read the hexbuffer privacy policy.",
 };
 
 async function getPrivacyPolicy() {

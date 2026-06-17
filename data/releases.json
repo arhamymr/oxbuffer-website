@@ -3,7 +3,7 @@
     "version": "v2026.0.1",
     "date": "May 2026",
     "changes": [
-      "Initial public release of 0xbuffer.",
+      "Initial public release of hexbuffer.",
       "Real-time HTTP/HTTPS traffic interception and inspection.",
       "Brute Force for automatic attack",
       "Manual request crafting with raw HTTP editor.",

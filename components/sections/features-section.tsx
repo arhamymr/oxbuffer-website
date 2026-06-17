@@ -42,7 +42,7 @@ const features = [
   {
     icon: LoaderPinwheel,
     title: "Automate Workflows",
-    description: "Chain tools together into automated pipelines. let 0xbuffer handle the repetitive work.",
+    description: "Chain tools together into automated pipelines. let hexbuffer handle the repetitive work.",
     soon: true,
   },
   {
@@ -66,7 +66,7 @@ export function FeaturesSection() {
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-normal mb-3">What Can You Do?</h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Modern web security testing is fragmented. 0xbuffer brings it all into one workspace.
+            Modern web security testing is fragmented. hexbuffer brings it all into one workspace.
           </p>
         </div>
 

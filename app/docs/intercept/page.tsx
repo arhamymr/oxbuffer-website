@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Intercept — 0xbuffer Docs",
+  title: "Intercept — hexbuffer Docs",
   description:
-    "Learn how to pause, inspect, edit, forward, and drop selected HTTP traffic in 0xbuffer.",
+    "Learn how to pause, inspect, edit, forward, and drop selected HTTP traffic in hexbuffer.",
 };
 
 export default function InterceptDoc() {

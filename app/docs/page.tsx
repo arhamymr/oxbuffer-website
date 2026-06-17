@@ -6,8 +6,8 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Eye, Globe, Pause, Wrench, Crosshair, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Documentation — 0xbuffer",
-  description: "Usage guides for common 0xbuffer web application security testing workflows.",
+  title: "Documentation — hexbuffer",
+  description: "Usage guides for common hexbuffer web application security testing workflows.",
 };
 
 const docs = [
@@ -57,7 +57,7 @@ export default function DocsIndex() {
           <PageBreadcrumb current="Documentation" />
           <h1 className="text-4xl font-normal mb-3 mt-20">Documentation</h1>
           <p className="text-muted-foreground mb-12 max-w-xl">
-            Practical guides for using 0xbuffer during web application recon,
+            Practical guides for using hexbuffer during web application recon,
             testing, and review. Pick a workflow below and follow the steps
             inside the app.
           </p>

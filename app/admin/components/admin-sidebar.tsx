@@ -38,7 +38,7 @@ export function AdminSidebar() {
         <div className="flex size-6 items-center justify-center rounded bg-primary">
           <KeyRound className="size-3.5 text-primary-foreground" />
         </div>
-        <span className="font-mono text-sm font-semibold">0xbuffer</span>
+        <span className="font-mono text-sm font-semibold">hexbuffer</span>
         <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
           admin
         </span>
@@ -92,7 +92,7 @@ export function AdminSidebar() {
           <div className="flex size-6 items-center justify-center rounded bg-primary">
             <KeyRound className="size-3.5 text-primary-foreground" />
           </div>
-          <span className="font-mono text-sm font-semibold">0xbuffer</span>
+          <span className="font-mono text-sm font-semibold">hexbuffer</span>
           <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
             admin
           </span>

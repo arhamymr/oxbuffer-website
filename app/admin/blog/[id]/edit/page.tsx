@@ -12,7 +12,7 @@ export async function generateMetadata({
 }) {
   const { id } = await params;
   return {
-    title: `Edit Article — 0xbuffer Admin`,
+    title: `Edit Article — hexbuffer Admin`,
   };
 }
 

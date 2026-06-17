@@ -7,9 +7,9 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { ArrowLeft, Search, Filter, Table2, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Live Traffic — 0xbuffer Docs",
+  title: "Live Traffic — hexbuffer Docs",
   description:
-    "Learn how to view, filter, and inspect captured HTTP and WebSocket traffic in 0xbuffer.",
+    "Learn how to view, filter, and inspect captured HTTP and WebSocket traffic in hexbuffer.",
 };
 
 export default function LiveTrafficDoc() {

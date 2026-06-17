@@ -2,13 +2,13 @@
 
 Last updated: June 4, 2026
 
-This Privacy Policy explains how 0xbuffer ("the app", "we", "us", or "our") handles information when you use the desktop application. 0xbuffer is a local network proxy, traffic inspection, browser automation, and security testing tool.
+This Privacy Policy explains how hexbuffer ("the app", "we", "us", or "our") handles information when you use the desktop application. hexbuffer is a local network proxy, traffic inspection, browser automation, and security testing tool.
 
 This document is provided for product transparency and should be reviewed by qualified counsel before public release.
 
 ## Summary
 
-0xbuffer is designed as a local-first desktop application. The app does not require an account, does not operate a multi-tenant cloud service, and does not send captured traffic to our servers by default.
+hexbuffer is designed as a local-first desktop application. The app does not require an account, does not operate a multi-tenant cloud service, and does not send captured traffic to our servers by default.
 
 Because the app is built for traffic interception, packet capture, browser automation, and security testing, the information you choose to capture or inspect may be highly sensitive. You are responsible for using the app only on systems, networks, applications, and accounts that you own or are authorized to test.
 
@@ -32,10 +32,10 @@ The app stores operational data locally on your device. This may include a local
 
 The exact storage location depends on your operating system and Tauri's application data directory. The Settings area of the app may show local storage paths such as:
 
-- `0xbuffer.db`
+- `hexbuffer.db`
 - `ai-browser-artifacts`
 - `intercept-browser-profile`
-- `0xbuffer-ca.pem`
+- `hexbuffer-ca.pem`
 
 Local files remain on your device unless you delete them, export them elsewhere, share them, synchronize them with another service, or use a feature that sends selected data to a third party.
 
@@ -61,7 +61,7 @@ Do not use AI features with sensitive traffic, credentials, proprietary informat
 
 The app may check for software updates using the configured update endpoint:
 
-`https://dist.0xbuffer.com/latest.json`
+`https://dist.hexbuffer.com/latest.json`
 
 Update checks may disclose standard network information to the update host, such as your IP address, request time, app version, operating system, and user agent or similar client metadata. Update downloads may also be requested from the update host when an update is available.
 

@@ -1,7 +1,7 @@
 import { GenerateForm } from "../../components/generate-form";
 
 export const metadata = {
-  title: "Generate License — 0xbuffer Admin",
+  title: "Generate License — hexbuffer Admin",
 };
 
 export default function GenerateLicensePage() {

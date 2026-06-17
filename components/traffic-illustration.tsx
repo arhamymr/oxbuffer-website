@@ -74,7 +74,7 @@ function CodeBlock({ title, badge, lines }: { title: string; badge?: string; lin
 export function TrafficIllustration() {
   return (
     <div
-      aria-label="0xbuffer live traffic interface illustration"
+      aria-label="hexbuffer live traffic interface illustration"
       className="relative h-full min-h-[420px] w-full overflow-hidden rounded-md border border-foreground/15 bg-background/30 text-foreground shadow-[0_24px_80px_rgb(0_0_0/0.14)] backdrop-blur"
     >
       <div className="flex h-9 items-center justify-between border-b border-foreground/10 px-4">

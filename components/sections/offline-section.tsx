@@ -19,7 +19,7 @@ export function OfflineSection() {
             A local-first desktop app
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            0xbuffer runs entirely on your machine. No cloud, no accounts.
+            hexbuffer runs entirely on your machine. No cloud, no accounts.
           </p>
         </div>
 

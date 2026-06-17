@@ -12,7 +12,7 @@ export async function generateMetadata({
 }) {
   const { key } = await params;
   return {
-    title: `${decodeURIComponent(key)} — 0xbuffer Admin`,
+    title: `${decodeURIComponent(key)} — hexbuffer Admin`,
   };
 }
 

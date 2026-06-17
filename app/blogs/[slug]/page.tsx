@@ -18,10 +18,10 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
   if (!article || article.status !== "published") {
-    return { title: "Not Found — 0xbuffer" };
+    return { title: "Not Found — hexbuffer" };
   }
   return {
-    title: `${article.title} — 0xbuffer Blog`,
+    title: `${article.title} — hexbuffer Blog`,
     description: article.excerpt ?? undefined,
   };
 }

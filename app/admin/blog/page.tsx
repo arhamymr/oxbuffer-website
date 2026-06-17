@@ -9,7 +9,7 @@ import { ArticleTable } from "../components/article-table";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Blog — 0xbuffer Admin",
+  title: "Blog — hexbuffer Admin",
 };
 
 export default async function AdminBlogPage() {

@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Tools — 0xbuffer Docs",
+  title: "Tools — hexbuffer Docs",
   description:
-    "Learn how to use 0xbuffer's built-in encoder, hash, and port scanning utilities.",
+    "Learn how to use hexbuffer's built-in encoder, hash, and port scanning utilities.",
 };
 
 export default function ToolsDoc() {
@@ -166,7 +166,7 @@ export default function ToolsDoc() {
             <p className="text-sm text-muted-foreground">
               The hash updates as you type or change the selected algorithm.
               Use copy when you need to paste the result into a note, report,
-              or another 0xbuffer workflow.
+              or another hexbuffer workflow.
             </p>
           </section>
 

@@ -4,8 +4,8 @@ import { SiteHeader } from "@/components/site-header";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Buy License — 0xbuffer",
-  description: "Buy a 0xbuffer license",
+  title: "Buy License — hexbuffer",
+  description: "Buy a hexbuffer license",
 };
 
 export default function PaymentPage() {
@@ -19,7 +19,7 @@ export default function PaymentPage() {
           <div className="border border-border p-10 rounded-lg">
             <h1 className="mb-3 text-4xl font-normal tracking-tight">Buy License</h1>
             <p className="text-muted-foreground">
-              Payments are not available during early access. Licenses will be available for purchase once 0xbuffer reaches a stable release.
+              Payments are not available during early access. Licenses will be available for purchase once hexbuffer reaches a stable release.
             </p>
           </div>
         </div>

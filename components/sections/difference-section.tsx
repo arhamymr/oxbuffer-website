@@ -13,7 +13,7 @@ export function DifferenceSection() {
         </div>
         <h2 className="text-3xl md:text-4xl font-normal mb-4">How Is It Different?</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          0xbuffer combines real-time traffic interception, manual request crafting, automated attacks, AI-driven reconnaissance (AI feature currently under development), and professional report building in a single desktop application. No web-based tool sprawl. No juggling five different windows. Just open 0xbuffer and get to work.
+          hexbuffer combines real-time traffic interception, manual request crafting, automated attacks, AI-driven reconnaissance (AI feature currently under development), and professional report building in a single desktop application. No web-based tool sprawl. No juggling five different windows. Just open hexbuffer and get to work.
         </p>
         </ScrollReveal>
       </div>

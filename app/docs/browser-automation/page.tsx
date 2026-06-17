@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Browser Automation — 0xbuffer Docs",
+  title: "Browser Automation — hexbuffer Docs",
   description:
-    "Learn how to configure, run, review, and troubleshoot authorized browser crawls in 0xbuffer.",
+    "Learn how to configure, run, review, and troubleshoot authorized browser crawls in hexbuffer.",
 };
 
 export default function BrowserAutomationDoc() {

@@ -24,7 +24,7 @@ export function CtaSection() {
             {/* Left: copy */}
             <div>
               <h2 className="text-2xl md:text-3xl font-normal tracking-tight mb-3">
-                Try 0xbuffer on your next target.
+                Try hexbuffer on your next target.
               </h2>
               <p className="text-muted-foreground max-w-md">
                 A desktop app for web app recon, traffic inspection, and security testing — all in one place.

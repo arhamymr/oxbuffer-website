@@ -29,7 +29,7 @@ export function SiteHeader() {
             onClick={() => setMenuOpen(false)}
           >
             <PulseTriangle />
-            <span className="truncate font-mono text-sm font-semibold">0xbuffer</span>
+            <span className="truncate font-mono text-sm font-semibold">hexbuffer</span>
             <span className="text-[10px] border border-border font-medium uppercase tracking-wider text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
               Early version</span>
           </Link>

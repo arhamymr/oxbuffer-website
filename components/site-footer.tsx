@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <PulseTriangle size="small" />
-            <span className="font-mono text-sm">0xbuffer  ✦  @{new Date().getFullYear()}</span>
+            <span className="font-mono text-sm">hexbuffer  ✦  @{new Date().getFullYear()}</span>
             <span className="text-[10px] border border-border font-medium uppercase tracking-wider text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
                      Early version</span>
           </div>

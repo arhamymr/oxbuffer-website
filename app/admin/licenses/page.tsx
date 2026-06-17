@@ -9,7 +9,7 @@ import { LicenseTable } from "../components/license-table";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "All Licenses — 0xbuffer Admin",
+  title: "All Licenses — hexbuffer Admin",
 };
 
 export default async function AllLicensesPage() {

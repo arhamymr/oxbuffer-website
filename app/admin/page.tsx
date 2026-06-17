@@ -10,7 +10,7 @@ import { LicenseTable } from "./components/license-table";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Admin Dashboard — 0xbuffer",
+  title: "Admin Dashboard — hexbuffer",
 };
 
 export default async function AdminDashboard() {

@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Invoker — 0xbuffer Docs",
+  title: "Invoker — hexbuffer Docs",
   description:
     "High-speed parameter mining and fuzzing — mark payload positions, configure attacks, and inspect results.",
 };

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const installCommand = "curl -fsSLO https://dist.0xbuffer.com/install.sh && bash install.sh";
+const installCommand = "curl -fsSLO https://dist.hexbuffer.com/install.sh && bash install.sh";
 
 export function InstallCommand() {
   const [copied, setCopied] = useState(false);

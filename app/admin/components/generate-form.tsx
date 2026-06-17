@@ -28,13 +28,13 @@ export function GenerateForm() {
     };
 
     const shareViaEmail = async () => {
-      const subject = encodeURIComponent("Your 0xbuffer License Key");
+      const subject = encodeURIComponent("Your hexbuffer License Key");
       const body = encodeURIComponent(
         `Hi${data.email ? ` ${data.email}` : ""},\n\n` +
-          `Your 0xbuffer license key:\n\n${data.key}\n\n` +
+          `Your hexbuffer license key:\n\n${data.key}\n\n` +
           `Plan: ${data.plan}\nMax devices: ${data.maxDevices}\n\n` +
-          `Download 0xbuffer: https://0xbuffer.com/downloads\n\n` +
-          `-- 0xbuffer`
+          `Download hexbuffer: https://hexbuffer.com/downloads\n\n` +
+          `-- hexbuffer`
       );
       window.open(`mailto:${data.email ?? ""}?subject=${subject}&body=${body}`);
     };

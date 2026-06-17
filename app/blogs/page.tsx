@@ -7,8 +7,8 @@ import { getPublishedArticles } from "@/app/admin/lib/db";
 import { Calendar } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog — 0xbuffer",
-  description: "Articles on web security testing, recon techniques, and 0xbuffer workflows.",
+  title: "Blog — hexbuffer",
+  description: "Articles on web security testing, recon techniques, and hexbuffer workflows.",
 };
 
 export const dynamic = "force-dynamic";
@@ -25,7 +25,7 @@ export default async function BlogPage() {
           <h1 className="text-4xl font-normal mb-3 mt-20">Blog</h1>
           <p className="text-muted-foreground mb-12 max-w-xl">
             Articles on web security testing, recon techniques, and
-            getting the most out of 0xbuffer.
+            getting the most out of hexbuffer.
           </p>
 
           {articles.length === 0 ? (

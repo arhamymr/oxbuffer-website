@@ -28,7 +28,7 @@ export function HeroSection() {
               Testing tools for security teams, developers, and QA
             </h1>
             <p className="text-md md:text-md text-muted-foreground max-w-sm mb-10">
-              0xbuffer helps inspect traffic, test APIs, automate workflows, and document findings faster with AI-powered analysis
+              hexbuffer helps inspect traffic, test APIs, automate workflows, and document findings faster with AI-powered analysis
             </p>
             <Link href="/#features">
               <Button size="lg" className="gap-2">

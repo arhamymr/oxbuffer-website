@@ -1,7 +1,7 @@
 import { ArticleForm } from "../../components/article-form";
 
 export const metadata = {
-  title: "New Article — 0xbuffer Admin",
+  title: "New Article — hexbuffer Admin",
 };
 
 export default function NewArticlePage() {
