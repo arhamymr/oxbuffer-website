@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 
-const BASE_URL = "https://dist.hexbuffer.com";
+const BASE_URL = "https://dist.0xbuffer.com";
 
 const WINDOWS_ARCHES = [
   { key: "x86_64", label: "x64", suffix: "x86_64" },
