@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, Edit, Zap, Globe, Brain, FileText, Wrench, Hexagon, Bot, Sparkles, LoaderPinwheel, Astroid, Box, RotateCw, PauseCircle, Binary } from "lucide-react";
+import { Eye, Globe, FileText, Hexagon, Box, RotateCw, PauseCircle, LoaderPinwheel, Astroid } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const features = [
@@ -49,12 +49,6 @@ const features = [
     icon: Astroid,
     title: "AI Assistant",
     description: "Get contextual suggestions, payload ideas, and guided remediation steps powered by an AI.",
-  },
-  {
-    icon: Binary,
-    title: "Code",
-    description: "Full-project C/C++ & Rust IDE with one-click scaffolding, integrated build/run output.",
-    soon: true,
   },
 ];
 
