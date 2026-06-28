@@ -7,18 +7,18 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { ArrowLeft, Search, Filter, Table2, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Live Traffic — hexbuffer Docs",
+  title: "HTTP & WebSocket History — hexbuffer Docs",
   description:
     "Learn how to view, filter, and inspect captured HTTP and WebSocket traffic in hexbuffer.",
 };
 
-export default function LiveTrafficDoc() {
+export default function HistoryDoc() {
   return (
     <>
       <SiteHeader />
       <main className="pt-16 pb-24 px-4 min-h-[100vh] mt-5">
         <div className="container mx-auto max-w-4xl">
-          <PageBreadcrumb current="Live Traffic" />
+          <PageBreadcrumb current="HTTP & WebSocket History" />
           <Link
             href="/docs"
             className="inline-flex items-center gap-1.5 mt-10 mb-6 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -26,17 +26,17 @@ export default function LiveTrafficDoc() {
             <ArrowLeft className="size-3.5" /> Back to docs
           </Link>
 
-          <h1 className="text-4xl font-normal mb-3">Live Traffic</h1>
+          <h1 className="text-4xl font-normal mb-3">HTTP & WebSocket History</h1>
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
-            Watch HTTP and WebSocket traffic as it is captured. Use this page
-            to spot interesting requests, narrow noisy sessions, and inspect
-            the full request and response when something needs a closer look.
+            Inspect all inbound and outbound traffic captured by the proxy. 
+            Analyze parameters, view live WebSocket frames, filter noise, and send 
+            interesting requests to other tools for targeted testing.
           </p>
 
           <div className="mb-12 overflow-hidden rounded-lg border border-border">
             <Image
               src="/docs/overview-live-traffic.png"
-              alt="Live Traffic overview"
+              alt="HTTP History overview"
               width={1200}
               height={675}
               className="w-full h-auto"
@@ -48,33 +48,30 @@ export default function LiveTrafficDoc() {
           <section className="mb-16">
             <h2 className="text-xl font-medium mb-4">When to Use It</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Open Live Traffic when you want to understand what an application
-              is sending and receiving while you browse, crawl, or test it.
-              It is useful for finding API endpoints, confirming form
-              submissions, checking authentication flows, and comparing normal
-              traffic with suspicious behavior.
+              Open the history logs whenever you want to inspect details of requests 
+              dispatched by the target application during normal usage. It is the core starting point 
+              for discovering API paths, identifying state-altering endpoints, studying cookies, and 
+              checking response headers.
             </p>
             <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="text-sm font-medium mb-3">Basic Workflow</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>1. Start capturing traffic, then use the target application normally.</p>
-                <p>2. Use search, filters, and target tabs to hide unrelated requests.</p>
-                <p>3. Select a row to inspect the request, response, cookies, and body.</p>
-                <p>4. Copy details, send the request to another tool, or clear traffic when finished.</p>
+                <p>1. Toggle the proxy active and interact with the target web app.</p>
+                <p>2. Select the **HTTP History** page to view raw requests/responses.</p>
+                <p>3. Select the **WebSocket History** page to watch live connection handshakes and messages.</p>
+                <p>4. Right-click any log row to copy the URL, request as cURL, or send to **Repeater** or **Invoker**.</p>
               </div>
             </div>
           </section>
 
-          {/* Traffic Table */}
+          {/* HTTP History */}
           <section className="mb-16">
             <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
               <Table2 className="size-5 text-muted-foreground" />
-              HTTP Traffic Table
+              HTTP History Table
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              The traffic table gives you a quick overview of each captured
-              request. Start by scanning the host, path, method, status, and
-              size columns to decide which requests deserve attention.
+              The main table lists every request captured. Easily check parameters like status codes, request length, response size, and MIME content types.
             </p>
             <div className="rounded-lg border border-border bg-card overflow-hidden">
               <table className="w-full text-left text-sm">
@@ -86,13 +83,13 @@ export default function LiveTrafficDoc() {
                 </thead>
                 <tbody>
                   {[
-                    ["Time", "When the request was captured. Sort by time to replay the session order."],
-                    ["Method", "The HTTP method and response status, useful for spotting errors or state changes."],
-                    ["Host", "The domain that received the request."],
-                    ["Path", "The requested path. Use it to identify pages, API routes, and assets."],
-                    ["Size", "How large the response was."],
-                    ["Length", "How much data was sent in the request."],
-                    ["MIME Type", "The response content type, such as JSON, HTML, image, or script."],
+                    ["Time", "The exact timestamp the packet reached the proxy listener."],
+                    ["Method", "The HTTP request verb (GET, POST, PUT, DELETE, etc.)."],
+                    ["Host", "The target destination server host domain."],
+                    ["Path", "The query path of the request URL."],
+                    ["Status", "The numerical HTTP response status code (e.g. 200, 302, 403, 500)."],
+                    ["Size", "The size of the response payload in bytes."],
+                    ["MIME Type", "Content headers parsed from the server response (HTML, JSON, CSS, images)."],
                   ].map(([col, desc]) => (
                     <tr key={col} className="border-b border-border last:border-0">
                       <td className="px-4 py-2.5 font-mono text-xs">{col}</td>
@@ -102,41 +99,24 @@ export default function LiveTrafficDoc() {
                 </tbody>
               </table>
             </div>
-            <div className="mt-4 grid sm:grid-cols-2 gap-3">
-              <div className="rounded-lg border border-border p-4">
-                <h3 className="text-sm font-medium mb-1">Select a Request</h3>
-                <p className="text-sm text-muted-foreground">
-                  Click any row to open its full details in the inspector. This
-                  is the fastest way to review headers, cookies, request data,
-                  and response content.
-                </p>
-              </div>
-              <div className="rounded-lg border border-border p-4">
-                <h3 className="text-sm font-medium mb-1">Use Row Actions</h3>
-                <p className="text-sm text-muted-foreground">
-                  Right-click a row for actions such as copying details, sending
-                  the request to another workflow, deleting a noisy item, or
-                  focusing on a related host.
-                </p>
-              </div>
-            </div>
           </section>
 
           {/* Filters */}
           <section className="mb-16">
             <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
               <Filter className="size-5 text-muted-foreground" />
-              Filters
+              Traffic Filters
             </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Narrow down your scope using the filters toolbar at the top:
+            </p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                ["Search", "Find matching hosts, paths, methods, or body text."],
-                ["Method", "Show only the request methods you care about, such as POST or DELETE."],
-                ["Status", "Focus on successful, redirected, client-error, or server-error responses."],
-                ["HTTP/WebSocket", "Switch between normal HTTP traffic and WebSocket frame traffic."],
-                ["Pause/Resume", "Pause the live list while you inspect current traffic, then resume capture."],
-                ["Target Tabs", "Limit the table to one target or workflow when multiple sessions are active."],
-                ["Clear All", "Remove captured traffic after you finish a session or want a clean start."],
+                ["Text Search", "Search for matching substrings within URLs, request/response headers, or text bodies."],
+                ["Method Toggles", "Checkbox switches to show/hide specific methods like POST, GET, PUT, or DELETE."],
+                ["Status Toggles", "Quick switches to isolate success (2xx), redirection (3xx), client error (4xx), or server error (5xx) responses."],
+                ["Scope Filtering", "Limit shown requests only to defined targets or workspaces, hiding third-party noise."],
+                ["Controls", "Pause the incoming logs stream to analyze static rows, refresh items, or clear logs entirely."],
               ].map(([filter, desc]) => (
                 <div key={filter} className="rounded-lg border border-border p-4">
                   <h3 className="text-sm font-medium mb-1">{filter}</h3>
@@ -146,63 +126,41 @@ export default function LiveTrafficDoc() {
             </div>
           </section>
 
+          {/* WebSocket History */}
+          <section className="mb-16">
+            <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
+              <Globe className="size-5 text-muted-foreground" />
+              WebSocket History
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              For applications using dynamic connection sockets, the WebSocket History page displays:
+            </p>
+            <div className="rounded-lg border border-border p-4 bg-card mb-4">
+              <h3 className="text-sm font-medium mb-2">Connection Log details</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Review connection target URLs, total sent/received message count, and last activity timestamps.
+              </p>
+              <h3 className="text-sm font-medium mb-2">Message Frames Stream</h3>
+              <p className="text-sm text-muted-foreground">
+                Watch inbound (downstream) and outbound (upstream) message frames with exact timestamps, sizes, and a JSON/Raw payload inspector drawer.
+              </p>
+            </div>
+          </section>
+
           {/* Inspector */}
           <section className="mb-16">
             <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
               <Search className="size-5 text-muted-foreground" />
-              HTTP Inspector
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              After selecting a row, use the inspector to review exactly what
-              was sent and what came back. This is where you confirm parameters,
-              headers, cookies, redirects, error messages, and response bodies.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["Request", "Response", "Cookies"].map((tab) => (
-                <span
-                  key={tab}
-                  className="rounded-md border border-border bg-muted px-3 py-1.5 text-sm font-mono"
-                >
-                  {tab}
-                </span>
-              ))}
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Use the separate detail window when you want to compare one
-              request against another workflow without losing your place.
-            </p>
-          </section>
-
-          {/* WebSocket */}
-          <section className="mb-16">
-            <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
-              <Globe className="size-5 text-muted-foreground" />
-              WebSocket Traffic
+              Burp-Style Request Inspector
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Switch to the WebSocket view when the application uses live
-              updates, chat, collaboration, dashboards, or streaming data. Use
-              direction, length, and payload preview to spot messages worth
-              opening in the payload inspector.
+              Clicking any request row opens a tabbed details side panel:
             </p>
-          </section>
-
-          {/* Session Hygiene */}
-          <section className="mb-16">
-            <h2 className="text-xl font-medium mb-4">Keep Sessions Manageable</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Busy applications can generate a lot of traffic. Use pause when
-              you need time to inspect, filter aggressively while testing a
-              specific flow, and clear captured traffic before starting a new
-              task so old requests do not distract you.
-            </p>
-            <div className="rounded-lg border border-border p-4 bg-muted/20">
-              <p className="text-sm text-muted-foreground">
-                Tip: clear traffic only after saving or copying anything you
-                still need. Clearing is useful for a fresh session, but it
-                removes the captured items from the current workspace.
-              </p>
-            </div>
+            <ul className="list-disc pl-5 space-y-2 mt-2 text-sm text-muted-foreground">
+              <li>**Raw**: Display raw, colorized HTTP syntax for the request and response.</li>
+              <li>**Headers**: A tabular list of request and response headers for easy identification of cookies and security headers.</li>
+              <li>**Body**: Beautifully formatted views for JSON, XML, form parameters, or previewable HTML content.</li>
+            </ul>
           </section>
         </div>
       </main>

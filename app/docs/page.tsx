@@ -3,7 +3,20 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
-import { Eye, Globe, Pause, Wrench, Crosshair, ArrowRight } from "lucide-react";
+import {
+  Home,
+  ArrowUpDown,
+  LoaderPinwheel,
+  AppWindow,
+  PauseCircle,
+  RotateCw,
+  Hexagon,
+  BookText,
+  Binary,
+  Radio,
+  Bug,
+  ArrowRight,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Documentation — hexbuffer",
@@ -12,39 +25,81 @@ export const metadata: Metadata = {
 
 const docs = [
   {
-    icon: Eye,
-    title: "Live Traffic",
+    icon: Home,
+    title: "Overview & Workspaces",
     description:
-      "Watch captured HTTP and WebSocket traffic, filter noisy sessions, and inspect the requests and responses that matter.",
+      "Get familiar with the main launcher dashboard, persistent widgets, and target collection workspaces.",
+    href: "/docs/overview",
+  },
+  {
+    icon: ArrowUpDown,
+    title: "HTTP & WebSocket History",
+    description:
+      "Watch captured traffic streams, configure target filtering rules, and inspect raw request and response data.",
     href: "/docs/live-traffic",
   },
   {
-    icon: Globe,
-    title: "Browser Automation",
+    icon: PauseCircle,
+    title: "Intercept & Breakpoints",
     description:
-      "Crawl an authorized target, review discovered pages, and use AI-assisted notes to guide your next testing steps.",
-    href: "/docs/browser-automation",
-  },
-  {
-    icon: Pause,
-    title: "Intercept",
-    description:
-      "Pause selected traffic, edit requests or responses, then forward or drop them while testing application behavior.",
+      "Pause selected traffic flows, edit header/body parameters mid-flow, and forward or drop requests interactively.",
     href: "/docs/intercept",
   },
   {
-    icon: Crosshair,
-    title: "Invoker",
+    icon: RotateCw,
+    title: "Repeater & Scripting",
     description:
-      "High-speed parameter mining and fuzzing. Mark payload positions, load wordlists, and run concurrent attacks.",
+      "Manually craft requests, re-execute WebSocket sessions, and write sandboxed JS Pre-Request and Test scripts.",
+    href: "/docs/repeater",
+  },
+  {
+    icon: Hexagon,
+    title: "Invoker Fuzzer",
+    description:
+      "Run concurrent fuzzing attacks. Setup payload positions in raw requests and manage payload processing pipelines.",
     href: "/docs/invoker",
   },
   {
-    icon: Wrench,
-    title: "Tools",
+    icon: LoaderPinwheel,
+    title: "Workflow Automation",
     description:
-      "Use everyday testing helpers for encoding, decoding, hashing, and checking reachable TCP services.",
+      "Build visual node-based execution flows using triggers, conditional match blocks, and custom script actions.",
+    href: "/docs/automation",
+  },
+  {
+    icon: AppWindow,
+    title: "Browser Crawler",
+    description:
+      "Crawl target domains, map directories in a crawl tree, and triage AI-categorized severity findings.",
+    href: "/docs/browser-automation",
+  },
+  {
+    icon: BookText,
+    title: "Documents & Evidence",
+    description:
+      "Initialize blank or specialized QA/Security templates, save request/response entries, and write reports.",
+    href: "/docs/documents",
+  },
+  {
+    icon: Binary,
+    title: "Security Utilities (Tools)",
+    description:
+      "Access split utilities for URL/Base64/Hex codecs, hashers, visual diff comparers, and TCP port scanners.",
     href: "/docs/tools",
+  },
+  {
+    icon: Radio,
+    title: "OOB Collaborator Listener",
+    description:
+      "Generate random interaction URLs and monitor incoming Out-Of-Band DNS, HTTP, and SMTP requests.",
+    href: "/docs/listener",
+  },
+  {
+    icon: Bug,
+    title: "Debugger & Regression",
+    description:
+      "Inspect chronological proxy events and build/run automated UI test integration suites.",
+    href: "/docs/debugger",
   },
 ];
 
