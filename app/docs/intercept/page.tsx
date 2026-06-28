@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import {
   ArrowLeft,
@@ -23,9 +21,7 @@ export const metadata: Metadata = {
 export default function InterceptDoc() {
   return (
     <>
-      <SiteHeader />
-      <main className="pt-16 pb-24 px-4 min-h-[100vh] mt-5">
-        <div className="container mx-auto max-w-4xl">
+      <div className="mt-10">
           <PageBreadcrumb current="Intercept" />
           <Link
             href="/docs"
@@ -237,8 +233,6 @@ export default function InterceptDoc() {
             </div>
           </section>
         </div>
-      </main>
-      <SiteFooter />
-    </>
+      </>
   );
 }

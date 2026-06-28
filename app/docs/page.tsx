@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import {
   Home,
@@ -106,9 +104,7 @@ const docs = [
 export default function DocsIndex() {
   return (
     <>
-      <SiteHeader />
-      <main className="pt-16 pb-24 px-4 min-h-[100vh] mt-5">
-        <div className="container mx-auto max-w-4xl">
+      <div className="mt-10">
           <PageBreadcrumb current="Documentation" />
           <h1 className="text-4xl font-normal mb-3 mt-20">Documentation</h1>
           <p className="text-muted-foreground mb-12 max-w-xl">
@@ -142,8 +138,6 @@ export default function DocsIndex() {
             ))}
           </div>
         </div>
-      </main>
-      <SiteFooter />
-    </>
+      </>
   );
 }

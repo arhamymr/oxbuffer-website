@@ -1,22 +1,14 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { ArrowLeft, RotateCw, Code2, Terminal } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Repeater & Scripting — hexbuffer Docs",
-  description:
-    "Learn how to craft, replay, and automate requests using JavaScript pre-request and test scripts.",
-};
+import { TextEditor } from "@/components/ui/text-editor";
 
 export default function RepeaterDoc() {
   return (
     <>
-      <SiteHeader />
-      <main className="pt-16 pb-24 px-4 min-h-[100vh] mt-5">
-        <div className="container mx-auto max-w-4xl">
+      <div className="mt-10">
           <PageBreadcrumb current="Repeater & Scripting" />
           <Link
             href="/docs"
@@ -82,21 +74,24 @@ export default function RepeaterDoc() {
               Environment Variables Integration
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Use the global `pm` namespace to communicate with the environment:
+              Use the global `script` namespace to communicate with the environment:
             </p>
-            <pre className="p-4 rounded-lg bg-muted font-mono text-xs overflow-x-auto space-y-1 text-muted-foreground mt-4 border border-border">
-              {"// Get, set, and delete variables\n"}
-              {"const token = pm.environment.get(\"token\");\n"}
-              {"pm.environment.set(\"token\", \"new_value\");\n"}
-              {"pm.environment.unset(\"temp\");\n"}
-            </pre>
+            <div className="rounded-lg border border-border overflow-hidden mt-4" style={{ height: 120 }}>
+              <TextEditor
+                value={`// Get, set, and delete variables
+const token = script.environment.get("token");
+script.environment.set("token", "new_value");
+script.environment.unset("temp");`}
+                options={{ readOnly: true }}
+                height={120}
+              />
+            </div>
             <p className="text-sm text-muted-foreground mt-4">
               Reference variables in URL fields, Headers, or request Bodies using the double curly-brace syntax {"`{{variableName}}`"}.
+              For a detailed guide on sandbox APIs, JavaScript helpers, and step-by-step token chaining, check out the <Link href="/docs/repeater-scripts" className="text-primary hover:underline font-medium">Repeater Scripting Engine Guide</Link>.
             </p>
           </section>
         </div>
-      </main>
-      <SiteFooter />
-    </>
+      </>
   );
 }

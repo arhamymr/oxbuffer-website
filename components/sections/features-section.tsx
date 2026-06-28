@@ -1,54 +1,79 @@
 "use client";
 
-import { Eye, Globe, FileText, Hexagon, Box, RotateCw, PauseCircle, LoaderPinwheel, Astroid } from "lucide-react";
+import {
+  ArrowUpDown,
+  PauseCircle,
+  RotateCw,
+  Hexagon,
+  LoaderPinwheel,
+  Globe,
+  FileText,
+  Radio,
+  Bug,
+  Sparkles,
+} from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const features = [
   {
-    icon: Eye,
-    title: "Watch Live Traffic",
-    description: "See every HTTP request and response in real time. Filter by URL, method, status, or custom tags.",
+    icon: ArrowUpDown,
+    title: "HTTP & WS History",
+    description:
+      "Capture, inspect, and filter HTTP traffic and live WebSocket frames in real time.",
   },
   {
     icon: PauseCircle,
     title: "Intercept & Tamper",
-    description: "Pause traffic mid-flight. Edit raw HTTP before it reaches the server — or drop it entirely.",
+    description:
+      "Pause traffic mid-flight. Edit raw request/response headers and bodies before they resolve.",
   },
   {
     icon: RotateCw,
-    title: "Repeat & Craft Requests",
-    description: "Compose HTTP requests from scratch and send them to any endpoint.",
+    title: "Repeater & Scripting",
+    description:
+      "Replay requests, re-execute sockets, and run custom sandboxed JavaScript pre-request and test scripts.",
   },
   {
     icon: Hexagon,
-    title: "Automate Request",
-    description: "Run high-speed brute force and fuzzing campaigns with marked payload positions.",
-  },
-  {
-    icon: Globe,
-    title: "Automate Browser",
-    description: "Let AI drive a browser to crawl target websites on your behalf.",
-  },
-  {
-    icon: FileText,
-    title: "Build Recon Reports",
-    description: "Document findings as you work. Create structured reports with markdown sections.",
-  },
-  {
-    icon: Box,
-    title: "Utility Toolkit",
-    description: "Encoder/decoder, hash generators, subdomain enumeration, port scanning, and more.",
+    title: "Invoker Fuzzer",
+    description:
+      "Run concurrent fuzzer campaigns with marked request payload positions and processing pipelines.",
   },
   {
     icon: LoaderPinwheel,
-    title: "Automate Workflows",
-    description: "Chain tools together into automated pipelines. let hexbuffer handle the repetitive work.",
-    soon: true,
+    title: "Workflow Automation",
+    description:
+      "Build visual node-based automation pipelines using triggers, conditions, and actions.",
   },
   {
-    icon: Astroid,
+    icon: Globe,
+    title: "Browser Crawler",
+    description:
+      "Automated BFS crawler that maps target directories and surfaces AI-categorized severity insights.",
+  },
+  {
+    icon: FileText,
+    title: "Documents & Evidence",
+    description:
+      "Write markdown reports using specialized templates and link captured HTTP transactions as evidence.",
+  },
+  {
+    icon: Radio,
+    title: "OOB Listener",
+    description:
+      "Generate temporary lookup domains to capture out-of-band DNS, HTTP, and SMTP transactions.",
+  },
+  {
+    icon: Bug,
+    title: "Debugger & Regression",
+    description:
+      "Triage chronological proxy logs and build/run automated UI test integration suites.",
+  },
+  {
+    icon: Sparkles,
     title: "AI Assistant",
-    description: "Get contextual suggestions, payload ideas, and guided remediation steps powered by an AI.",
+    description:
+      "Get contextual suggested payloads, endpoint summaries, and remediation advice.",
   },
 ];
 
@@ -57,39 +82,35 @@ export function FeaturesSection() {
     <section id="features" className="py-24 px-4 border-t border-border">
       <div className="container mx-auto max-w-4xl">
         <ScrollReveal>
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-normal mb-3">What Can You Do?</h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Modern web security testing is fragmented. hexbuffer brings it all into one workspace.
-          </p>
-        </div>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-normal mb-3">
+              What Can You Do?
+            </h2>
+            <p className="text-muted-foreground max-w-md mx-auto">
+              Modern web security testing is fragmented. hexbuffer brings it all
+              into one workspace.
+            </p>
+          </div>
 
-        <div className="grid sm:grid-cols-2 gap-3">
-          {features.map((feature, i) => (
-            <ScrollReveal key={feature.title} delay={i * 0.08}>
-            <div
-              className="group flex gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-border hover:bg-card/70"
-            >
-              <div className="size-10 shrink-0 rounded-md border border-border bg-muted flex items-center justify-center mt-0.5">
-                <feature.icon className="size-5 text-muted-foreground" />
-              </div>
-              <div className="min-w-0">
-                <h3 className="font-medium text-foreground mb-0.5 flex items-center gap-2">
-                  {feature.title}
-                  {feature.soon && (
-                    <span className="text-[10px] border border-border font-medium uppercase tracking-wider text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
-                      Soon
-                    </span>
-                  )}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-            </ScrollReveal>
-          ))}
-        </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {features.map((feature, i) => (
+              <ScrollReveal key={feature.title} delay={i * 0.08}>
+                <div className="group flex gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-border hover:bg-card/70">
+                  <div className="size-10 shrink-0 rounded-md border border-border bg-muted flex items-center justify-center mt-0.5">
+                    <feature.icon className="size-5 text-muted-foreground" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-medium text-foreground mb-0.5 flex items-center gap-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </ScrollReveal>
       </div>
     </section>
