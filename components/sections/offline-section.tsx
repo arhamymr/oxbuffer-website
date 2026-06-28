@@ -1,12 +1,12 @@
 "use client";
 
-import { WifiOff, Shield, Laptop } from "lucide-react";
+import { WifiSlashIcon, ShieldIcon, LaptopIcon } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const perks = [
-  { icon: WifiOff, label: "Entirely local — runs on your machine, not on our servers" },
-  { icon: Shield, label: "No accounts — install and start working immediately" },
-  { icon: Laptop, label: "Zero cloud — everything stays on your machine" },
+  { icon: WifiSlashIcon, label: "Entirely local — runs on your machine, not on our servers" },
+  { icon: ShieldIcon, label: "No accounts — install and start working immediately" },
+  { icon: LaptopIcon, label: "Zero cloud — everything stays on your machine" },
 ];
 
 export function OfflineSection() {

@@ -1,12 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, Hexagon } from "lucide-react";
+import { ArrowRightIcon, HeartIcon, HexagonIcon } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const highlights = [
-  { icon: Hexagon, label: "Always improving" },
-  { icon: Heart, label: "Open to feedback" },
+  { icon: HexagonIcon, label: "Always improving" },
+  { icon: HeartIcon, label: "Open to feedback" },
 ];
 
 export function CtaSection() {
@@ -45,7 +45,7 @@ export function CtaSection() {
               <Button size="lg" className="gap-2 w-full" asChild>
                 <a href="/downloads">
                   Download for macOS
-                  <ArrowRight className="size-4" />
+                  <ArrowRightIcon className="size-4" />
                 </a>
               </Button>
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Asterisk, Box } from "lucide-react";
+import { AsteriskIcon, CubeIcon } from "@phosphor-icons/react";
 import { TrafficIllustration } from "@/components/traffic-illustration";
 import { ShinyText } from "@/components/shiny-text";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -16,7 +16,7 @@ export function HeroSection() {
 
           <div className="flex items-start flex-col justify-center h-full z-10">
             <div className="mb-3 flex items-center justify-center gap-1 text-green-500 lg:justify-start">
-              <Asterisk className="hidden md:block animate-spin size-5 [animation-duration:2s]" />
+              <AsteriskIcon className="hidden md:block animate-spin size-5 [animation-duration:2s]" />
               <ShinyText
                 text="Testing, Recon, and Reporting"
                 className="text-sm md:text-md"
@@ -33,7 +33,7 @@ export function HeroSection() {
             <Link href="/#features">
               <Button size="lg" className="gap-2">
                 See Features
-                <Box className="size-4" />
+                <CubeIcon className="size-4" />
               </Button>
             </Link>
           </div>

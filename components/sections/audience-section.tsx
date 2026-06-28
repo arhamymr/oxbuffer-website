@@ -1,26 +1,26 @@
 "use client";
 
-import { Crosshair, Bug, Microscope, Wrench } from "lucide-react";
+import { CrosshairIcon, BugIcon, MicroscopeIcon, WrenchIcon } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const audience = [
   {
-    icon: Crosshair,
+    icon: CrosshairIcon,
     title: "Penetration Testers",
     desc: "A complete workstation that replaces a patchwork of tools.",
   },
   {
-    icon: Bug,
+    icon: BugIcon,
     title: "Bug Bounty Hunters",
     desc: "Find, verify, and document vulnerabilities faster.",
   },
   {
-    icon: Microscope,
+    icon: MicroscopeIcon,
     title: "Security Researchers",
     desc: "Deep traffic analysis combined with AI-assisted discovery.",
   },
   {
-    icon: Wrench,
+    icon: WrenchIcon,
     title: "Developers & QA",
     desc: "Debug APIs and test endpoint behavior manually.",
   },

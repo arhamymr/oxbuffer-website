@@ -1,76 +1,76 @@
 "use client";
 
 import {
-  ArrowUpDown,
-  PauseCircle,
-  RotateCw,
-  Hexagon,
-  LoaderPinwheel,
-  Globe,
-  FileText,
-  Radio,
-  Bug,
-  Sparkles,
-} from "lucide-react";
+  ArrowsDownUpIcon,
+  PauseCircleIcon,
+  ArrowsClockwiseIcon,
+  SwordIcon,
+  PinwheelIcon,
+  GlobeIcon,
+  FileTextIcon,
+  BroadcastIcon,
+  BugIcon,
+  SparkleIcon,
+} from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const features = [
   {
-    icon: ArrowUpDown,
+    icon: ArrowsDownUpIcon,
     title: "HTTP & WS History",
     description:
       "Capture, inspect, and filter HTTP traffic and live WebSocket frames in real time.",
   },
   {
-    icon: PauseCircle,
+    icon: PauseCircleIcon,
     title: "Intercept & Tamper",
     description:
       "Pause traffic mid-flight. Edit raw request/response headers and bodies before they resolve.",
   },
   {
-    icon: RotateCw,
+    icon: ArrowsClockwiseIcon,
     title: "Repeater & Scripting",
     description:
       "Replay requests, re-execute sockets, and run custom sandboxed JavaScript pre-request and test scripts.",
   },
   {
-    icon: Hexagon,
+    icon: SwordIcon,
     title: "Invoker Fuzzer",
     description:
       "Run concurrent fuzzer campaigns with marked request payload positions and processing pipelines.",
   },
   {
-    icon: LoaderPinwheel,
+    icon: PinwheelIcon,
     title: "Workflow Automation",
     description:
       "Build visual node-based automation pipelines using triggers, conditions, and actions.",
   },
   {
-    icon: Globe,
+    icon: GlobeIcon,
     title: "Browser Crawler",
     description:
       "Automated BFS crawler that maps target directories and surfaces AI-categorized severity insights.",
   },
   {
-    icon: FileText,
+    icon: FileTextIcon,
     title: "Documents & Evidence",
     description:
       "Write markdown reports using specialized templates and link captured HTTP transactions as evidence.",
   },
   {
-    icon: Radio,
+    icon: BroadcastIcon,
     title: "OOB Listener",
     description:
       "Generate temporary lookup domains to capture out-of-band DNS, HTTP, and SMTP transactions.",
   },
   {
-    icon: Bug,
+    icon: BugIcon,
     title: "Debugger & Regression",
     description:
       "Triage chronological proxy logs and build/run automated UI test integration suites.",
   },
   {
-    icon: Sparkles,
+    icon: SparkleIcon,
     title: "AI Assistant",
     description:
       "Get contextual suggested payloads, endpoint summaries, and remediation advice.",
