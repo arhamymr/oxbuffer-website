@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 // import { ThemeToggle } from "@/components/theme-toggle";
 import { PulseTriangle } from "@/components/pulse-triangle";
@@ -11,7 +11,7 @@ import { PulseTriangle } from "@/components/pulse-triangle";
 const navItems = [
   { label: "Features", href: "/#features" },
   { label: "Docs", href: "/docs" },
-  { label: "Buy License", href: "/payment" },
+  // { label: "Buy License", href: "/payment" },
   { label: "Blogs", href: "/blogs" }
   // { label: "Release Notes", href: "/release-notes" },
 ];
