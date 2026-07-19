@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { GithubLogoIcon, ListIcon, XIcon } from "@phosphor-icons/react";
 import { useState } from "react";
 // import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { PulseTriangle } from "@/components/pulse-triangle";
 
 const navItems = [
-  { label: "Features", href: "/#features" },
   { label: "Docs", href: "/docs" },
   // { label: "Buy License", href: "/payment" },
   { label: "Blogs", href: "/blogs" }
@@ -45,6 +44,16 @@ export function SiteHeader() {
               </Link>
             ))}
             {/* <ThemeToggle /> */}
+            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-1.5" asChild>
+              <a
+                href="https://github.com/arhamymr/hexbuffer"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GithubLogoIcon className="size-4" />
+                <span>Star us on GitHub</span>
+              </a>
+            </Button>
             <Button size="sm" asChild>
               <Link href="/downloads">Download</Link>
             </Button>
@@ -52,6 +61,16 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-1 md:hidden">
             {/* <ThemeToggle /> */}
+            <Button variant="ghost" size="icon" className="size-8 text-muted-foreground hover:text-foreground" asChild>
+              <a
+                href="https://github.com/arhamymr/hexbuffer"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub Repository"
+              >
+                <GithubLogoIcon className="size-5" />
+              </a>
+            </Button>
             <Button
               variant="ghost"
               size="icon"
@@ -61,7 +80,7 @@ export function SiteHeader() {
               aria-controls="mobile-navigation"
               onClick={() => setMenuOpen((open) => !open)}
             >
-              {menuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+              {menuOpen ? <XIcon className="size-5" /> : <ListIcon className="size-5" />}
             </Button>
           </div>
         </div>
@@ -82,6 +101,16 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href="https://github.com/arhamymr/hexbuffer"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              onClick={() => setMenuOpen(false)}
+            >
+              <GithubLogoIcon className="size-5" />
+              <span>Star us on GitHub</span>
+            </a>
             <Button variant="outline" size="sm" className="mt-2 w-full" asChild>
               <Link href="/downloads" onClick={() => setMenuOpen(false)}>
                 Download
