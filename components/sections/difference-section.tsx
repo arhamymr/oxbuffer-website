@@ -1,6 +1,5 @@
 "use client";
 
-import { PulseTriangle } from "@/components/pulse-triangle";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +10,7 @@ export function DifferenceSection() {
         // Sizing & Spacing
         "py-24 px-4",
         // Backgrounds & Borders
-        "bg-muted border-t border-border"
+        "border-t border-border"
       )}
     >
       <div

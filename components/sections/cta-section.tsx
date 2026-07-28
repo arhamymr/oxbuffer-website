@@ -29,16 +29,6 @@ export function CtaSection() {
           "absolute inset-0 pointer-events-none"
         )}
       >
-        <div
-          className={cn(
-            // Layout & Positioning
-            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-            // Sizing & Spacing
-            "w-[600px] h-[600px]",
-            // Backgrounds & Borders
-            "rounded-full bg-green-500 blur-3xl"
-          )}
-        />
       </div>
 
       <div
