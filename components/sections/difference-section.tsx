@@ -23,18 +23,6 @@ export function DifferenceSection() {
         )}
       >
         <ScrollReveal>
-          <div
-            className={cn(
-              // Layout & Positioning
-              "flex items-center justify-center mx-auto",
-              // Sizing & Spacing
-              "size-12 mb-6",
-              // Backgrounds & Borders
-              "rounded-lg bg-accent"
-            )}
-          >
-            <PulseTriangle size="xxlarge" className="text-accent-foreground" />
-          </div>
           <h2
             className={cn(
               // Typography
