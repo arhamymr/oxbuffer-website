@@ -8,7 +8,7 @@ import { Calendar } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog — hexbuffer",
-  description: "Articles on web security testing, recon techniques, and hexbuffer workflows.",
+  description: "Articles on web application testing, recon techniques, and hexbuffer workflows.",
 };
 
 export const dynamic = "force-dynamic";
@@ -24,7 +24,7 @@ export default async function BlogPage() {
           <PageBreadcrumb current="Blog" />
           <h1 className="text-4xl font-normal mb-3 mt-20">Blog</h1>
           <p className="text-muted-foreground mb-12 max-w-xl">
-            Articles on web security testing, recon techniques, and
+            Articles on web application testing, recon techniques, and
             getting the most out of hexbuffer.
           </p>
 

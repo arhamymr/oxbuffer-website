@@ -27,7 +27,7 @@ export function CtaSection() {
                 Try hexbuffer on your next target.
               </h2>
               <p className="text-muted-foreground max-w-md">
-                A desktop app for web app recon, traffic inspection, and security testing — all in one place.
+                A desktop app for web app recon, traffic inspection, and application testing — all in one place.
               </p>
 
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-6 text-xs text-muted-foreground">

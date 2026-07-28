@@ -18,7 +18,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Documentation — hexbuffer",
-  description: "Usage guides for common hexbuffer web application security testing workflows.",
+  description: "Usage guides for common hexbuffer web application testing workflows.",
 };
 
 const docs = [

@@ -22,7 +22,7 @@ export default function About() {
               <h1 className="text-4xl font-normal mb-4 mt-20">About Me</h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 I&apos;m Arham, a Software Developer building hexbuffer as my personal project.
-                It is a space for experimenting with practical web application security workflows,
+                It is a space for experimenting with practical web application testing workflows,
                 developer tooling, and ideas that make technical work feel clearer and faster.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">

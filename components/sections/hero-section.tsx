@@ -25,7 +25,7 @@ export function HeroSection() {
               />
             </div>
             <h1 className="text-2xl lg:text-3xl max-w-sm !font-normal tracking-tight mb-6">
-              Testing tools for security teams, developers, and QA
+              Web application tools for developers, QA, and engineers
             </h1>
             <p className="text-md md:text-md text-muted-foreground max-w-sm mb-10">
               hexbuffer helps inspect traffic, test APIs, automate workflows, and document findings faster with AI-powered analysis

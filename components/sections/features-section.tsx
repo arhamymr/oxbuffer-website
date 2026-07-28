@@ -87,7 +87,7 @@ export function FeaturesSection() {
               What Can You Do?
             </h2>
             <p className="text-muted-foreground max-w-md mx-auto">
-              Modern web security testing is fragmented. hexbuffer brings it all
+              Modern web application testing is fragmented. hexbuffer brings it all
               into one workspace.
             </p>
           </div>
