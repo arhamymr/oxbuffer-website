@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import {
   ArrowsDownUpIcon,
   PauseCircleIcon,
@@ -14,6 +15,7 @@ import {
 } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { cn } from "@/lib/utils";
+import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
 
 const FEATURES = [
   {
@@ -76,7 +78,7 @@ const FEATURES = [
     description:
       "Get contextual suggested payloads, endpoint summaries, and remediation advice.",
   },
-];
+] as const;
 
 export function FeaturesSection() {
   return (
@@ -94,7 +96,7 @@ export function FeaturesSection() {
           // Layout & Positioning
           "container mx-auto",
           // Sizing & Spacing
-          "max-w-4xl"
+          "max-w-6xl"
         )}
       >
         <ScrollReveal>
@@ -109,7 +111,7 @@ export function FeaturesSection() {
             <h2
               className={cn(
                 // Typography
-                "text-3xl md:text-4xl font-normal",
+                "text-3xl md:text-4xl font-medium tracking-tight text-foreground",
                 // Sizing & Spacing
                 "mb-3"
               )}
@@ -121,9 +123,9 @@ export function FeaturesSection() {
                 // Layout & Positioning
                 "mx-auto",
                 // Sizing & Spacing
-                "max-w-md",
+                "max-w-lg",
                 // Typography
-                "text-muted-foreground"
+                "text-base text-muted-foreground leading-relaxed"
               )}
             >
               Modern web application testing is fragmented. hexbuffer brings it all
@@ -134,23 +136,26 @@ export function FeaturesSection() {
           <div
             className={cn(
               // Layout & Positioning
-              "grid sm:grid-cols-2",
+              "grid sm:grid-cols-2 lg:grid-cols-2",
               // Sizing & Spacing
-              "gap-3"
+              "gap-4"
             )}
           >
             {FEATURES.map((feature, i) => (
-              <ScrollReveal key={feature.title} delay={i * 0.08}>
-                <div
+              <ScrollReveal key={feature.title} delay={i * 0.04}>
+                <motion.div
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.99 }}
+                  transition={CRITICALLY_DAMPED_SPRING}
                   className={cn(
                     // Layout & Positioning
-                    "flex gap-4",
+                    "flex gap-4 h-full",
                     // Sizing & Spacing
-                    "px-4 py-3",
+                    "px-5 py-4",
                     // Backgrounds & Borders
-                    "rounded-xl border border-border bg-card",
+                    "rounded-xl border border-border border-t-neutral-800 bg-card backdrop-blur-md shadow-sm",
                     // Interactive & States
-                    "group transition-colors hover:border-border hover:bg-card"
+                    "group transition-colors duration-200 hover:border-neutral-700 hover:bg-muted"
                   )}
                 >
                   <div
@@ -160,7 +165,9 @@ export function FeaturesSection() {
                       // Sizing & Spacing
                       "size-10 mt-0.5",
                       // Backgrounds & Borders
-                      "rounded-md border border-border bg-muted"
+                      "rounded-lg border border-border bg-muted/60",
+                      // Interactive & States
+                      "group-hover:border-emerald-500/40 transition-colors"
                     )}
                   >
                     <feature.icon
@@ -168,19 +175,19 @@ export function FeaturesSection() {
                         // Sizing & Spacing
                         "size-5",
                         // Typography
-                        "text-muted-foreground"
+                        "text-muted-foreground group-hover:text-emerald-400 transition-colors"
                       )}
                     />
                   </div>
-                  <div className={cn("min-w-0")}>
+                  <div className={cn("min-w-0 flex-1")}>
                     <h3
                       className={cn(
                         // Layout & Positioning
                         "flex items-center gap-2",
                         // Sizing & Spacing
-                        "mb-0.5",
+                        "mb-1",
                         // Typography
-                        "font-medium text-foreground"
+                        "font-medium text-foreground tracking-tight text-base"
                       )}
                     >
                       {feature.title}
@@ -194,7 +201,7 @@ export function FeaturesSection() {
                       {feature.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </ScrollReveal>
             ))}
           </div>

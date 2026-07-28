@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const HIGHLIGHTS = [
   { icon: HexagonIcon, label: "Always improving" },
   { icon: HeartIcon, label: "Open to feedback" },
-];
+] as const;
 
 export function CtaSection() {
   return (
@@ -22,21 +22,12 @@ export function CtaSection() {
         "border-t border-border"
       )}
     >
-      {/* subtle radial glow */}
-      <div
-        className={cn(
-          // Layout & Positioning
-          "absolute inset-0 pointer-events-none"
-        )}
-      >
-      </div>
-
       <div
         className={cn(
           // Layout & Positioning
           "container mx-auto relative",
           // Sizing & Spacing
-          "max-w-4xl"
+          "max-w-6xl"
         )}
       >
         <ScrollReveal>
@@ -45,7 +36,7 @@ export function CtaSection() {
               // Sizing & Spacing
               "p-10 md:p-14",
               // Backgrounds & Borders
-              "rounded-xl border border-border bg-card"
+              "rounded-2xl border border-border border-t-neutral-700 bg-card shadow-2xl backdrop-blur-xl"
             )}
           >
             <div
@@ -61,7 +52,7 @@ export function CtaSection() {
                 <h2
                   className={cn(
                     // Typography
-                    "text-2xl md:text-3xl font-normal tracking-tight",
+                    "text-2xl md:text-3xl font-semibold tracking-tight text-foreground",
                     // Sizing & Spacing
                     "mb-3"
                   )}
@@ -71,9 +62,9 @@ export function CtaSection() {
                 <p
                   className={cn(
                     // Sizing & Spacing
-                    "max-w-md",
+                    "max-w-lg",
                     // Typography
-                    "text-muted-foreground"
+                    "text-base text-muted-foreground leading-relaxed"
                   )}
                 >
                   A desktop app for web app recon, traffic inspection, and application testing — all in one place.
@@ -102,7 +93,9 @@ export function CtaSection() {
                       <item.icon
                         className={cn(
                           // Sizing & Spacing
-                          "size-3.5"
+                          "size-3.5",
+                          // Typography
+                          "text-emerald-400"
                         )}
                       />
                       {item.label}
@@ -117,10 +110,10 @@ export function CtaSection() {
                   // Layout & Positioning
                   "flex flex-col items-stretch",
                   // Sizing & Spacing
-                  "gap-3 min-w-[220px]"
+                  "gap-3 min-w-[240px]"
                 )}
               >
-                <Button size="lg" className="gap-2 w-full" asChild>
+                <Button size="lg" className="gap-2 w-full active:scale-95 transition-transform duration-100 ease-out" asChild>
                   <a href="/downloads">
                     Download for macOS
                     <ArrowRightIcon className="size-4" />

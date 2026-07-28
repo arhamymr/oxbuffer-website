@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
+import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
 
-const steps = [
+const STEPS = [
   {
     id: "interception",
     step: "Step 1",
@@ -54,52 +56,105 @@ const steps = [
     badge: "WebSocket Tunnel",
     hook: "WebSocketHandler::on_frame(&self, ctx, frame, dir)",
   },
-];
+] as const;
 
 export function ProxyArchitecture() {
   const [activeStep, setActiveStep] = useState<string>("interception");
 
-  const current = steps.find((s) => s.id === activeStep) || steps[0];
+  const current = STEPS.find((s) => s.id === activeStep) || STEPS[0];
 
   return (
-    <div className="my-8 rounded-2xl border border-border bg-card p-6 shadow-sm">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-4">
+    <div
+      className={cn(
+        // Layout & Positioning
+        "my-8",
+        // Sizing & Spacing
+        "p-6 rounded-2xl",
+        // Backgrounds & Borders
+        "border border-border border-t-neutral-800 bg-card backdrop-blur-xl shadow-xl"
+      )}
+    >
+      <div
+        className={cn(
+          // Layout & Positioning
+          "flex flex-wrap items-center justify-between gap-4 border-b border-border pb-4",
+          // Sizing & Spacing
+          "mb-6"
+        )}
+      >
         <div>
-          <h3 className="text-lg font-semibold text-foreground">
+          <h3
+            className={cn(
+              // Typography
+              "text-lg font-semibold tracking-tight text-foreground"
+            )}
+          >
             hexbuffer-proxy Execution Lifecycle
           </h3>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <p
+            className={cn(
+              // Typography
+              "text-xs text-muted-foreground mt-0.5"
+            )}
+          >
             Click any phase in the pipeline flow to inspect runtime hooks and behavior.
           </p>
         </div>
-        <div className="flex items-center gap-2 text-xs font-mono bg-muted border border-border rounded-full px-3 py-1 text-primary">
-          <span className="inline-block size-2 rounded-full bg-primary animate-pulse" />
+        <div
+          className={cn(
+            // Layout & Positioning
+            "flex items-center gap-2",
+            // Sizing & Spacing
+            "px-3 py-1 rounded-full",
+            // Typography
+            "text-xs font-mono text-emerald-400",
+            // Backgrounds & Borders
+            "bg-muted border border-border"
+          )}
+        >
+          <span className={cn("inline-block size-2 rounded-full bg-emerald-400 animate-pulse")} />
           Tokio • Hyper • rustls
         </div>
       </div>
 
       {/* Interactive Flow Diagram */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-3 mb-6">
-        {steps.map((s) => {
+      <div
+        className={cn(
+          // Layout & Positioning
+          "grid grid-cols-1 md:grid-cols-5",
+          // Sizing & Spacing
+          "gap-3 mb-6"
+        )}
+      >
+        {STEPS.map((s) => {
           const isActive = s.id === activeStep;
 
           return (
             <button
               key={s.id}
+              type="button"
               onClick={() => setActiveStep(s.id)}
               className={cn(
-                "flex flex-col items-start p-3.5 rounded-xl border text-left transition-all group cursor-pointer",
+                // Layout & Positioning
+                "flex flex-col items-start cursor-pointer text-left",
+                // Sizing & Spacing
+                "p-3.5 rounded-xl border",
+                // Typography
+                isActive ? "font-semibold text-emerald-400" : "text-muted-foreground",
+                // Backgrounds & Borders
                 isActive
-                  ? "border-primary/60 bg-primary/10 text-primary font-semibold shadow-sm"
-                  : "border-border bg-muted/30 text-muted-foreground hover:border-border/80 hover:bg-muted/60 hover:text-foreground"
+                  ? "border-emerald-500 bg-muted shadow-sm"
+                  : "border-border bg-background hover:border-neutral-700 hover:bg-muted hover:text-foreground",
+                // Interactive & States
+                "active:scale-95 transition-all duration-100 ease-out"
               )}
             >
-              <div className="w-full mb-1">
-                <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+              <div className={cn("w-full mb-1")}>
+                <span className={cn("text-xs font-mono uppercase tracking-wider text-muted-foreground")}>
                   {s.step}
                 </span>
               </div>
-              <span className="text-xs font-medium line-clamp-2 leading-tight">
+              <span className={cn("text-xs font-medium line-clamp-2 leading-tight")}>
                 {s.title}
               </span>
             </button>
@@ -108,28 +163,85 @@ export function ProxyArchitecture() {
       </div>
 
       {/* Selected Step Detail Panel */}
-      <div className="rounded-xl border border-border bg-muted/20 p-5">
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-primary/20 border border-primary/40 text-primary">
-              {current.step}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current.id}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={CRITICALLY_DAMPED_SPRING}
+          className={cn(
+            // Sizing & Spacing
+            "p-5 rounded-xl",
+            // Backgrounds & Borders
+            "border border-border bg-background/80 backdrop-blur-md"
+          )}
+        >
+          <div
+            className={cn(
+              // Layout & Positioning
+              "flex flex-wrap items-center justify-between gap-3",
+              // Sizing & Spacing
+              "mb-3"
+            )}
+          >
+            <div className={cn("flex items-center gap-2")}>
+              <span
+                className={cn(
+                  // Sizing & Spacing
+                  "px-2 py-0.5 rounded",
+                  // Typography
+                  "text-xs font-mono font-semibold text-emerald-400",
+                  // Backgrounds & Borders
+                  "bg-muted border border-border"
+                )}
+              >
+                {current.step}
+              </span>
+              <h4 className={cn("text-base font-medium text-foreground")}>{current.title}</h4>
+            </div>
+            <span
+              className={cn(
+                // Sizing & Spacing
+                "px-2.5 py-1 rounded",
+                // Typography
+                "text-xs font-mono text-muted-foreground",
+                // Backgrounds & Borders
+                "bg-muted border border-border"
+              )}
+            >
+              {current.badge}
             </span>
-            <h4 className="text-base font-medium text-foreground">{current.title}</h4>
           </div>
-          <span className="text-xs font-mono text-muted-foreground bg-muted px-2.5 py-1 rounded border border-border">
-            {current.badge}
-          </span>
-        </div>
 
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4">{current.description}</p>
+          <p className={cn("text-sm text-muted-foreground leading-relaxed mb-4")}>{current.description}</p>
 
-        <div className="flex items-center gap-2 pt-3 border-t border-border/60 text-xs font-mono text-primary">
-          <span className="text-muted-foreground">Primary Hook:</span>
-          <code className="bg-muted border border-border px-2 py-0.5 rounded text-primary overflow-x-auto max-w-full">
-            {current.hook}
-          </code>
-        </div>
-      </div>
+          <div
+            className={cn(
+              // Layout & Positioning
+              "flex items-center gap-2 border-t border-border pt-3",
+              // Typography
+              "text-xs font-mono text-emerald-400"
+            )}
+          >
+            <span className={cn("text-muted-foreground")}>Primary Hook:</span>
+            <code
+              className={cn(
+                // Layout & Positioning
+                "max-w-full overflow-x-auto",
+                // Sizing & Spacing
+                "px-2 py-0.5 rounded",
+                // Typography
+                "text-emerald-400 font-mono",
+                // Backgrounds & Borders
+                "bg-muted border border-border"
+              )}
+            >
+              {current.hook}
+            </code>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

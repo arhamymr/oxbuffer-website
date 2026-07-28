@@ -1,8 +1,10 @@
 "use client";
 
+import { motion } from "motion/react";
 import { CrosshairIcon, BugIcon, MicroscopeIcon, WrenchIcon } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { cn } from "@/lib/utils";
+import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
 
 const AUDIENCE = [
   {
@@ -25,7 +27,7 @@ const AUDIENCE = [
     title: "Developers & QA",
     desc: "Debug APIs and test endpoint behavior manually.",
   },
-];
+] as const;
 
 export function AudienceSection() {
   return (
@@ -43,7 +45,7 @@ export function AudienceSection() {
           // Layout & Positioning
           "container mx-auto",
           // Sizing & Spacing
-          "max-w-4xl"
+          "max-w-6xl"
         )}
       >
         <ScrollReveal>
@@ -58,7 +60,7 @@ export function AudienceSection() {
             <h2
               className={cn(
                 // Typography
-                "text-3xl md:text-4xl font-normal",
+                "text-3xl md:text-4xl font-medium tracking-tight text-foreground",
                 // Sizing & Spacing
                 "mb-3"
               )}
@@ -72,7 +74,7 @@ export function AudienceSection() {
                 // Sizing & Spacing
                 "max-w-md",
                 // Typography
-                "text-muted-foreground"
+                "text-base text-muted-foreground leading-relaxed"
               )}
             >
               Built for anyone who needs to inspect, test, and document web applications.
@@ -88,17 +90,20 @@ export function AudienceSection() {
             )}
           >
             {AUDIENCE.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div
+              <ScrollReveal key={item.title} delay={i * 0.06}>
+                <motion.div
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.99 }}
+                  transition={CRITICALLY_DAMPED_SPRING}
                   className={cn(
                     // Layout & Positioning
-                    "flex gap-4",
+                    "flex gap-4 h-full",
                     // Sizing & Spacing
-                    "min-h-25 px-4 py-3",
+                    "min-h-25 px-5 py-4",
                     // Backgrounds & Borders
-                    "rounded-xl border border-border bg-card",
+                    "rounded-xl border border-border border-t-neutral-800 bg-card backdrop-blur-md shadow-sm",
                     // Interactive & States
-                    "group transition-colors hover:border-border hover:bg-card"
+                    "group transition-colors duration-200 hover:border-neutral-700 hover:bg-muted"
                   )}
                 >
                   <div
@@ -108,7 +113,9 @@ export function AudienceSection() {
                       // Sizing & Spacing
                       "size-10 mt-0.5",
                       // Backgrounds & Borders
-                      "rounded-md border border-border bg-muted"
+                      "rounded-lg border border-border bg-muted/60",
+                      // Interactive & States
+                      "group-hover:border-emerald-500/40 transition-colors"
                     )}
                   >
                     <item.icon
@@ -116,7 +123,7 @@ export function AudienceSection() {
                         // Sizing & Spacing
                         "size-5",
                         // Typography
-                        "text-muted-foreground"
+                        "text-muted-foreground group-hover:text-emerald-400 transition-colors"
                       )}
                     />
                   </div>
@@ -124,7 +131,7 @@ export function AudienceSection() {
                     <h3
                       className={cn(
                         // Typography
-                        "font-medium text-foreground",
+                        "font-medium text-foreground tracking-tight text-base",
                         // Sizing & Spacing
                         "mb-1"
                       )}
@@ -140,7 +147,7 @@ export function AudienceSection() {
                       {item.desc}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </ScrollReveal>
             ))}
           </div>

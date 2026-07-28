@@ -23,7 +23,7 @@ export function HeroSection() {
           // Layout & Positioning
           "container mx-auto",
           // Sizing & Spacing
-          "max-w-4xl"
+          "max-w-6xl"
         )}
       >
         <ScrollReveal>
@@ -34,7 +34,9 @@ export function HeroSection() {
               // Sizing & Spacing
               "h-120 p-8 md:p-12",
               // Backgrounds & Borders
-              "rounded-xl border border-border bg-card"
+              "rounded-2xl border border-border border-t-neutral-700 bg-card shadow-2xl backdrop-blur-xl",
+              // Interactive & States
+              "transition-all duration-300 hover:border-neutral-700"
             )}
           >
             <div
@@ -48,17 +50,17 @@ export function HeroSection() {
               <div
                 className={cn(
                   // Layout & Positioning
-                  "flex items-center justify-center lg:justify-start gap-1",
+                  "flex items-center justify-center lg:justify-start gap-1.5",
                   // Sizing & Spacing
                   "mb-3",
                   // Typography
-                  "text-green-500"
+                  "text-emerald-400"
                 )}
               >
                 <AsteriskIcon
                   className={cn(
                     // Layout & Positioning
-                    "hidden md:block animate-spin [animation-duration:2s]",
+                    "hidden md:block animate-spin [animation-duration:3s]",
                     // Sizing & Spacing
                     "size-5"
                   )}
@@ -67,18 +69,18 @@ export function HeroSection() {
                   text="Testing, Recon, and Reporting"
                   className={cn(
                     // Typography
-                    "text-sm md:text-md"
+                    "text-sm font-mono tracking-tight md:text-md"
                   )}
                   speed={2}
-                  shineColor="#bbf7d0"
+                  shineColor="#34d399"
                 />
               </div>
               <h1
                 className={cn(
                   // Sizing & Spacing
-                  "max-w-sm mb-6",
+                  "max-w-md mb-6",
                   // Typography
-                  "text-2xl lg:text-3xl font-normal tracking-tight"
+                  "text-3xl lg:text-4xl font-semibold tracking-tight leading-snug text-foreground"
                 )}
               >
                 Web application tools for developers, QA, and engineers
@@ -86,15 +88,15 @@ export function HeroSection() {
               <p
                 className={cn(
                   // Sizing & Spacing
-                  "max-w-sm mb-10",
+                  "max-w-lg mb-10",
                   // Typography
-                  "text-md md:text-md text-muted-foreground"
+                  "text-base md:text-lg text-muted-foreground leading-relaxed"
                 )}
               >
                 hexbuffer helps inspect traffic, test APIs, automate workflows, and document findings faster with AI-powered analysis
               </p>
               <Link href="/#features">
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="gap-2 active:scale-95 transition-transform duration-100 ease-out">
                   See Features
                   <CubeIcon className="size-4" />
                 </Button>
@@ -103,7 +105,7 @@ export function HeroSection() {
             <div
               className={cn(
                 // Layout & Positioning
-                "hidden lg:block absolute z-9 scale-[0.8] top-0 -right-[480px]",
+                "hidden lg:block absolute z-9 scale-[0.85] top-0 -right-[380px] pointer-events-none",
                 // Sizing & Spacing
                 "w-[1000px] h-[620px]"
               )}
