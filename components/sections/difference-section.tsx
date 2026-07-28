@@ -2,19 +2,61 @@
 
 import { PulseTriangle } from "@/components/pulse-triangle";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { cn } from "@/lib/utils";
 
 export function DifferenceSection() {
   return (
-    <section className="py-24 px-4 bg-muted/30 border-t border-border">
-      <div className="container mx-auto max-w-4xl text-center">
+    <section
+      className={cn(
+        // Sizing & Spacing
+        "py-24 px-4",
+        // Backgrounds & Borders
+        "bg-muted border-t border-border"
+      )}
+    >
+      <div
+        className={cn(
+          // Layout & Positioning
+          "container mx-auto text-center",
+          // Sizing & Spacing
+          "max-w-4xl"
+        )}
+      >
         <ScrollReveal>
-        <div className="size-12 rounded-lg bg-accent-dim/10 flex items-center justify-center mx-auto mb-6">
-          <PulseTriangle size="xxlarge" className="text-accent-dim" />
-        </div>
-        <h2 className="text-3xl md:text-4xl font-normal mb-4">How Is It Different?</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          hexbuffer combines real-time traffic interception, manual request crafting, automated attacks, AI-driven reconnaissance (AI feature currently under development), and professional report building in a single desktop application. No web-based tool sprawl. No juggling five different windows. Just open hexbuffer and get to work.
-        </p>
+          <div
+            className={cn(
+              // Layout & Positioning
+              "flex items-center justify-center mx-auto",
+              // Sizing & Spacing
+              "size-12 mb-6",
+              // Backgrounds & Borders
+              "rounded-lg bg-accent"
+            )}
+          >
+            <PulseTriangle size="xxlarge" className="text-accent-foreground" />
+          </div>
+          <h2
+            className={cn(
+              // Typography
+              "text-3xl md:text-4xl font-normal",
+              // Sizing & Spacing
+              "mb-4"
+            )}
+          >
+            How Is It Different?
+          </h2>
+          <p
+            className={cn(
+              // Layout & Positioning
+              "mx-auto",
+              // Sizing & Spacing
+              "max-w-2xl",
+              // Typography
+              "text-lg text-muted-foreground"
+            )}
+          >
+            hexbuffer combines real-time traffic interception, manual request crafting, automated attacks, AI-driven reconnaissance (AI feature currently under development), and professional report building in a single desktop application. No web-based tool sprawl. No juggling five different windows. Just open hexbuffer and get to work.
+          </p>
         </ScrollReveal>
       </div>
     </section>

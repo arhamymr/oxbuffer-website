@@ -2,8 +2,9 @@
 
 import { CrosshairIcon, BugIcon, MicroscopeIcon, WrenchIcon } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { cn } from "@/lib/utils";
 
-const audience = [
+const AUDIENCE = [
   {
     icon: CrosshairIcon,
     title: "Penetration Testers",
@@ -28,36 +29,121 @@ const audience = [
 
 export function AudienceSection() {
   return (
-    <section id="audience" className="py-24 px-4 border-t border-border">
-      <div className="container mx-auto max-w-4xl">
+    <section
+      id="audience"
+      className={cn(
+        // Sizing & Spacing
+        "py-24 px-4",
+        // Backgrounds & Borders
+        "border-t border-border"
+      )}
+    >
+      <div
+        className={cn(
+          // Layout & Positioning
+          "container mx-auto",
+          // Sizing & Spacing
+          "max-w-4xl"
+        )}
+      >
         <ScrollReveal>
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-normal mb-3">Who Is It For?</h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Built for anyone who needs to inspect, test, and document web applications.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-4">
-          {audience.map((item, i) => (
-            <ScrollReveal key={item.title} delay={i * 0.1}>
-            <div
-              className="group min-h-25 flex gap-4 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-border hover:bg-card/70"
+          <div
+            className={cn(
+              // Layout & Positioning
+              "text-center",
+              // Sizing & Spacing
+              "mb-14"
+            )}
+          >
+            <h2
+              className={cn(
+                // Typography
+                "text-3xl md:text-4xl font-normal",
+                // Sizing & Spacing
+                "mb-3"
+              )}
             >
-              <div className="size-10 shrink-0 rounded-md border border-border bg-muted flex items-center justify-center mt-0.5">
-                <item.icon className="size-5 text-muted-foreground" />
-              </div>
-              <div>
+              Who Is It For?
+            </h2>
+            <p
+              className={cn(
+                // Layout & Positioning
+                "mx-auto",
+                // Sizing & Spacing
+                "max-w-md",
+                // Typography
+                "text-muted-foreground"
+              )}
+            >
+              Built for anyone who needs to inspect, test, and document web applications.
+            </p>
+          </div>
 
-                <h3 className="font-medium text-foreground mb-1">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-            </ScrollReveal>
-          ))}
-        </div>
+          <div
+            className={cn(
+              // Layout & Positioning
+              "grid sm:grid-cols-2",
+              // Sizing & Spacing
+              "gap-4"
+            )}
+          >
+            {AUDIENCE.map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 0.1}>
+                <div
+                  className={cn(
+                    // Layout & Positioning
+                    "flex gap-4",
+                    // Sizing & Spacing
+                    "min-h-25 px-4 py-3",
+                    // Backgrounds & Borders
+                    "rounded-xl border border-border bg-card",
+                    // Interactive & States
+                    "group transition-colors hover:border-border hover:bg-card"
+                  )}
+                >
+                  <div
+                    className={cn(
+                      // Layout & Positioning
+                      "flex items-center justify-center shrink-0",
+                      // Sizing & Spacing
+                      "size-10 mt-0.5",
+                      // Backgrounds & Borders
+                      "rounded-md border border-border bg-muted"
+                    )}
+                  >
+                    <item.icon
+                      className={cn(
+                        // Sizing & Spacing
+                        "size-5",
+                        // Typography
+                        "text-muted-foreground"
+                      )}
+                    />
+                  </div>
+                  <div>
+                    <h3
+                      className={cn(
+                        // Typography
+                        "font-medium text-foreground",
+                        // Sizing & Spacing
+                        "mb-1"
+                      )}
+                    >
+                      {item.title}
+                    </h3>
+                    <p
+                      className={cn(
+                        // Typography
+                        "text-sm text-muted-foreground leading-relaxed"
+                      )}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </ScrollReveal>
       </div>
     </section>
