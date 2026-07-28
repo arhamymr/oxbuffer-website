@@ -4,79 +4,78 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
-  Home,
-  ArrowUpDown,
-  PauseCircle,
-  RotateCw,
-  Code2,
-  Hexagon,
-  LoaderPinwheel,
-  AppWindow,
-  BookText,
-  Binary,
-  Radio,
-  Bug,
-} from "lucide-react";
+  HouseIcon,
+  ArrowsDownUpIcon,
+  PauseCircleIcon,
+  ArrowsClockwiseIcon,
+  CodeIcon,
+  HexagonIcon,
+  GearSixIcon,
+  BrowserIcon,
+  BookOpenIcon,
+  RadioIcon,
+  BugIcon,
+} from "@phosphor-icons/react";
 
 const menuItems = [
   {
     label: "Overview & Workspaces",
-    icon: Home,
+    icon: HouseIcon,
     href: "/docs/overview",
   },
   {
     label: "HTTP & WS History",
-    icon: ArrowUpDown,
+    icon: ArrowsDownUpIcon,
     href: "/docs/live-traffic",
   },
   {
     label: "Intercept & Breakpoints",
-    icon: PauseCircle,
+    icon: PauseCircleIcon,
     href: "/docs/intercept",
   },
   {
     label: "Repeater & Replay",
-    icon: RotateCw,
+    icon: ArrowsClockwiseIcon,
     href: "/docs/repeater",
   },
   {
     label: "Repeater Scripting",
-    icon: Code2,
+    icon: CodeIcon,
     href: "/docs/repeater-scripts",
   },
   {
     label: "Invoker Fuzzer",
-    icon: Hexagon,
+    icon: HexagonIcon,
     href: "/docs/invoker",
   },
   {
     label: "Workflow Automation",
-    icon: LoaderPinwheel,
+    icon: GearSixIcon,
     href: "/docs/automation",
   },
   {
     label: "Browser Crawler",
-    icon: AppWindow,
+    icon: BrowserIcon,
     href: "/docs/browser-automation",
   },
   {
     label: "Documents & Evidence",
-    icon: BookText,
+    icon: BookOpenIcon,
     href: "/docs/documents",
   },
   {
     label: "Security Utilities",
-    icon: Binary,
+    icon: CodeIcon,
     href: "/docs/tools",
   },
   {
     label: "OOB Listener",
-    icon: Radio,
+    icon: RadioIcon,
     href: "/docs/listener",
   },
   {
     label: "Debugger & Regression",
-    icon: Bug,
+    icon: BugIcon,
     href: "/docs/debugger",
   },
 ];

@@ -43,7 +43,7 @@ export function SiteHeader() {
               </Link>
             ))}
             {/* <ThemeToggle /> */}
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground gap-1.5" asChild>
+            <Button variant="outline" size="sm" className="gap-1.5" asChild>
               <a
                 href="https://github.com/arhamymr/hexbuffer"
                 target="_blank"

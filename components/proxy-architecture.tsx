@@ -1,18 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ShieldCheck,
-  Cpu,
-  ArrowDown,
-  ArrowRight,
-  Server,
-  Layers,
-  Radio,
-  FileCode2,
-  Lock,
-  Zap,
-} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const steps = [
@@ -20,7 +8,6 @@ const steps = [
     id: "interception",
     step: "Step 1",
     title: "TLS Interception Check",
-    icon: Lock,
     summary: "Dynamic Certificate Forging & Bypass Evaluation",
     description:
       "Evaluates `should_intercept_tls(host)` and `is_enabled()`. If false, raw TCP tunneling bypasses decryption (ideal for cert-pinned domains). If true, on-the-fly CA certificate forging generates dynamic DER certificates via rcgen.",
@@ -31,7 +18,6 @@ const steps = [
     id: "req_pipeline",
     step: "Step 2",
     title: "HTTP Request Pipeline",
-    icon: Layers,
     summary: "Chain of Responsibility Request Inspection",
     description:
       "Passes incoming `Request<Body>` through registered `HttpHandler` instances sequentially. Handlers can mutate headers/body, or return `RequestOrResponse::Response` to short-circuit and mock/block responses immediately.",
@@ -42,7 +28,6 @@ const steps = [
     id: "upstream",
     step: "Step 3",
     title: "Upstream Connection Pool",
-    icon: Server,
     summary: "Hyper Client Pool & Stream Multiplexing",
     description:
       "Forwards non-short-circuited requests upstream using high-performance Hyper client connection pools over HTTP/1.1 or TLS with optimized buffer streaming.",
@@ -53,7 +38,6 @@ const steps = [
     id: "res_pipeline",
     step: "Step 4",
     title: "HTTP Response Pipeline",
-    icon: Zap,
     summary: "Reverse Response Processing & Body Modification",
     description:
       "Upstream `Response<Body>` flows back through the `HttpHandler` chain in REVERSE insertion order. Features optional gzip/brotli/zstd decompression (`decoder` feature) or HTML body injection before returning to client.",
@@ -64,7 +48,6 @@ const steps = [
     id: "ws_upgrade",
     step: "Step 5",
     title: "WebSocket Frame Interception",
-    icon: Radio,
     summary: "Frame-Level Duplex Interception",
     description:
       "After an HTTP 101 Upgrade, connection transitions to `WebSocketHandler`. Intercepts, modifies, or drops frames in real-time (`Direction::ClientToServer` or `Direction::ServerToClient`).",
@@ -79,27 +62,25 @@ export function ProxyArchitecture() {
   const current = steps.find((s) => s.id === activeStep) || steps[0];
 
   return (
-    <div className="my-8 rounded-2xl border border-zinc-800 bg-gradient-to-b from-zinc-900/90 to-zinc-950/95 p-6 shadow-xl backdrop-blur-lg">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 pb-4">
+    <div className="my-8 rounded-2xl border border-border bg-card p-6 shadow-sm">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-4">
         <div>
-          <h3 className="flex items-center gap-2 text-lg font-semibold text-zinc-100">
-            <Cpu className="size-5 text-emerald-400" />
-            <span>hexbuffer-proxy Execution Lifecycle</span>
+          <h3 className="text-lg font-semibold text-foreground">
+            hexbuffer-proxy Execution Lifecycle
           </h3>
-          <p className="text-xs text-zinc-400 mt-0.5">
+          <p className="text-xs text-muted-foreground mt-0.5">
             Click any phase in the pipeline flow to inspect runtime hooks and behavior.
           </p>
         </div>
-        <div className="flex items-center gap-2 text-xs font-mono bg-zinc-900 border border-zinc-800 rounded-full px-3 py-1 text-emerald-400">
-          <span className="inline-block size-2 rounded-full bg-emerald-400 animate-pulse" />
+        <div className="flex items-center gap-2 text-xs font-mono bg-muted border border-border rounded-full px-3 py-1 text-primary">
+          <span className="inline-block size-2 rounded-full bg-primary animate-pulse" />
           Tokio • Hyper • rustls
         </div>
       </div>
 
       {/* Interactive Flow Diagram */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-3 mb-6">
-        {steps.map((s, index) => {
-          const Icon = s.icon;
+        {steps.map((s) => {
           const isActive = s.id === activeStep;
 
           return (
@@ -107,57 +88,44 @@ export function ProxyArchitecture() {
               key={s.id}
               onClick={() => setActiveStep(s.id)}
               className={cn(
-                "relative flex flex-col items-start p-3.5 rounded-xl border text-left transition-all group",
+                "flex flex-col items-start p-3.5 rounded-xl border text-left transition-all group cursor-pointer",
                 isActive
-                  ? "border-emerald-500/60 bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-500/30 shadow-lg shadow-emerald-950/40"
-                  : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:bg-zinc-800/60 hover:text-zinc-200"
+                  ? "border-primary/60 bg-primary/10 text-primary font-semibold shadow-sm"
+                  : "border-border bg-muted/30 text-muted-foreground hover:border-border/80 hover:bg-muted/60 hover:text-foreground"
               )}
             >
-              <div className="flex items-center justify-between w-full mb-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 group-hover:text-zinc-400">
+              <div className="w-full mb-1">
+                <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
                   {s.step}
                 </span>
-                <Icon
-                  className={cn(
-                    "size-4",
-                    isActive ? "text-emerald-400" : "text-zinc-500 group-hover:text-zinc-300"
-                  )}
-                />
               </div>
               <span className="text-xs font-medium line-clamp-2 leading-tight">
                 {s.title}
               </span>
-
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 text-zinc-700">
-                  <ArrowRight className="size-3.5" />
-                </div>
-              )}
             </button>
           );
         })}
       </div>
 
       {/* Selected Step Detail Panel */}
-      <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/80 p-5">
+      <div className="rounded-xl border border-border bg-muted/20 p-5">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-emerald-950 border border-emerald-800/60 text-emerald-400">
+            <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-primary/20 border border-primary/40 text-primary">
               {current.step}
             </span>
-            <h4 className="text-base font-medium text-zinc-100">{current.title}</h4>
+            <h4 className="text-base font-medium text-foreground">{current.title}</h4>
           </div>
-          <span className="text-xs font-mono text-zinc-400 bg-zinc-900 px-2.5 py-1 rounded border border-zinc-800">
+          <span className="text-xs font-mono text-muted-foreground bg-muted px-2.5 py-1 rounded border border-border">
             {current.badge}
           </span>
         </div>
 
-        <p className="text-sm text-zinc-300 leading-relaxed mb-4">{current.description}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4">{current.description}</p>
 
-        <div className="flex items-center gap-2 pt-3 border-t border-zinc-900 text-xs font-mono text-cyan-400">
-          <FileCode2 className="size-4 shrink-0 text-cyan-400" />
-          <span className="text-zinc-400">Primary Hook:</span>
-          <code className="bg-zinc-900 border border-zinc-800 px-2 py-0.5 rounded text-cyan-300 overflow-x-auto max-w-full">
+        <div className="flex items-center gap-2 pt-3 border-t border-border/60 text-xs font-mono text-primary">
+          <span className="text-muted-foreground">Primary Hook:</span>
+          <code className="bg-muted border border-border px-2 py-0.5 rounded text-primary overflow-x-auto max-w-full">
             {current.hook}
           </code>
         </div>

@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import {
-  Home,
-  ArrowUpDown,
-  LoaderPinwheel,
-  AppWindow,
-  PauseCircle,
-  RotateCw,
-  Hexagon,
-  BookText,
-  Binary,
-  Radio,
-  Bug,
-  ArrowRight,
-} from "lucide-react";
+  HouseIcon,
+  ArrowsDownUpIcon,
+  PauseCircleIcon,
+  ArrowsClockwiseIcon,
+  HexagonIcon,
+  GearSixIcon,
+  BrowserIcon,
+  BookOpenIcon,
+  CodeIcon,
+  RadioIcon,
+  BugIcon,
+  ArrowRightIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
   title: "Documentation — hexbuffer",
@@ -23,77 +23,77 @@ export const metadata: Metadata = {
 
 const docs = [
   {
-    icon: Home,
+    icon: HouseIcon,
     title: "Overview & Workspaces",
     description:
       "Get familiar with the main launcher dashboard, persistent widgets, and target collection workspaces.",
     href: "/docs/overview",
   },
   {
-    icon: ArrowUpDown,
+    icon: ArrowsDownUpIcon,
     title: "HTTP & WebSocket History",
     description:
       "Watch captured traffic streams, configure target filtering rules, and inspect raw request and response data.",
     href: "/docs/live-traffic",
   },
   {
-    icon: PauseCircle,
+    icon: PauseCircleIcon,
     title: "Intercept & Breakpoints",
     description:
       "Pause selected traffic flows, edit header/body parameters mid-flow, and forward or drop requests interactively.",
     href: "/docs/intercept",
   },
   {
-    icon: RotateCw,
+    icon: ArrowsClockwiseIcon,
     title: "Repeater & Scripting",
     description:
       "Manually craft requests, re-execute WebSocket sessions, and write sandboxed JS Pre-Request and Test scripts.",
     href: "/docs/repeater",
   },
   {
-    icon: Hexagon,
+    icon: HexagonIcon,
     title: "Invoker Fuzzer",
     description:
       "Run concurrent fuzzing attacks. Setup payload positions in raw requests and manage payload processing pipelines.",
     href: "/docs/invoker",
   },
   {
-    icon: LoaderPinwheel,
+    icon: GearSixIcon,
     title: "Workflow Automation",
     description:
       "Build visual node-based execution flows using triggers, conditional match blocks, and custom script actions.",
     href: "/docs/automation",
   },
   {
-    icon: AppWindow,
+    icon: BrowserIcon,
     title: "Browser Crawler",
     description:
       "Crawl target domains, map directories in a crawl tree, and triage AI-categorized severity findings.",
     href: "/docs/browser-automation",
   },
   {
-    icon: BookText,
+    icon: BookOpenIcon,
     title: "Documents & Evidence",
     description:
       "Initialize blank or specialized QA/Security templates, save request/response entries, and write reports.",
     href: "/docs/documents",
   },
   {
-    icon: Binary,
+    icon: CodeIcon,
     title: "Security Utilities (Tools)",
     description:
       "Access split utilities for URL/Base64/Hex codecs, hashers, visual diff comparers, and TCP port scanners.",
     href: "/docs/tools",
   },
   {
-    icon: Radio,
+    icon: RadioIcon,
     title: "OOB Collaborator Listener",
     description:
       "Generate random interaction URLs and monitor incoming Out-Of-Band DNS, HTTP, and SMTP requests.",
     href: "/docs/listener",
   },
   {
-    icon: Bug,
+    icon: BugIcon,
     title: "Debugger & Regression",
     description:
       "Inspect chronological proxy events and build/run automated UI test integration suites.",
@@ -127,7 +127,7 @@ export default function DocsIndex() {
                   <div className="min-w-0 flex-1">
                     <h2 className="flex items-center gap-2 font-medium text-foreground mb-1.5">
                       {doc.title}
-                      <ArrowRight className="size-3.5 shrink-0 text-muted-foreground opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-0.5" />
+                      <ArrowRightIcon className="size-3.5 shrink-0 text-muted-foreground opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-0.5" />
                     </h2>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {doc.description}

@@ -9,28 +9,8 @@ import { ProxyArchitecture } from "@/components/proxy-architecture";
 import { ButtonGroup } from "@/components/ui/button-group";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import {
-  Shield,
-  Zap,
-  Terminal,
-  Layers,
-  Code2,
-  BookOpen,
-  CheckCircle2,
-  ArrowRight,
-  Sparkles,
-  Lock,
-  Radio,
-  FileCode,
-  Box,
-  Copy,
-  Check,
-  ChevronRight,
-  ExternalLink,
-  Laptop,
-  Flame,
-  Search,
-} from "lucide-react";
+import { PageBreadcrumb } from "@/components/page-breadcrumb";
+import { ArrowLeftIcon, CaretRightIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
 
 const navSections = [
   { id: "overview", label: "Overview" },
@@ -284,16 +264,15 @@ export function ProxyPageClient() {
   return (
     <>
       <SiteHeader />
-      <main className="min-h-screen pt-24 pb-28 px-4 bg-background selection:bg-emerald-500/20 selection:text-emerald-300">
+      <main className="min-h-screen pt-24 pb-28 px-4 bg-background selection:bg-emerald-500/20 selection:text-emerald-300 antialiased">
         <div className="mx-auto max-w-7xl">
-          {/* Breadcrumb Navigation */}
-          <div className="flex items-center gap-2 text-xs text-muted-foreground mb-8">
-            <Link href="/" className="hover:text-foreground transition-colors">
-              Home
-            </Link>
-            <ChevronRight className="size-3" />
-            <span className="text-foreground font-medium">hexbuffer-proxy</span>
-          </div>
+          <PageBreadcrumb current="hexbuffer-proxy" />
+          <Link
+            href="/docs"
+            className="inline-flex items-center gap-1.5 mb-6 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeftIcon className="size-3.5" /> Back to docs
+          </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-10">
             {/* Sticky Sidebar Table of Contents */}
@@ -316,44 +295,42 @@ export function ProxyPageClient() {
                 ))}
               </nav>
 
-              <div className="mt-8 rounded-xl border border-emerald-900/40 bg-emerald-950/20 p-4">
-                <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 mb-1">
-                  <Flame className="size-4 text-emerald-400" />
-                  <span>Crab MITM Power</span>
+              <div className="mt-8 rounded-xl border border-border bg-card p-4">
+                <div className="text-xs font-semibold text-primary mb-1">
+                  High Performance MITM
                 </div>
-                <p className="text-[11px] text-zinc-400 leading-relaxed">
-                  High-performance stream pooling, zero heap allocation frame splitting, and Tokio async runtime integration.
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Stream pooling, zero allocation frame parsing, and Tokio async runtime integration.
                 </p>
               </div>
             </aside>
 
             {/* Main Content Area */}
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0 flex-1 space-y-16">
               {/* HERO SECTION */}
-              <section id="overview" className="mb-16">
+              <section id="overview" className="scroll-mt-24">
                 <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-mono font-medium text-emerald-400">
-                    <Sparkles className="size-3.5" />
-                    Rust MITM Library
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-mono font-medium text-primary">
+                    Rust Library
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs font-mono text-muted-foreground">
+                  <span className="inline-flex items-center rounded-full border border-border bg-muted/50 px-3 py-1 text-xs font-mono text-muted-foreground">
                     Tokio • Hyper • rustls
                   </span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-foreground">
+                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-foreground text-wrap-balance">
                   hexbuffer-proxy
                 </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
-                  A high-performance HTTPS Man-in-the-Middle (MITM) proxy library for Rust built on{" "}
+                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8 text-wrap-pretty">
+                  High-performance HTTPS Man-in-the-Middle (MITM) proxy library for Rust built on{" "}
                   <strong className="text-foreground font-semibold">Tokio</strong>,{" "}
                   <strong className="text-foreground font-semibold">Hyper</strong>, and{" "}
-                  <strong className="text-foreground font-semibold">rustls</strong>. Provides connection pooling, WebSocket frame-level interception, and dynamic TLS certificate forging.
+                  <strong className="text-foreground font-semibold">rustls</strong>. Features connection pooling, WebSocket frame-level interception, and dynamic TLS certificate forging.
                 </p>
 
                 {/* Feature Flags */}
                 <div className="mt-8">
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                     Feature Flags
                   </h3>
                   <div className="overflow-x-auto rounded-xl border border-border bg-card">
@@ -367,7 +344,7 @@ export function ProxyPageClient() {
                       </thead>
                       <tbody className="divide-y divide-border/60">
                         <tr>
-                          <td className="px-4 py-3 font-mono font-semibold text-emerald-400">
+                          <td className="px-4 py-3 font-mono font-semibold text-primary">
                             decoder
                           </td>
                           <td className="px-4 py-3 font-semibold text-foreground">
@@ -384,12 +361,13 @@ export function ProxyPageClient() {
               </section>
 
               {/* QUICK START SECTION */}
-              <section id="quickstart" className="mb-16 scroll-mt-24">
-                <div className="flex items-center gap-2 mb-2">
-                  <Zap className="size-5 text-emerald-400" />
-                  <h2 className="text-2xl font-bold text-foreground">Quick Start — Minimal Proxy</h2>
+              <section id="quickstart" className="scroll-mt-24">
+                <div className="mb-2">
+                  <h2 className="text-2xl font-bold tracking-tight text-foreground text-wrap-balance">
+                    Quick Start — Minimal Proxy
+                  </h2>
                 </div>
-                <p className="text-sm text-muted-foreground mb-6">
+                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                   Set up a pass-through HTTPS proxy server listening on <code>127.0.0.1:8080</code> in under 20 lines of Rust code.
                 </p>
 
@@ -425,12 +403,13 @@ async fn main() -> anyhow::Result<()> {
               </section>
 
               {/* ARCHITECTURE SECTION */}
-              <section id="architecture" className="mb-16 scroll-mt-24">
-                <div className="flex items-center gap-2 mb-2">
-                  <Layers className="size-5 text-emerald-400" />
-                  <h2 className="text-2xl font-bold text-foreground">Architecture & Pipeline Flow</h2>
+              <section id="architecture" className="scroll-mt-24">
+                <div className="mb-2">
+                  <h2 className="text-2xl font-bold tracking-tight text-foreground text-wrap-balance">
+                    Architecture & Pipeline Flow
+                  </h2>
                 </div>
-                <p className="text-sm text-muted-foreground mb-6">
+                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                   Understand how <code>hexbuffer-proxy</code> handles TCP connections, TLS certificate forging, HTTP handler chains, and WebSocket upgrades.
                 </p>
 
@@ -438,14 +417,15 @@ async fn main() -> anyhow::Result<()> {
               </section>
 
               {/* PUBLIC API REFERENCE SECTION */}
-              <section id="api-reference" className="mb-16 scroll-mt-24">
-                <div className="flex items-center justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-2">
-                    <Code2 className="size-5 text-emerald-400" />
-                    <h2 className="text-2xl font-bold text-foreground">Public API Reference</h2>
+              <section id="api-reference" className="scroll-mt-24">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                  <div>
+                    <h2 className="text-2xl font-bold tracking-tight text-foreground text-wrap-balance">
+                      Public API Reference
+                    </h2>
                   </div>
                   <div className="relative w-48 sm:w-64">
-                    <Search className="absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
+                    <MagnifyingGlassIcon className="absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
                     <input
                       type="text"
                       placeholder="Filter API symbols..."
@@ -458,7 +438,9 @@ async fn main() -> anyhow::Result<()> {
 
                 {/* Re-exports Table */}
                 <div className="mb-8">
-                  <h3 className="text-base font-semibold text-foreground mb-3">Re-exports (Crate Root)</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                    Re-exports (Crate Root)
+                  </h3>
                   <div className="overflow-x-auto rounded-xl border border-border bg-card">
                     <table className="w-full text-left text-sm">
                       <thead className="border-b border-border bg-muted/50 text-xs font-semibold uppercase text-muted-foreground">
@@ -510,7 +492,7 @@ async fn main() -> anyhow::Result<()> {
                   </div>
                 </div>
 
-                {/* Detailed Symbol Reference Accordions / Cards */}
+                {/* Detailed Symbol Reference Cards */}
                 <div className="space-y-6">
                   {/* ProxyBuilder */}
                   <div className="rounded-xl border border-border bg-card p-5">
@@ -670,12 +652,13 @@ pub type Result<T> = std::result::Result<T, ProxyError>;`}
               </section>
 
               {/* USAGE RECIPES SECTION */}
-              <section id="recipes" className="mb-16 scroll-mt-24">
-                <div className="flex items-center gap-2 mb-2">
-                  <BookOpen className="size-5 text-emerald-400" />
-                  <h2 className="text-2xl font-bold text-foreground">Usage Recipes</h2>
+              <section id="recipes" className="scroll-mt-24">
+                <div className="mb-2">
+                  <h2 className="text-2xl font-bold tracking-tight text-foreground text-wrap-balance">
+                    Usage Recipes
+                  </h2>
                 </div>
-                <p className="text-sm text-muted-foreground mb-6">
+                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                   Select a recipe below to view common implementation patterns and handler code.
                 </p>
 
@@ -690,8 +673,8 @@ pub type Result<T> = std::result::Result<T, ProxyError>;`}
                           variant="outline"
                           size="sm"
                           className={cn(
-                            "hover:text-green-500 transition-colors text-xs",
-                            isActive && "text-green-500 border-green-500/50 bg-green-500/10 font-semibold"
+                            "hover:text-primary transition-colors text-xs",
+                            isActive && "text-primary border-primary/50 bg-primary/10 font-semibold"
                           )}
                           data-state={isActive ? "on" : "off"}
                           onClick={() => setActiveRecipe(r.id)}
@@ -705,8 +688,8 @@ pub type Result<T> = std::result::Result<T, ProxyError>;`}
 
                 {/* Recipe Details Display */}
                 <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{currentRecipeObj.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{currentRecipeObj.description}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2 text-wrap-balance">{currentRecipeObj.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{currentRecipeObj.description}</p>
 
                   <CodeBlock
                     language="rust"
@@ -717,12 +700,13 @@ pub type Result<T> = std::result::Result<T, ProxyError>;`}
               </section>
 
               {/* GRACEFUL SHUTDOWN SECTION */}
-              <section id="shutdown" className="mb-16 scroll-mt-24">
-                <div className="flex items-center gap-2 mb-2">
-                  <Lock className="size-5 text-emerald-400" />
-                  <h2 className="text-2xl font-bold text-foreground">Graceful Shutdown</h2>
+              <section id="shutdown" className="scroll-mt-24">
+                <div className="mb-2">
+                  <h2 className="text-2xl font-bold tracking-tight text-foreground text-wrap-balance">
+                    Graceful Shutdown
+                  </h2>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                   Handle Ctrl+C signals gracefully using <code>tokio::select!</code>:
                 </p>
 
@@ -745,17 +729,17 @@ tokio::select! {
               </section>
 
               {/* FOOTER CTA */}
-              <div className="rounded-2xl border border-emerald-900/50 bg-gradient-to-r from-emerald-950/30 via-zinc-900 to-zinc-950 p-8 text-center">
-                <h3 className="text-2xl font-bold text-foreground mb-2">
+              <div className="rounded-2xl border border-border bg-card p-8 text-center">
+                <h3 className="text-2xl font-bold text-foreground mb-2 text-wrap-balance">
                   Ready to Intercept Traffic with hexbuffer-proxy?
                 </h3>
-                <p className="text-sm text-muted-foreground max-w-xl mx-auto mb-6">
+                <p className="text-sm text-muted-foreground max-w-xl mx-auto mb-6 leading-relaxed">
                   Integrate high-speed MITM proxy capabilities into your security tools, web fuzzers, or test automation suites today.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                  <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-semibold" asChild>
+                  <Button size="lg" variant="default" asChild>
                     <a href="https://github.com/arhamymr/hexbuffer" target="_blank" rel="noreferrer">
-                      Star on GitHub <ExternalLink className="size-4 ml-1.5" />
+                      Star on GitHub
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
