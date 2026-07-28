@@ -134,6 +134,52 @@ function highlightLine(line: string, lang: string): string {
     }
 
     return result;
+  } else if (
+    lang === "javascript" ||
+    lang === "js" ||
+    lang === "typescript" ||
+    lang === "ts"
+  ) {
+    const tokenRegex =
+      /(\/\/.*$)|("[^"]*"|'[^']*'|`[^`]*`)|(#\[[^\]]+\])|\b(const|let|var|function|return|if|else|for|while|await|async|import|from|export|default|new|typeof|instanceof|try|catch|throw)\b|\b(script|console|window|document|Math|JSON|Object|Array|Promise|String|Number|Boolean)\b|\b(environment|get|set|unset|has|test|log|response|request|expect|to|equal|json|text|code|status|headers|body)\b/g;
+
+    let result = "";
+    let lastIndex = 0;
+
+    for (const match of line.matchAll(tokenRegex)) {
+      const matchStr = match[0];
+      const index = match.index!;
+
+      if (index > lastIndex) {
+        result += escapeHtml(line.slice(lastIndex, index));
+      }
+
+      const escaped = escapeHtml(matchStr);
+
+      if (match[1]) {
+        result += `<span class="text-zinc-500 italic">${escaped}</span>`;
+      } else if (match[2]) {
+        result += `<span class="text-emerald-400">${escaped}</span>`;
+      } else if (match[3]) {
+        result += `<span class="text-amber-500/90">${escaped}</span>`;
+      } else if (match[4]) {
+        result += `<span class="text-purple-400 font-semibold">${escaped}</span>`;
+      } else if (match[5]) {
+        result += `<span class="text-amber-400 font-medium">${escaped}</span>`;
+      } else if (match[6]) {
+        result += `<span class="text-cyan-300 font-medium">${escaped}</span>`;
+      } else {
+        result += escaped;
+      }
+
+      lastIndex = index + matchStr.length;
+    }
+
+    if (lastIndex < line.length) {
+      result += escapeHtml(line.slice(lastIndex));
+    }
+
+    return result;
   }
 
   return escapeHtml(line);

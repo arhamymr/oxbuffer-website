@@ -11,54 +11,52 @@ export const metadata: Metadata = {
 
 export default function DocumentsDoc() {
   return (
-    <>
-      <div className="mt-10">
-          <PageBreadcrumb current="Documents & Evidence" />
-          <Link
-            href="/docs"
-            className="inline-flex items-center gap-1.5 mt-10 mb-6 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="size-3.5" /> Back to docs
-          </Link>
+    <div className="mt-10">
+      <PageBreadcrumb current="Documents & Evidence" />
+      <Link
+        href="/docs"
+        className="inline-flex items-center gap-1.5 mt-10 mb-6 text-sm text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ArrowLeft className="size-3.5" /> Back to docs
+      </Link>
 
-          <h1 className="text-4xl font-normal mb-3">Documents & Evidence</h1>
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
-            Build clean markdown logs and structured security reports. Save raw request and response evidence directly into document sections.
-          </p>
+      <h1 className="text-4xl font-normal mb-3">Documents & Evidence</h1>
+      <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
+        Build clean markdown logs and structured security reports. Save raw request and response evidence directly into document sections.
+      </p>
 
-          {/* Specialized Templates */}
-          <section className="mb-16">
-            <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
-              <FileText className="size-5 text-muted-foreground" />
-              Specialized Document Templates
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Get started quickly by selecting predefined templates for blank notes, developer code specs, QA testing guidelines, or security research reports.
-            </p>
-          </section>
+      {/* Specialized Templates */}
+      <section className="mb-16">
+        <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
+          <FileText className="size-5 text-muted-foreground" />
+          Specialized Document Templates
+        </h2>
+        <p className="text-muted-foreground leading-relaxed mb-4">
+          Get started quickly by selecting predefined templates for blank notes, developer code specs, QA testing guidelines, or security research reports.
+        </p>
+      </section>
 
-          {/* Evidence API Entries */}
-          <section className="mb-16">
-            <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
-              <BookText className="size-5 text-muted-foreground" />
-              API Evidence Log
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Integrate raw HTTP traffic directly into your notes. Keep records of payloads, headers, methods, and status codes inside an evidence sidebar. Re-fetch or edit entries directly from the Documents workspace.
-            </p>
-          </section>
+      {/* Evidence API Entries */}
+      <section className="mb-16">
+        <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
+          <BookText className="size-5 text-muted-foreground" />
+          API Evidence Log
+        </h2>
+        <p className="text-muted-foreground leading-relaxed mb-4">
+          Integrate raw HTTP traffic directly into your notes. Keep records of payloads, headers, methods, and status codes inside an evidence sidebar. Re-fetch or edit entries directly from the Documents workspace.
+        </p>
+      </section>
 
-          {/* Markdown & PDF Export */}
-          <section className="mb-16">
-            <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
-              <Download className="size-5 text-muted-foreground" />
-              Export & Preview
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Edit in a clean, rich WYSIWYG markdown editor or toggle preview mode. Once notes are complete, export them as formatted PDF documents for final reports.
-            </p>
-          </section>
-        </div>
-      </>
+      {/* Markdown & PDF Export */}
+      <section className="mb-16">
+        <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
+          <Download className="size-5 text-muted-foreground" />
+          Export & Preview
+        </h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Edit in a clean, rich WYSIWYG markdown editor or toggle preview mode. Once notes are complete, export them as formatted PDF documents for final reports.
+        </p>
+      </section>
+    </div>
   );
 }

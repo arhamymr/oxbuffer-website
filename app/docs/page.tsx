@@ -103,41 +103,39 @@ const docs = [
 
 export default function DocsIndex() {
   return (
-    <>
-      <div className="mt-10">
-          <PageBreadcrumb current="Documentation" />
-          <h1 className="text-4xl font-normal mb-3 mt-20">Documentation</h1>
-          <p className="text-muted-foreground mb-12 max-w-xl">
-            Practical guides for using hexbuffer during web application recon,
-            testing, and review. Pick a workflow below and follow the steps
-            inside the app.
-          </p>
+    <div className="mt-10">
+      <PageBreadcrumb current="Documentation" />
+      <h1 className="text-4xl font-normal mb-3 mt-20">Documentation</h1>
+      <p className="text-muted-foreground mb-12 max-w-xl">
+        Practical guides for using hexbuffer during web application recon,
+        testing, and review. Pick a workflow below and follow the steps
+        inside the app.
+      </p>
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            {docs.map((doc) => (
-              <Link
-                key={doc.href}
-                href={doc.href}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40 hover:bg-card/70"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-md border border-border bg-muted">
-                    <doc.icon className="size-5 text-muted-foreground transition-colors group-hover:text-primary" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h2 className="flex items-center gap-2 font-medium text-foreground mb-1.5">
-                      {doc.title}
-                      <ArrowRightIcon className="size-3.5 shrink-0 text-muted-foreground opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-0.5" />
-                    </h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {doc.description}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </>
+      <div className="grid sm:grid-cols-2 gap-4">
+        {docs.map((doc) => (
+          <Link
+            key={doc.href}
+            href={doc.href}
+            className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40 hover:bg-card/70"
+          >
+            <div className="flex items-start gap-4">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-md border border-border bg-muted">
+                <doc.icon className="size-5 text-muted-foreground transition-colors group-hover:text-primary" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h2 className="flex items-center gap-2 font-medium text-foreground mb-1.5">
+                  {doc.title}
+                  <ArrowRightIcon className="size-3.5 shrink-0 text-muted-foreground opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-0.5" />
+                </h2>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {doc.description}
+                </p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
