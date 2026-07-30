@@ -896,20 +896,12 @@ export function ProxyPageClient() {
                       asChild
                     >
                       <a
-                        href="https://github.com/arhamymr/hexbuffer"
+                        href="https://github.com/arhamymr/hexbuffer-proxy"
                         target="_blank"
                         rel="noreferrer"
                       >
                         Star on GitHub
                       </a>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className={cn("active:scale-95 transition-transform duration-100 ease-out")}
-                      asChild
-                    >
-                      <Link href="/docs">View Desktop App Docs</Link>
                     </Button>
                   </div>
                 </div>

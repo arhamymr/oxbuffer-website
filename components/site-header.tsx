@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
 
 const NAV_ITEMS = [
-  { label: "Docs", href: "/docs" },
+  { label: "Docs", href: "https://dosc.0xbuffer.com", target: "_blank", rel: "noreferrer" },
   { label: "Blogs", href: "/blogs" },
 ] as const;
 
@@ -80,6 +80,8 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
+                target={"target" in item ? item.target : undefined}
+                rel={"rel" in item ? item.rel : undefined}
                 className={cn(
                   // Typography
                   "text-sm font-medium text-muted-foreground",
@@ -167,6 +169,8 @@ export function SiteHeader() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    target={"target" in item ? item.target : undefined}
+                    rel={"rel" in item ? item.rel : undefined}
                     className={cn(
                       // Sizing & Spacing
                       "px-2 py-2 rounded-md",
