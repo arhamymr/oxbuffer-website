@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
 
 const NAV_ITEMS = [
-  { label: "Docs", href: "https://dosc.0xbuffer.com", target: "_blank", rel: "noreferrer" },
+  { label: "Docs", href: "https://docs.0xbuffer.com", target: "_blank", rel: "noreferrer" },
   { label: "Blogs", href: "/blogs" },
 ] as const;
 
