@@ -97,9 +97,10 @@ export function SiteHeader() {
               size="sm"
               render={
                 <a
-                  href="https://github.com/arhamymr/hexbuffer"
+                  href="https://github.com/dev-celestia/hexbuffer"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Star us on GitHub"
                 />
               }
             >
