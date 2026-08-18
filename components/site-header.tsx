@@ -123,7 +123,7 @@ export function SiteHeader() {
               size="icon"
               render={
                 <a
-                  href="https://github.com/arhamymr/hexbuffer"
+                  href="https://github.com/dev-celestia/hexbuffer"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub Repository"
