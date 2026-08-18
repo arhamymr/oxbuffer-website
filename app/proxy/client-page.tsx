@@ -5,11 +5,9 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { TextEditor } from "@/components/ui/text-editor";
+import { TextEditor, ButtonGroup, Button } from "@celestia-project/ui";
 import { ProxyArchitecture } from "@/components/proxy-architecture";
-import { ButtonGroup } from "@/components/ui/button-group";
-import { Button } from "@/components/ui/button";
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { cn } from "@/lib/utils";
 import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
@@ -43,7 +41,7 @@ export function ProxyPageClient() {
       <main
         className={cn(
           // Layout & Positioning
-          "min-h-screen pt-24 pb-28 px-4",
+          "min-h-screen pt-24 pb-28 px-4 sm:px-6 lg:px-8",
           // Backgrounds & Borders
           "bg-background selection:bg-emerald-950 selection:text-emerald-300 antialiased"
         )}
@@ -763,12 +761,6 @@ export function ProxyPageClient() {
                             key={r.id}
                             variant={isActive ? "default" : "outline"}
                             size="sm"
-                            className={cn(
-                              // Typography
-                              "text-xs font-mono",
-                              // Interactive & States
-                              "active:scale-95 transition-all duration-100 ease-out"
-                            )}
                             data-state={isActive ? "on" : "off"}
                             onClick={() => setActiveRecipe(r.id)}
                           >
@@ -892,16 +884,15 @@ export function ProxyPageClient() {
                     <Button
                       size="lg"
                       variant="default"
-                      className={cn("active:scale-95 transition-transform duration-100 ease-out")}
-                      asChild
+                      render={
+                        <a
+                          href="https://github.com/arhamymr/hexbuffer-proxy"
+                          target="_blank"
+                          rel="noreferrer"
+                        />
+                      }
                     >
-                      <a
-                        href="https://github.com/arhamymr/hexbuffer-proxy"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Star on GitHub
-                      </a>
+                      Star on GitHub
                     </Button>
                   </div>
                 </div>

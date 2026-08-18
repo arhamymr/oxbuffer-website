@@ -5,9 +5,7 @@ import { useRouter } from "next/navigation";
 import { useActionState } from "react";
 import Link from "next/link";
 import { Search, Pencil, Trash2, Eye, EyeOff } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import { Button, Input, Badge } from "@celestia-project/ui";
 import {
   deleteArticleAction,
   toggleArticleStatusAction,
@@ -37,12 +35,11 @@ export function ArticleTable({ articles }: ArticleTableProps) {
     <div className="space-y-3">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative flex-1 sm:max-w-xs">
-          <Search className="pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
+          <Search className="pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground z-10" />
           <Input
             placeholder="Search by title or slug..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="h-9 pl-8"
           />
         </div>
         <div className="flex gap-1">
@@ -114,7 +111,6 @@ function ArticleRow({ article }: { article: Article }) {
       <td className="px-3 py-2.5">
         <Badge
           variant={article.status === "published" ? "default" : "secondary"}
-          className="text-[10px]"
         >
           {article.status}
         </Badge>

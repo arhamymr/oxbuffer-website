@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { GithubLogoIcon } from "@phosphor-icons/react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 import { PulseTriangle } from "./pulse-triangle";
 import { cn } from "@/lib/utils";
 
@@ -21,7 +21,7 @@ export function SiteFooter() {
       <div
         className={cn(
           // Layout & Positioning
-          "mx-auto w-full max-w-6xl"
+          "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8"
         )}
       >
         <div
@@ -61,15 +61,19 @@ export function SiteFooter() {
               report generation.
             </p>
             <div className={cn("pt-1")}>
-              <Button variant="outline" size="sm" className="gap-2 text-sm active:scale-95 transition-transform duration-100 ease-out" asChild>
-                <a
-                  href="https://github.com/arhamymr/hexbuffer"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <GithubLogoIcon className="size-4" />
-                  <span>Star us on GitHub</span>
-                </a>
+              <Button
+                variant="outline"
+                size="sm"
+                render={
+                  <a
+                    href="https://github.com/arhamymr/hexbuffer"
+                    target="_blank"
+                    rel="noreferrer"
+                  />
+                }
+              >
+                <GithubLogoIcon className="size-4" />
+                <span>Star us on GitHub</span>
               </Button>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 import { PlusCircle } from "lucide-react";
 import { getAdminApiKey, verifyAdmin } from "./lib/auth";
 import { getStats, getRecentLicenses } from "./lib/db";
@@ -31,11 +31,9 @@ export default async function AdminDashboard() {
             License overview and recent activity.
           </p>
         </div>
-        <Button size="sm" asChild>
-          <Link href="/admin/licenses/new">
-            <PlusCircle className="size-3.5" />
-            New License
-          </Link>
+        <Button size="sm" render={<Link href="/admin/licenses/new" />}>
+          <PlusCircle className="size-3.5" />
+          New License
         </Button>
       </div>
 

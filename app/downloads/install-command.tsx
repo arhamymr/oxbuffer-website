@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 
 const installCommand = "curl -fsSLO https://dist.0xbuffer.com/install.sh && bash install.sh";
 
@@ -37,7 +37,6 @@ export function InstallCommand() {
         variant={copied ? "secondary" : "outline"}
         onClick={copyInstallCommand}
         aria-label={copied ? "Install command copied" : "Copy install command"}
-        className="sm:w-28"
       >
         {copied ? (
           <>

@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 import { ArrowRightIcon, HeartIcon, HexagonIcon } from "@phosphor-icons/react";
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { cn } from "@/lib/utils";
 
 const HIGHLIGHTS = [
@@ -17,7 +17,7 @@ export function CtaSection() {
         // Layout & Positioning
         "relative overflow-hidden",
         // Sizing & Spacing
-        "py-24 px-4",
+        "py-24 px-4 sm:px-6 lg:px-8",
         // Backgrounds & Borders
         "border-t border-border"
       )}
@@ -27,7 +27,7 @@ export function CtaSection() {
           // Layout & Positioning
           "container mx-auto relative",
           // Sizing & Spacing
-          "max-w-6xl"
+          "max-w-7xl"
         )}
       >
         <ScrollReveal>
@@ -113,14 +113,17 @@ export function CtaSection() {
                   "gap-3 min-w-[240px]"
                 )}
               >
-                <Button size="lg" className="gap-2 w-full active:scale-95 transition-transform duration-100 ease-out" asChild>
-                  <a href="/downloads">
-                    Download for macOS
-                    <ArrowRightIcon className="size-4" />
-                  </a>
+                <Button
+                  size="lg"
+                  render={
+                    <a href="/downloads" />
+                  }
+                >
+                  Download for macOS
+                  <ArrowRightIcon className="size-4" />
                 </Button>
 
-                <Button size="lg" variant="outline" className="gap-2 w-full" disabled>
+                <Button size="lg" variant="outline" disabled>
                   Windows — Coming Soon
                 </Button>
 

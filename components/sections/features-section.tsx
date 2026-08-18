@@ -13,7 +13,7 @@ import {
   BugIcon,
   SparkleIcon,
 } from "@phosphor-icons/react";
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { cn } from "@/lib/utils";
 import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
 
@@ -86,7 +86,7 @@ export function FeaturesSection() {
       id="features"
       className={cn(
         // Sizing & Spacing
-        "py-24 px-4",
+        "py-24 px-4 sm:px-6 lg:px-8",
         // Backgrounds & Borders
         "border-t border-border"
       )}
@@ -96,7 +96,7 @@ export function FeaturesSection() {
           // Layout & Positioning
           "container mx-auto",
           // Sizing & Spacing
-          "max-w-6xl"
+          "max-w-7xl"
         )}
       >
         <ScrollReveal>

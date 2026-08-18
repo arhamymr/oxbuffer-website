@@ -12,7 +12,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 import { cn } from "@/lib/utils";
 import { logout } from "../lib/actions";
 
@@ -23,16 +23,19 @@ const navItems = [
   { label: "Blog", href: "/admin/blog", icon: FileText },
 ];
 
-export function AdminSidebar() {
-  const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
+interface NavContentProps {
+  pathname: string;
+  mobile?: boolean;
+  onNavigate?: () => void;
+}
 
+function NavContent({ pathname, mobile = false, onNavigate }: NavContentProps) {
   const isActive = (href: string) => {
     if (href === "/admin") return pathname === "/admin";
     return pathname.startsWith(href);
   };
 
-  const NavContent = ({ mobile = false }: { mobile?: boolean }) => (
+  return (
     <>
       <div className="flex h-13 items-center gap-2 border-b border-border px-4">
         <div className="flex size-6 items-center justify-center rounded bg-primary">
@@ -52,7 +55,9 @@ export function AdminSidebar() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => mobile && setMobileOpen(false)}
+              onClick={() => {
+                if (mobile && onNavigate) onNavigate();
+              }}
               className={cn(
                 "flex items-center gap-2.5 rounded-md px-2.5 py-2 text-sm transition-colors",
                 active
@@ -83,6 +88,11 @@ export function AdminSidebar() {
       </div>
     </>
   );
+}
+
+export function AdminSidebar() {
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
@@ -109,13 +119,17 @@ export function AdminSidebar() {
       {/* Mobile nav dropdown */}
       {mobileOpen && (
         <div className="fixed inset-x-0 top-13 z-20 flex flex-col border-b border-border bg-background lg:hidden">
-          <NavContent mobile />
+          <NavContent
+            pathname={pathname}
+            mobile
+            onNavigate={() => setMobileOpen(false)}
+          />
         </div>
       )}
 
       {/* Desktop sidebar */}
       <aside className="sticky top-0 hidden h-screen w-56 shrink-0 flex-col border-r border-border bg-background lg:flex">
-        <NavContent />
+        <NavContent pathname={pathname} />
       </aside>
     </>
   );

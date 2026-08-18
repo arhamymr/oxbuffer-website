@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { cn } from "@/lib/utils";
 
 export function DifferenceSection() {
@@ -8,7 +8,7 @@ export function DifferenceSection() {
     <section
       className={cn(
         // Sizing & Spacing
-        "py-24 px-4",
+        "py-24 px-4 sm:px-6 lg:px-8",
         // Backgrounds & Borders
         "border-t border-border"
       )}
@@ -18,7 +18,7 @@ export function DifferenceSection() {
           // Layout & Positioning
           "container mx-auto text-center",
           // Sizing & Spacing
-          "max-w-6xl"
+          "max-w-7xl"
         )}
       >
         <ScrollReveal>

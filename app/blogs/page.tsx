@@ -19,8 +19,8 @@ export default async function BlogPage() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-16 pb-24 px-4 min-h-[100vh] mt-5">
-        <div className="container mx-auto max-w-4xl">
+      <main className="pt-16 pb-24 px-4 sm:px-6 lg:px-8 min-h-[100vh] mt-5">
+        <div className="container mx-auto max-w-7xl">
           <PageBreadcrumb current="Blog" />
           <h1 className="text-4xl font-normal mb-3 mt-20">Blog</h1>
           <p className="text-muted-foreground mb-12 max-w-xl">

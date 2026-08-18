@@ -1,7 +1,7 @@
 "use client";
 
 import { WifiSlashIcon, ShieldIcon, LaptopIcon } from "@phosphor-icons/react";
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { cn } from "@/lib/utils";
 
 const PERKS = [
@@ -15,7 +15,7 @@ export function OfflineSection() {
     <section
       className={cn(
         // Sizing & Spacing
-        "py-20 px-4",
+        "py-24 px-4 sm:px-6 lg:px-8",
         // Backgrounds & Borders
         "border-t border-border"
       )}
@@ -25,7 +25,7 @@ export function OfflineSection() {
           // Layout & Positioning
           "container mx-auto",
           // Sizing & Spacing
-          "max-w-4xl"
+          "max-w-7xl"
         )}
       >
         <ScrollReveal>

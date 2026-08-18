@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getAdminApiKey, verifyAdmin } from "../../lib/auth";
 import { getLicenseByKey } from "../../lib/db";
@@ -31,12 +32,12 @@ export default async function LicenseDetailPage({
     return (
       <div className="flex flex-col items-center gap-3 py-20 text-center">
         <p className="text-muted-foreground">License not found.</p>
-        <a
+        <Link
           href="/admin/licenses"
           className="text-sm text-primary hover:underline"
         >
           Back to licenses
-        </a>
+        </Link>
       </div>
     );
   }

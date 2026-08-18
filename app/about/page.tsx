@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { ExternalLink, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 
 export const metadata: Metadata = {
   title: "About Arham — hexbuffer",
@@ -14,29 +14,42 @@ export default function About() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-16 pb-24 px-4 mt-5">
-        <div className="container mx-auto max-w-4xl">
+      <main className="pt-16 pb-24 px-4 sm:px-6 lg:px-8 mt-5">
+        <div className="container mx-auto max-w-7xl">
           <PageBreadcrumb current="About" />
           <section className="text-center mb-16 min-h-[100vh]">
             <div className="border border-border rounded-xl bg-card pb-20">
               <h1 className="text-4xl font-normal mb-4 mt-20">About Me</h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 I&apos;m Arham, a Software Developer building hexbuffer as my personal project.
                 It is a space for experimenting with practical web application testing workflows,
                 developer tooling, and ideas that make technical work feel clearer and faster.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Button asChild>
-                  <a href="https://github.com/arhamymr" target="_blank" rel="noreferrer">
-                    <ExternalLink className="size-4" />
-                    GitHub
-                  </a>
+                <Button
+                  render={
+                    <a
+                      href="https://github.com/arhamymr"
+                      target="_blank"
+                      rel="noreferrer"
+                    />
+                  }
+                >
+                  <ExternalLink className="size-4" />
+                  GitHub
                 </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://www.threads.com/@arhamymr" target="_blank" rel="noreferrer">
-                    <MessageCircle className="size-4" />
-                    Threads
-                  </a>
+                <Button
+                  variant="outline"
+                  render={
+                    <a
+                      href="https://www.threads.com/@arhamymr"
+                      target="_blank"
+                      rel="noreferrer"
+                    />
+                  }
+                >
+                  <MessageCircle className="size-4" />
+                  Threads
                 </Button>
               </div>
             </div>

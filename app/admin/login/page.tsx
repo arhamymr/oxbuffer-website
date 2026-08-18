@@ -3,9 +3,7 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { KeyRound } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button, Input, Label } from "@celestia-project/ui";
 import { login, type LoginResult } from "../lib/actions";
 
 export default function AdminLoginPage() {
@@ -38,7 +36,6 @@ export default function AdminLoginPage() {
               type="password"
               placeholder="Your admin key..."
               autoComplete="off"
-              className="h-10 font-mono"
               required
             />
           </div>
@@ -49,7 +46,9 @@ export default function AdminLoginPage() {
             </p>
           )}
 
-          <LoginButton />
+          <div className="pt-2">
+            <LoginButton />
+          </div>
         </form>
       </div>
     </div>
@@ -59,7 +58,7 @@ export default function AdminLoginPage() {
 function LoginButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" className="h-10 w-full" disabled={pending}>
+    <Button type="submit" disabled={pending}>
       {pending ? "Verifying..." : "Sign in"}
     </Button>
   );

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@source "../node_modules/@celestia-project/ui";
+
 @custom-variant dark (&:is(.dark *));
 
 /* ===== Tailwind v4 tokens → map ke CSS vars (shadcn) ===== */

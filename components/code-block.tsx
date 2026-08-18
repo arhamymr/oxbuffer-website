@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { CheckIcon, CopyIcon, TerminalWindowIcon, FileCodeIcon } from "@phosphor-icons/react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 import { cn } from "@/lib/utils";
 
 interface CodeBlockProps {
@@ -247,7 +247,6 @@ export function CodeBlock({
             variant="ghost"
             size="xs"
             onClick={handleCopy}
-            className="h-6 gap-1 px-2 text-xs text-muted-foreground hover:text-foreground"
           >
             {copied ? (
               <>

@@ -3,9 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Copy, Check, Ban, ArrowLeft, Calendar, Mail, Monitor } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button, Badge, Card, CardContent, CardHeader, CardTitle } from "@celestia-project/ui";
 import { revokeLicenseAction } from "../lib/actions";
 import type { LicenseWithActivations } from "../lib/db";
 
@@ -55,8 +53,8 @@ export function LicenseDetail({ license }: LicenseDetailProps) {
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="font-mono text-base">
-              {license.key}
+            <CardTitle>
+              <span className="font-mono text-base">{license.key}</span>
             </CardTitle>
             <Button
               variant="outline"
@@ -72,65 +70,67 @@ export function LicenseDetail({ license }: LicenseDetailProps) {
           </div>
         </CardHeader>
 
-        <CardContent className="space-y-6">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <DetailItem
-              icon={Mail}
-              label="Email"
-              value={license.email || "---"}
-            />
-            <DetailItem
-              label="Plan"
-              value={license.plan}
-              badge="secondary"
-            />
-            <DetailItem
-              label="Status"
-              value={revoked ? "revoked" : license.status}
-              badge={
-                revoked || license.status === "revoked"
-                  ? "destructive"
-                  : "default"
-              }
-            />
-            <DetailItem
-              icon={Calendar}
-              label="Created"
-              value={new Date(license.createdAt).toLocaleDateString()}
-            />
-          </div>
-
-          <div className="space-y-2.5">
-            <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-1.5 text-muted-foreground">
-                <Monitor className="size-3.5" />
-                Activations
-              </div>
-              <span className="font-mono text-xs">
-                {license.activationCount} / {license.maxDevices}
-              </span>
-            </div>
-            <div className="h-2 overflow-hidden rounded-full bg-muted">
-              <div
-                className="h-full rounded-full bg-primary transition-all"
-                style={{ width: `${activationPercent}%` }}
+        <CardContent>
+          <div className="space-y-6">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <DetailItem
+                icon={Mail}
+                label="Email"
+                value={license.email || "---"}
+              />
+              <DetailItem
+                label="Plan"
+                value={license.plan}
+                badge="secondary"
+              />
+              <DetailItem
+                label="Status"
+                value={revoked ? "revoked" : license.status}
+                badge={
+                  revoked || license.status === "revoked"
+                    ? "destructive"
+                    : "default"
+                }
+              />
+              <DetailItem
+                icon={Calendar}
+                label="Created"
+                value={new Date(license.createdAt).toLocaleDateString()}
               />
             </div>
-          </div>
 
-          {!revoked && license.status !== "revoked" && (
-            <div className="flex gap-2 border-t border-border pt-4">
-              <Button
-                variant="destructive"
-                size="sm"
-                onClick={handleRevoke}
-                disabled={revoking}
-              >
-                <Ban className="size-3.5" />
-                {revoking ? "Revoking..." : "Revoke License"}
-              </Button>
+            <div className="space-y-2.5">
+              <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center gap-1.5 text-muted-foreground">
+                  <Monitor className="size-3.5" />
+                  Activations
+                </div>
+                <span className="font-mono text-xs">
+                  {license.activationCount} / {license.maxDevices}
+                </span>
+              </div>
+              <div className="h-2 overflow-hidden rounded-full bg-muted">
+                <div
+                  className="h-full rounded-full bg-primary transition-all"
+                  style={{ width: `${activationPercent}%` }}
+                />
+              </div>
             </div>
-          )}
+
+            {!revoked && license.status !== "revoked" && (
+              <div className="flex gap-2 border-t border-border pt-4">
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  onClick={handleRevoke}
+                  disabled={revoking}
+                >
+                  <Ban className="size-3.5" />
+                  {revoking ? "Revoking..." : "Revoke License"}
+                </Button>
+              </div>
+            )}
+          </div>
         </CardContent>
       </Card>
     </div>
@@ -155,7 +155,7 @@ function DetailItem({
         {label}
       </p>
       {badge ? (
-        <Badge variant={badge} className="w-fit text-[10px]">
+        <Badge variant={badge}>
           {value}
         </Badge>
       ) : (

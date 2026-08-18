@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { GithubLogoIcon, ListIcon, XIcon } from "@phosphor-icons/react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 import { PulseTriangle } from "@/components/pulse-triangle";
 import { cn } from "@/lib/utils";
 import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
@@ -31,7 +31,7 @@ export function SiteHeader() {
       <div
         className={cn(
           // Layout & Positioning
-          "mx-auto flex w-full max-w-6xl flex-col"
+          "mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8"
         )}
       >
         <div
@@ -92,18 +92,22 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Button variant="outline" size="sm" className="gap-1.5" asChild>
-              <a
-                href="https://github.com/arhamymr/hexbuffer"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GithubLogoIcon className="size-4" />
-                <span>Star us on GitHub</span>
-              </a>
+            <Button
+              variant="outline"
+              size="sm"
+              render={
+                <a
+                  href="https://github.com/arhamymr/hexbuffer"
+                  target="_blank"
+                  rel="noreferrer"
+                />
+              }
+            >
+              <GithubLogoIcon className="size-4" weight="fill" />
+              <span>Star us on GitHub</span>
             </Button>
-            <Button size="sm" asChild>
-              <Link href="/downloads">Download</Link>
+            <Button size="sm" render={<Link href="/downloads" />}>
+              Download
             </Button>
           </nav>
 
@@ -116,22 +120,20 @@ export function SiteHeader() {
             <Button
               variant="ghost"
               size="icon"
-              className={cn("size-8 text-muted-foreground hover:text-foreground")}
-              asChild
+              render={
+                <a
+                  href="https://github.com/arhamymr/hexbuffer"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub Repository"
+                />
+              }
             >
-              <a
-                href="https://github.com/arhamymr/hexbuffer"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub Repository"
-              >
-                <GithubLogoIcon className="size-5" />
-              </a>
+              <GithubLogoIcon className="size-5" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              className={cn("size-8")}
               aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
@@ -203,10 +205,14 @@ export function SiteHeader() {
                   <GithubLogoIcon className="size-5" />
                   <span>Star us on GitHub</span>
                 </a>
-                <Button variant="outline" size="sm" className="mt-2 w-full" asChild>
-                  <Link href="/downloads" onClick={() => setMenuOpen(false)}>
-                    Download
-                  </Link>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  render={
+                    <Link href="/downloads" onClick={() => setMenuOpen(false)} />
+                  }
+                >
+                  Download
                 </Button>
               </div>
             </motion.nav>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { Button } from "@celestia-project/ui";
 import { PlusCircle } from "lucide-react";
 import { getAdminApiKey, verifyAdmin } from "../lib/auth";
 import { getAllArticles } from "../lib/db";
@@ -27,11 +27,9 @@ export default async function AdminBlogPage() {
             Manage articles and blog posts.
           </p>
         </div>
-        <Button size="sm" asChild>
-          <Link href="/admin/blog/new">
-            <PlusCircle className="size-3.5" />
-            New Article
-          </Link>
+        <Button size="sm" render={<Link href="/admin/blog/new" />}>
+          <PlusCircle className="size-3.5" />
+          New Article
         </Button>
       </div>
 
