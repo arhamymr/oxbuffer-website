@@ -56,9 +56,9 @@ export function SiteFooter() {
               </span>
             </div>
             <p className={cn("text-sm text-muted-foreground leading-relaxed max-w-sm")}>
-              Desktop application and developer tooling for web application
-              security testing, traffic interception, automated recon, and
-              report generation.
+              Desktop application and developer tooling for HTTP traffic
+              inspection, request interception, payload testing, and
+              security analysis.
             </p>
             <div className={cn("pt-1")}>
               <Button

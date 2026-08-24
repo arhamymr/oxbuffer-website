@@ -66,7 +66,7 @@ export function HeroSection() {
                   )}
                 />
                 <ShinyText
-                  text="Testing, Recon, and Reporting"
+                  text="HTTP Traffic Interception & Testing"
                   className={cn(
                     // Typography
                     "text-sm font-mono tracking-tight md:text-md"
@@ -93,7 +93,7 @@ export function HeroSection() {
                   "text-base md:text-lg text-muted-foreground leading-relaxed"
                 )}
               >
-                hexbuffer helps inspect traffic, test APIs, automate workflows, and document findings faster with AI-powered analysis
+                hexbuffer lets you capture HTTP traffic, modify requests mid-flight, replay and fuzz endpoints, and organize notes in a single local desktop workspace.
               </p>
               <Button size="lg" render={<Link href="/#features" />}>
                 See Features

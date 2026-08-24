@@ -27,7 +27,7 @@ const responseLines = [
 ];
 
 function MethodBadge({ value }: { value: string }) {
-  const color = value === "GET" ? "border-emerald-500/70 text-emerald-500" : "border-blue-500/70 text-blue-500";
+  const color = value === "GET" ? "border-emerald-500 text-emerald-500" : "border-blue-500 text-blue-500";
 
   return (
     <span className={`rounded-[4px] border px-1.5 py-0.5 text-[10px] font-bold ${color}`}>
@@ -39,10 +39,10 @@ function MethodBadge({ value }: { value: string }) {
 function StatusBadge({ value }: { value: string }) {
   const color =
     value === "200"
-      ? "border-emerald-500/70 text-emerald-500"
+      ? "border-emerald-500 text-emerald-500"
       : value === "304" || value === "307"
-        ? "border-blue-500/70 text-blue-500"
-        : "border-sky-500/70 text-sky-500";
+        ? "border-blue-500 text-blue-500"
+        : "border-sky-500 text-sky-500";
 
   return <span className={`rounded-[4px] border px-1.5 py-0.5 text-[10px] font-bold ${color}`}>{value}</span>;
 }
@@ -102,7 +102,7 @@ export function TrafficIllustration() {
         </div>
       </div>
 
-      <div className="flex h-11 items-end gap-1 border-b border-emerald-500/70 px-2">
+      <div className="flex h-11 items-end gap-1 border-b border-emerald-500 px-2">
         {tabs.map((tab, index) => (
           <div
             className={
@@ -125,7 +125,7 @@ export function TrafficIllustration() {
           <div className="hidden items-center gap-2 text-xs font-bold text-foreground md:flex">
             HTTP
             <span className="h-4 w-8 rounded-full border border-foreground/20 before:block before:size-3.5 before:rounded-full before:border before:border-foreground/40" />
-            <span className="font-normal text-muted-foreground">WebSocket</span>
+            <span className="font-normal text-muted-foreground">HTTPS</span>
           </div>
           <div className="rounded-md border border-emerald-500 px-3 py-2 text-[10px] font-bold text-emerald-500">TARGET</div>
         </div>
@@ -156,7 +156,7 @@ export function TrafficIllustration() {
         {trafficRows.map((row, index) => (
           <div
             className={`grid grid-cols-[80px_120px_minmax(200px,1fr)_minmax(220px,1.4fr)_70px_54px] border-b border-foreground/10 px-3 py-2 ${
-              index === 2 ? "bg-emerald-500/[0.04]" : "bg-transparent"
+              index === 2 ? "bg-muted" : "bg-transparent"
             }`}
             key={`${row[0]}-${row[3]}-${index}`}
           >

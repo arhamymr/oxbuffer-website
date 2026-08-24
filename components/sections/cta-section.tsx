@@ -67,7 +67,7 @@ export function CtaSection() {
                     "text-base text-muted-foreground leading-relaxed"
                   )}
                 >
-                  A desktop app for web app recon, traffic inspection, and application testing — all in one place.
+                  A fast desktop app for HTTP traffic inspection, request interception, and endpoint testing — all in one place.
                 </p>
 
                 <div

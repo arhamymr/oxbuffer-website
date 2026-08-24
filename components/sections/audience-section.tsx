@@ -10,22 +10,22 @@ const AUDIENCE = [
   {
     icon: CrosshairIcon,
     title: "Penetration Testers",
-    desc: "A complete workstation that replaces a patchwork of tools.",
+    desc: "A dedicated local workstation for inspecting and manipulating HTTP traffic.",
   },
   {
     icon: BugIcon,
     title: "Bug Bounty Hunters",
-    desc: "Find, verify, and document vulnerabilities faster.",
+    desc: "Find, verify, and document endpoint vulnerabilities faster.",
   },
   {
     icon: MicroscopeIcon,
     title: "Security Researchers",
-    desc: "Deep traffic analysis combined with AI-assisted discovery.",
+    desc: "Deep HTTP request and response inspection with manual payload tampering.",
   },
   {
     icon: WrenchIcon,
     title: "Developers & QA",
-    desc: "Debug APIs and test endpoint behavior manually.",
+    desc: "Debug APIs and test endpoint behavior with immediate request replay.",
   },
 ] as const;
 
@@ -113,9 +113,9 @@ export function AudienceSection() {
                       // Sizing & Spacing
                       "size-10 mt-0.5",
                       // Backgrounds & Borders
-                      "rounded-lg border border-border bg-muted/60",
+                      "rounded-lg border border-border bg-muted",
                       // Interactive & States
-                      "group-hover:border-emerald-500/40 transition-colors"
+                      "group-hover:border-emerald-500 transition-colors"
                     )}
                   >
                     <item.icon

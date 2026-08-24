@@ -4,14 +4,10 @@ import { motion } from "motion/react";
 import {
   ArrowsDownUpIcon,
   PauseCircleIcon,
-  ArrowsClockwiseIcon,
-  SwordIcon,
-  PinwheelIcon,
-  GlobeIcon,
-  FileTextIcon,
-  BroadcastIcon,
-  BugIcon,
-  SparkleIcon,
+  InfinityIcon,
+  CubeFocusIcon,
+  PencilIcon,
+  GearSixIcon,
 } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { cn } from "@/lib/utils";
@@ -20,63 +16,39 @@ import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
 const FEATURES = [
   {
     icon: ArrowsDownUpIcon,
-    title: "HTTP & WS History",
+    title: "HTTP & HTTPS History",
     description:
-      "Capture, inspect, and filter HTTP traffic and live WebSocket frames in real time.",
+      "Capture, inspect, and filter real-time HTTP and HTTPS network traffic with detailed header and body viewers.",
   },
   {
     icon: PauseCircleIcon,
     title: "Intercept & Tamper",
     description:
-      "Pause traffic mid-flight. Edit raw request/response headers and bodies before they resolve.",
+      "Pause traffic mid-flight. Edit raw request and response headers, parameters, and bodies before they resolve.",
   },
   {
-    icon: ArrowsClockwiseIcon,
-    title: "Repeater & Scripting",
+    icon: InfinityIcon,
+    title: "Request Repeater",
     description:
-      "Replay requests, re-execute sockets, and run custom sandboxed JavaScript pre-request and test scripts.",
+      "Modify HTTP requests, reissue them instantly, and analyze response status, headers, and bodies side-by-side.",
   },
   {
-    icon: SwordIcon,
-    title: "Invoker Fuzzer",
+    icon: CubeFocusIcon,
+    title: "Intruder & Fuzzer",
     description:
-      "Run concurrent fuzzer campaigns with marked request payload positions and processing pipelines.",
+      "Set payload positions, configure wordlists, and run automated attack iterations against target endpoints.",
   },
   {
-    icon: PinwheelIcon,
-    title: "Workflow Automation",
+    icon: PencilIcon,
+    title: "Notes & Scratchpad",
     description:
-      "Build visual node-based automation pipelines using triggers, conditions, and actions.",
+      "Write markdown notes, record reproduction steps, and keep context organized within your testing session.",
   },
   {
-    icon: GlobeIcon,
-    title: "Browser Crawler",
+    icon: GearSixIcon,
+    title: "Proxy Configuration",
     description:
-      "Automated BFS crawler that maps target directories and surfaces AI-categorized severity insights.",
-  },
-  {
-    icon: FileTextIcon,
-    title: "Documents & Evidence",
-    description:
-      "Write markdown reports using specialized templates and link captured HTTP transactions as evidence.",
-  },
-  {
-    icon: BroadcastIcon,
-    title: "OOB Listener",
-    description:
-      "Generate temporary lookup domains to capture out-of-band DNS, HTTP, and SMTP transactions.",
-  },
-  {
-    icon: BugIcon,
-    title: "Debugger & Regression",
-    description:
-      "Triage chronological proxy logs and build/run automated UI test integration suites.",
-  },
-  {
-    icon: SparkleIcon,
-    title: "AI Assistant",
-    description:
-      "Get contextual suggested payloads, endpoint summaries, and remediation advice.",
+      "Configure custom proxy listeners, install trusted CA root certificates, and tune application preferences.",
   },
 ] as const;
 
@@ -128,15 +100,14 @@ export function FeaturesSection() {
                 "text-base text-muted-foreground leading-relaxed"
               )}
             >
-              Modern web application testing is fragmented. hexbuffer brings it all
-              into one workspace.
+              Essential tools for inspecting, tampering, replaying, and testing web application traffic in one workspace.
             </p>
           </div>
 
           <div
             className={cn(
               // Layout & Positioning
-              "grid sm:grid-cols-2 lg:grid-cols-2",
+              "grid sm:grid-cols-2 lg:grid-cols-3",
               // Sizing & Spacing
               "gap-4"
             )}
@@ -165,9 +136,9 @@ export function FeaturesSection() {
                       // Sizing & Spacing
                       "size-10 mt-0.5",
                       // Backgrounds & Borders
-                      "rounded-lg border border-border bg-muted/60",
+                      "rounded-lg border border-border bg-muted",
                       // Interactive & States
-                      "group-hover:border-emerald-500/40 transition-colors"
+                      "group-hover:border-emerald-500 transition-colors"
                     )}
                   >
                     <feature.icon

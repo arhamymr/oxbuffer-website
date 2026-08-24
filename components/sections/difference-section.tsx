@@ -52,7 +52,7 @@ export function DifferenceSection() {
                 "text-base md:text-lg text-muted-foreground leading-relaxed"
               )}
             >
-              hexbuffer combines real-time traffic interception, manual request crafting, automated attacks, AI-driven reconnaissance (AI feature currently under development), and professional report building in a single desktop application. No web-based tool sprawl. No juggling five different windows. Just open hexbuffer and get to work.
+              hexbuffer combines real-time HTTP interception, manual request crafting, targeted endpoint attacks, and session notes into a fast, standalone desktop application. No web-based tool sprawl. No juggling disconnected single-purpose utilities. Just open hexbuffer and get to work.
             </p>
           </div>
         </ScrollReveal>
