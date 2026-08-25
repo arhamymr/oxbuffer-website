@@ -11,7 +11,6 @@ import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
 
 const NAV_ITEMS = [
   { label: "Docs", href: "https://docs.0xbuffer.com", target: "_blank", rel: "noreferrer" },
-  { label: "Blogs", href: "/blogs" },
 ] as const;
 
 export function SiteHeader() {
@@ -31,7 +30,7 @@ export function SiteHeader() {
       <div
         className={cn(
           // Layout & Positioning
-          "mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8"
+          "mx-auto flex w-full max-w-8xl flex-col px-4 sm:px-6 lg:px-8"
         )}
       >
         <div
@@ -46,7 +45,7 @@ export function SiteHeader() {
             href="/"
             className={cn(
               // Layout & Positioning
-              "flex min-w-0 items-center gap-2",
+              "flex items-center gap-2",
               // Interactive & States
               "active:scale-95 transition-transform duration-100 ease-out"
             )}
@@ -55,18 +54,6 @@ export function SiteHeader() {
             <PulseTriangle />
             <span className={cn("truncate font-mono text-sm font-semibold text-foreground")}>
               hexbuffer
-            </span>
-            <span
-              className={cn(
-                // Typography
-                "text-[10px] font-medium uppercase tracking-wider text-muted-foreground",
-                // Sizing & Spacing
-                "px-1.5 py-0.5 rounded",
-                // Backgrounds & Borders
-                "bg-muted border border-border"
-              )}
-            >
-              Early version
             </span>
           </Link>
 
@@ -105,7 +92,7 @@ export function SiteHeader() {
               }
             >
               <GithubLogoIcon className="size-4" weight="fill" />
-              <span>Star us on GitHub</span>
+              <span>Star us GitHub</span>
             </Button>
             <Button size="sm" render={<Link href="/downloads" />}>
               Download

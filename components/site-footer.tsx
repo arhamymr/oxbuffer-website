@@ -21,7 +21,7 @@ export function SiteFooter() {
       <div
         className={cn(
           // Layout & Positioning
-          "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8"
+          "mx-auto w-full max-w-8xl px-4 sm:px-6 lg:px-8"
         )}
       >
         <div
@@ -40,19 +40,7 @@ export function SiteFooter() {
             <div className={cn("flex items-center gap-2")}>
               <PulseTriangle size="small" />
               <span className={cn("font-mono text-base font-semibold tracking-tight text-foreground")}>
-                hexbuffer
-              </span>
-              <span
-                className={cn(
-                  // Typography
-                  "text-xs font-medium uppercase tracking-wider text-muted-foreground",
-                  // Sizing & Spacing
-                  "px-1.5 py-0.5 rounded",
-                  // Backgrounds & Borders
-                  "bg-muted border border-border"
-                )}
-              >
-                Early version
+                Hexbuffer
               </span>
             </div>
             <p className={cn("text-sm text-muted-foreground leading-relaxed max-w-sm")}>
@@ -106,14 +94,6 @@ export function SiteFooter() {
                   className={cn("hover:text-foreground transition-colors inline-block")}
                 >
                   Hexbuffer MITM Proxy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blogs"
-                  className={cn("hover:text-foreground transition-colors inline-block")}
-                >
-                  Blogs & Notes
                 </Link>
               </li>
             </ul>

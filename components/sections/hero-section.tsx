@@ -83,7 +83,7 @@ export function HeroSection() {
                   "text-3xl lg:text-5xl font-semibold tracking-tight leading-tight text-foreground"
                 )}
               >
-                Web application tools for developers, QA, and engineers
+                Testing tools for web development and security
               </h1>
               <p
                 className={cn(
