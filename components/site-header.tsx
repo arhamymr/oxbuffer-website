@@ -87,12 +87,12 @@ export function SiteHeader() {
                   href="https://github.com/dev-celestia/hexbuffer"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Star us on GitHub"
+                  aria-label="Star on GitHub"
                 />
               }
             >
               <GithubLogoIcon className="size-4" weight="fill" />
-              <span>Star us GitHub</span>
+              <span>Star GitHub</span>
             </Button>
             <Button size="sm" render={<Link href="/downloads" />}>
               Download
@@ -191,7 +191,7 @@ export function SiteHeader() {
                   onClick={() => setMenuOpen(false)}
                 >
                   <GithubLogoIcon className="size-5" />
-                  <span>Star us on GitHub</span>
+                  <span>Star on GitHub</span>
                 </a>
                 <Button
                   variant="outline"

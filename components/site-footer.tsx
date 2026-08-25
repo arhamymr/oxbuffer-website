@@ -61,7 +61,7 @@ export function SiteFooter() {
                 }
               >
                 <GithubLogoIcon className="size-4" />
-                <span>Star us on GitHub</span>
+                <span>Star on GitHub</span>
               </Button>
             </div>
           </div>
