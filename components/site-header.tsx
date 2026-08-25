@@ -92,7 +92,7 @@ export function SiteHeader() {
               }
             >
               <GithubLogoIcon className="size-4" weight="fill" />
-              <span>Star GitHub</span>
+              <span>Star on GitHub</span>
             </Button>
             <Button size="sm" render={<Link href="/downloads" />}>
               Download
