@@ -5,6 +5,8 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Badge } from "@celestia-project/ui";
 import { InstallCommand } from "./install-command";
 
+import { cn } from "@/lib/utils";
+
 export const metadata: Metadata = {
   title: "Downloads — hexbuffer",
   description: "Download hexbuffer with the official install script.",
@@ -14,29 +16,101 @@ export default function Downloads() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-16 pb-24 px-4 sm:px-6 lg:px-8 min-h-[100vh] mt-5">
-        <div className="container mx-auto max-w-7xl">
+      <main
+        className={cn(
+          // Layout & Positioning
+          "min-h-[100vh]",
+          // Sizing & Spacing
+          "mt-5 px-4 sm:px-6 lg:px-8 pt-16 pb-24"
+        )}
+      >
+        <div
+          className={cn(
+            // Layout & Positioning
+            "container mx-auto",
+            // Sizing & Spacing
+            "max-w-7xl"
+          )}
+        >
           <PageBreadcrumb current="Downloads" />
-          <h1 className="text-4xl mb-2 mt-20">Downloads</h1>
-          <p className="text-muted-foreground mb-8">
+          <h1
+            className={cn(
+              // Typography
+              "text-4xl",
+              // Sizing & Spacing
+              "mt-20 mb-2"
+            )}
+          >
+            Downloads
+          </h1>
+          <p
+            className={cn(
+              // Typography
+              "text-muted-foreground",
+              // Sizing & Spacing
+              "mb-8"
+            )}
+          >
             Install the latest hexbuffer distribution from the terminal.
           </p>
 
-          <div className="mb-8">
-            <div className="mb-3 flex items-center gap-3">
-              <h2 className="text-lg">macOS</h2>
+          <div
+            className={cn(
+              // Sizing & Spacing
+              "mb-8"
+            )}
+          >
+            <div
+              className={cn(
+                // Layout & Positioning
+                "flex items-center gap-3",
+                // Sizing & Spacing
+                "mb-3"
+              )}
+            >
+              <h2
+                className={cn(
+                  // Typography
+                  "text-lg"
+                )}
+              >
+                macOS
+              </h2>
               <Badge variant="secondary">Latest</Badge>
             </div>
             <InstallCommand />
-            <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-muted-foreground">
-              <h3 className="mb-2 font-medium text-foreground">macOS security notice</h3>
+            <div
+              className={cn(
+                // Sizing & Spacing
+                "mt-4 p-4",
+                // Typography
+                "text-sm text-muted-foreground",
+                // Backgrounds & Borders
+                "rounded-lg border border-border bg-card"
+              )}
+            >
+              <h3
+                className={cn(
+                  // Typography
+                  "font-medium text-foreground",
+                  // Sizing & Spacing
+                  "mb-2"
+                )}
+              >
+                macOS security notice
+              </h3>
               <p>
                 hexbuffer is currently distributed without Apple Developer ID signing or notarization. The
                 terminal installer copies the app into /Applications, but it does not make the app
                 Apple-verified. Depending on how the app is installed and your macOS security settings,
                 macOS may or may not show an unidentified developer warning.
               </p>
-              <p className="mt-2">
+              <p
+                className={cn(
+                  // Sizing & Spacing
+                  "mt-2"
+                )}
+              >
                 The installer verifies the downloaded DMG with SHA256 to detect corruption or incomplete
                 downloads. The checksum is served from the same official release source, so only install
                 hexbuffer from the official website.

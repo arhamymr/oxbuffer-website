@@ -21,7 +21,9 @@ export function SiteFooter() {
       <div
         className={cn(
           // Layout & Positioning
-          "mx-auto w-full max-w-8xl px-4 sm:px-6 lg:px-8"
+          "mx-auto w-full",
+          // Sizing & Spacing
+          "max-w-7xl px-4 sm:px-6 lg:px-8"
         )}
       >
         <div

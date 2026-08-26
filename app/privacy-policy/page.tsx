@@ -6,6 +6,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { MarkdownContent } from "@/lib/markdown";
 
+import { cn } from "@/lib/utils";
+
 export const metadata: Metadata = {
   title: "Privacy Policy — hexbuffer",
   description: "Read the hexbuffer privacy policy.",
@@ -21,10 +23,31 @@ export default async function PrivacyPolicy() {
   return (
     <>
       <SiteHeader />
-      <main className="min-h-[100vh] px-4 sm:px-6 lg:px-8 pb-24 pt-16 mt-5">
-        <div className="container mx-auto max-w-5xl">
+      <main
+        className={cn(
+          // Layout & Positioning
+          "min-h-[100vh]",
+          // Sizing & Spacing
+          "mt-5 px-4 sm:px-6 lg:px-8 pt-16 pb-24"
+        )}
+      >
+        <div
+          className={cn(
+            // Layout & Positioning
+            "container mx-auto",
+            // Sizing & Spacing
+            "max-w-7xl"
+          )}
+        >
           <PageBreadcrumb current="Privacy Policy" />
-          <div className="rounded-xl border border-border bg-card p-6 sm:p-10">
+          <div
+            className={cn(
+              // Sizing & Spacing
+              "p-6 sm:p-10",
+              // Backgrounds & Borders
+              "rounded-xl border border-border bg-card"
+            )}
+          >
             <MarkdownContent markdown={markdown} />
           </div>
         </div>
