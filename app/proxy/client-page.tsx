@@ -51,7 +51,7 @@ export function ProxyPageClient() {
             // Layout & Positioning
             "mx-auto",
             // Sizing & Spacing
-            "max-w-7xl"
+            "max-w-5xl"
           )}
         >
           <PageBreadcrumb current="hexbuffer-proxy" />

@@ -36,7 +36,7 @@ export default async function PrivacyPolicy() {
             // Layout & Positioning
             "container mx-auto",
             // Sizing & Spacing
-            "max-w-7xl"
+            "max-w-5xl"
           )}
         >
           <PageBreadcrumb current="Privacy Policy" />

@@ -23,7 +23,7 @@ export function SiteFooter() {
           // Layout & Positioning
           "mx-auto w-full",
           // Sizing & Spacing
-          "max-w-7xl px-4 sm:px-6 lg:px-8"
+          "max-w-5xl px-4 sm:px-6 lg:px-8"
         )}
       >
         <div

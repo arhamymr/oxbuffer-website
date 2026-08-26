@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Button } from "@celestia-project/ui";
 import { AsteriskIcon, CubeIcon } from "@phosphor-icons/react";
-import { TrafficIllustration } from "@/components/traffic-illustration";
 import { ShinyText } from "@/components/shiny-text";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { cn } from "@/lib/utils";
@@ -23,7 +22,7 @@ export function HeroSection() {
           // Layout & Positioning
           "container mx-auto",
           // Sizing & Spacing
-          "max-w-7xl"
+          "max-w-5xl"
         )}
       >
         <ScrollReveal>
@@ -32,7 +31,7 @@ export function HeroSection() {
               // Layout & Positioning
               "relative overflow-hidden",
               // Sizing & Spacing
-              "min-h-[520px] p-8 md:p-14",
+              "p-8 md:p-14",
               // Backgrounds & Borders
               "rounded-2xl border border-border border-t-neutral-700 bg-card shadow-2xl backdrop-blur-xl",
               // Interactive & States
@@ -80,7 +79,7 @@ export function HeroSection() {
                   // Sizing & Spacing
                   "max-w-xl mb-6",
                   // Typography
-                  "text-3xl lg:text-5xl font-semibold tracking-tight leading-tight text-foreground"
+                  "text-2xl lg:text-5xl font-semibold tracking-tight leading-tight text-foreground"
                 )}
               >
                 Testing tools for web development and security
@@ -90,17 +89,17 @@ export function HeroSection() {
                   // Sizing & Spacing
                   "max-w-xl mb-10",
                   // Typography
-                  "text-base md:text-lg text-muted-foreground leading-relaxed"
+                  "text-sm md:text-lg text-muted-foreground leading-relaxed"
                 )}
               >
-                hexbuffer lets you capture HTTP traffic, modify requests mid-flight, replay and fuzz endpoints, and organize notes in a single local desktop workspace.
+                Hexbuffer lets you capture HTTP traffic, modify requests mid-flight, replay and fuzz endpoints, and organize notes in a single local desktop workspace.
               </p>
               <Button size="lg" render={<Link href="/#features" />}>
                 See Features
                 <CubeIcon className="size-4" />
               </Button>
             </div>
-            <div
+            {/* <div
               className={cn(
                 // Layout & Positioning
                 "hidden lg:block absolute z-9 scale-[0.85] xl:scale-[0.92] 2xl:scale-100 top-2 -right-[400px] pointer-events-none",
@@ -109,7 +108,7 @@ export function HeroSection() {
               )}
             >
               <TrafficIllustration />
-            </div>
+            </div> */}
           </div>
         </ScrollReveal>
       </div>

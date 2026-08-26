@@ -32,7 +32,7 @@ export function SiteHeader() {
           // Layout & Positioning
           "mx-auto flex w-full flex-col",
           // Sizing & Spacing
-          "max-w-7xl px-4 sm:px-6 lg:px-8"
+          "max-w-5xl px-4 sm:px-6 lg:px-8"
         )}
       >
         <div
@@ -55,7 +55,7 @@ export function SiteHeader() {
           >
             <PulseTriangle />
             <span className={cn("truncate font-mono text-sm font-semibold text-foreground")}>
-              hexbuffer
+              Hexbuffer
             </span>
           </Link>
 

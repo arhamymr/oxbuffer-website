@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { CrosshairIcon, BugIcon, MicroscopeIcon, WrenchIcon } from "@phosphor-icons/react";
+import { CrosshairIcon, MicroscopeIcon, WrenchIcon } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { cn } from "@/lib/utils";
 import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
@@ -11,11 +11,6 @@ const AUDIENCE = [
     icon: CrosshairIcon,
     title: "Penetration Testers",
     desc: "A dedicated local workstation for inspecting and manipulating HTTP traffic.",
-  },
-  {
-    icon: BugIcon,
-    title: "Bug Bounty Hunters",
-    desc: "Find, verify, and document endpoint vulnerabilities faster.",
   },
   {
     icon: MicroscopeIcon,
@@ -45,7 +40,7 @@ export function AudienceSection() {
           // Layout & Positioning
           "container mx-auto",
           // Sizing & Spacing
-          "max-w-7xl"
+          "max-w-5xl"
         )}
       >
         <ScrollReveal>
@@ -84,7 +79,7 @@ export function AudienceSection() {
           <div
             className={cn(
               // Layout & Positioning
-              "grid sm:grid-cols-2 lg:grid-cols-4",
+              "grid sm:grid-cols-1 lg:grid-cols-3",
               // Sizing & Spacing
               "gap-4"
             )}

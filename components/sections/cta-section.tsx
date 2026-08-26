@@ -27,7 +27,7 @@ export function CtaSection() {
           // Layout & Positioning
           "container mx-auto relative",
           // Sizing & Spacing
-          "max-w-7xl"
+          "max-w-5xl"
         )}
       >
         <ScrollReveal>

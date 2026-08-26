@@ -68,7 +68,7 @@ export function FeaturesSection() {
           // Layout & Positioning
           "container mx-auto",
           // Sizing & Spacing
-          "max-w-7xl"
+          "max-w-5xl"
         )}
       >
         <ScrollReveal>
