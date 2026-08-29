@@ -13,7 +13,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@celestia-project/ui": "^0.3.0",
+    "@celestia-project/ui": "^0.3.3",
     "@codemirror/lang-javascript": "^6.2.5",
     "@codemirror/language": "^6.12.4",
     "@codemirror/state": "^6.7.0",
