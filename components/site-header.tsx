@@ -32,7 +32,7 @@ export function SiteHeader() {
           // Layout & Positioning
           "mx-auto flex w-full flex-col",
           // Sizing & Spacing
-          "max-w-5xl px-4 sm:px-6 lg:px-8"
+          "max-w-5xl"
         )}
       >
         <div
