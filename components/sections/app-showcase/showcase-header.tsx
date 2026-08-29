@@ -11,21 +11,7 @@ export function ShowcaseHeader() {
         "mb-12 max-w-2xl"
       )}
     >
-      <div
-        className={cn(
-          // Layout & Positioning
-          "inline-flex items-center gap-1.5",
-          // Sizing & Spacing
-          "px-2.5 py-1 mb-4 rounded-full",
-          // Backgrounds & Borders
-          "border border-border bg-card",
-          // Typography
-          "text-xs font-mono text-emerald-400"
-        )}
-      >
-        <BrowsersIcon className="size-3.5" />
-        <span>APPLICATION SUITE</span>
-      </div>
+      
       <h2
         className={cn(
           // Typography
