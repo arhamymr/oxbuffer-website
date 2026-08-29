@@ -7,10 +7,27 @@ import type { ShowcaseItem } from "./types";
 
 interface ShowcaseSpotlightCardProps {
   readonly selectedItem: ShowcaseItem;
+  readonly direction: number;
 }
+
+const SLIDE_VARIANTS = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 40 : -40,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: number) => ({
+    x: direction > 0 ? -40 : 40,
+    opacity: 0,
+  }),
+};
 
 export function ShowcaseSpotlightCard({
   selectedItem,
+  direction,
 }: ShowcaseSpotlightCardProps) {
   return (
     <div
@@ -23,12 +40,14 @@ export function ShowcaseSpotlightCard({
         "rounded-xl border border-border bg-card shadow-sm"
       )}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" custom={direction}>
         <motion.div
           key={selectedItem.id}
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -6 }}
+          custom={direction}
+          variants={SLIDE_VARIANTS}
+          initial="enter"
+          animate="center"
+          exit="exit"
           transition={CRITICALLY_DAMPED_SPRING}
           className={cn(
             // Layout & Positioning

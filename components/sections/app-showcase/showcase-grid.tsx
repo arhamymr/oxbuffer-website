@@ -6,12 +6,14 @@ import type { ShowcaseItem } from "./types";
 interface ShowcaseGridProps {
   readonly items: readonly ShowcaseItem[];
   readonly selectedId: string;
+  readonly isPaused: boolean;
   readonly onSelect: (id: string) => void;
 }
 
 export function ShowcaseGrid({
   items,
   selectedId,
+  isPaused,
   onSelect,
 }: ShowcaseGridProps) {
   return (
@@ -30,6 +32,7 @@ export function ShowcaseGrid({
             item={item}
             index={index}
             isSelected={item.id === selectedId}
+            isPaused={isPaused}
             onSelect={onSelect}
           />
         ))}

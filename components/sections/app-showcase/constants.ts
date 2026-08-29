@@ -1,6 +1,7 @@
 import type { ShowcaseItem } from "./types";
 
-export const AUTO_CYCLE_INTERVAL_MS = 3500;
+export const AUTO_CYCLE_INTERVAL_MS = 7000;
+export const PAUSE_DURATION_MS = 4000;
 
 export const SHOWCASE_ITEMS: readonly ShowcaseItem[] = [
   {

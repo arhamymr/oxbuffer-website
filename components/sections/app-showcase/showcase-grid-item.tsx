@@ -2,12 +2,14 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { CRITICALLY_DAMPED_SPRING } from "@/lib/constants/physics";
+import { AUTO_CYCLE_INTERVAL_MS } from "./constants";
 import type { ShowcaseItem } from "./types";
 
 interface ShowcaseGridItemProps {
   readonly item: ShowcaseItem;
   readonly index: number;
   readonly isSelected: boolean;
+  readonly isPaused: boolean;
   readonly onSelect: (id: string) => void;
 }
 
@@ -15,6 +17,7 @@ export function ShowcaseGridItem({
   item,
   index,
   isSelected,
+  isPaused,
   onSelect,
 }: ShowcaseGridItemProps) {
   return (
@@ -31,7 +34,7 @@ export function ShowcaseGridItem({
       onClick={() => onSelect(item.id)}
       className={cn(
         // Layout & Positioning
-        "relative flex flex-col justify-between text-start",
+        "relative flex flex-col justify-between text-start overflow-hidden",
         // Sizing & Spacing
         "p-4 rounded-xl",
         // Backgrounds & Borders
@@ -120,6 +123,36 @@ export function ShowcaseGridItem({
           {item.description}
         </p>
       </div>
+
+      {/* Slide Active Progress Indicator */}
+      {isSelected && !isPaused && (
+        <div
+          className={cn(
+            // Layout & Positioning
+            "absolute bottom-0 left-0 right-0 overflow-hidden",
+            // Sizing & Spacing
+            "h-1 rounded-b-xl",
+            // Backgrounds & Borders
+            "bg-neutral-800"
+          )}
+        >
+          <motion.div
+            key={item.id}
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{
+              duration: AUTO_CYCLE_INTERVAL_MS / 1000,
+              ease: "linear",
+            }}
+            className={cn(
+              // Sizing & Spacing
+              "h-full",
+              // Backgrounds & Borders
+              "bg-emerald-500"
+            )}
+          />
+        </div>
+      )}
     </motion.div>
   );
 }
