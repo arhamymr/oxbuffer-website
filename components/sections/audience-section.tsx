@@ -10,17 +10,17 @@ const AUDIENCE = [
   {
     icon: CrosshairIcon,
     title: "Penetration Testers",
-    desc: "A dedicated local workstation for inspecting and manipulating HTTP traffic.",
+    desc: "A dedicated local workstation for intercepting, inspecting, and manipulating live target HTTP traffic.",
   },
   {
     icon: MicroscopeIcon,
     title: "Security Researchers",
-    desc: "Deep HTTP request and response inspection with manual payload tampering.",
+    desc: "Deep request and response payload inspection with automated fuzzing and token tampering.",
   },
   {
     icon: WrenchIcon,
     title: "Developers & QA",
-    desc: "Debug APIs and test endpoint behavior with immediate request replay.",
+    desc: "Debug web APIs, mock scenarios, and verify endpoint behavior with instant request replay.",
   },
 ] as const;
 
@@ -30,7 +30,7 @@ export function AudienceSection() {
       id="audience"
       className={cn(
         // Sizing & Spacing
-        "py-24 px-4 sm:px-6 lg:px-8",
+        "py-20 md:py-28 px-4 sm:px-6 lg:px-8",
         // Backgrounds & Borders
         "border-t border-border"
       )}
@@ -44,61 +44,58 @@ export function AudienceSection() {
         )}
       >
         <ScrollReveal>
+          {/* Section Header */}
           <div
             className={cn(
               // Layout & Positioning
-              "text-center",
+              "flex flex-col items-start text-start",
               // Sizing & Spacing
-              "mb-14"
+              "mb-12 max-w-2xl"
             )}
           >
             <h2
               className={cn(
                 // Typography
-                "text-3xl md:text-4xl font-medium tracking-tight text-foreground",
+                "text-2xl sm:text-4xl font-semibold tracking-tight text-foreground",
                 // Sizing & Spacing
                 "mb-3"
               )}
             >
-              Who Is It For?
+              Who is Hexbuffer for?
             </h2>
             <p
               className={cn(
-                // Layout & Positioning
-                "mx-auto",
-                // Sizing & Spacing
-                "max-w-md",
                 // Typography
                 "text-base text-muted-foreground leading-relaxed"
               )}
             >
-              Built for anyone who needs to inspect, test, and document web applications.
+              Tailored for security engineers, penetration testers, and developers requiring fast, private local reconnaissance.
             </p>
           </div>
 
+          {/* Minimal 3-Card Grid */}
           <div
             className={cn(
               // Layout & Positioning
-              "grid sm:grid-cols-1 lg:grid-cols-3",
+              "grid sm:grid-cols-1 md:grid-cols-3",
               // Sizing & Spacing
               "gap-4"
             )}
           >
             {AUDIENCE.map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 0.06}>
+              <ScrollReveal key={item.title} delay={i * 0.04}>
                 <motion.div
                   whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.99 }}
                   transition={CRITICALLY_DAMPED_SPRING}
                   className={cn(
                     // Layout & Positioning
-                    "flex gap-4 h-full",
+                    "flex flex-col justify-start h-full",
                     // Sizing & Spacing
-                    "min-h-25 px-5 py-4",
+                    "p-6 rounded-xl",
                     // Backgrounds & Borders
-                    "rounded-xl border border-border border-t-neutral-800 bg-card backdrop-blur-md shadow-sm",
+                    "border border-border bg-card shadow-sm",
                     // Interactive & States
-                    "group transition-colors duration-200 hover:border-neutral-700 hover:bg-muted"
+                    "group transition-colors duration-150 hover:border-neutral-700 hover:bg-muted"
                   )}
                 >
                   <div
@@ -106,7 +103,7 @@ export function AudienceSection() {
                       // Layout & Positioning
                       "flex items-center justify-center shrink-0",
                       // Sizing & Spacing
-                      "size-10 mt-0.5",
+                      "size-10 mb-4",
                       // Backgrounds & Borders
                       "rounded-lg border border-border bg-muted",
                       // Interactive & States
@@ -126,9 +123,9 @@ export function AudienceSection() {
                     <h3
                       className={cn(
                         // Typography
-                        "font-medium text-foreground tracking-tight text-base",
+                        "font-semibold text-foreground tracking-tight text-base",
                         // Sizing & Spacing
-                        "mb-1"
+                        "mb-1.5"
                       )}
                     >
                       {item.title}

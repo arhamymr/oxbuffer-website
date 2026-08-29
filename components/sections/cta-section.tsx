@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@celestia-project/ui";
 import { ArrowRightIcon, HeartIcon, HexagonIcon } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -17,7 +18,7 @@ export function CtaSection() {
         // Layout & Positioning
         "relative overflow-hidden",
         // Sizing & Spacing
-        "py-24 px-4 sm:px-6 lg:px-8",
+        "py-20 md:py-28 px-4 sm:px-6 lg:px-8",
         // Backgrounds & Borders
         "border-t border-border"
       )}
@@ -25,7 +26,7 @@ export function CtaSection() {
       <div
         className={cn(
           // Layout & Positioning
-          "container mx-auto relative",
+          "container mx-auto",
           // Sizing & Spacing
           "max-w-5xl"
         )}
@@ -34,9 +35,9 @@ export function CtaSection() {
           <div
             className={cn(
               // Sizing & Spacing
-              "p-10 md:p-14",
+              "p-8 sm:p-10 md:p-12",
               // Backgrounds & Borders
-              "rounded-2xl border border-border border-t-neutral-700 bg-card shadow-2xl backdrop-blur-xl"
+              "rounded-xl border border-border bg-card shadow-sm"
             )}
           >
             <div
@@ -44,20 +45,20 @@ export function CtaSection() {
                 // Layout & Positioning
                 "grid md:grid-cols-[1fr_auto] items-center",
                 // Sizing & Spacing
-                "gap-10"
+                "gap-8 md:gap-12"
               )}
             >
-              {/* Left: copy */}
-              <div>
+              {/* Left Column: Copy */}
+              <div className="text-start">
                 <h2
                   className={cn(
                     // Typography
-                    "text-2xl md:text-3xl font-semibold tracking-tight text-foreground",
+                    "text-2xl sm:text-3xl font-semibold tracking-tight text-foreground",
                     // Sizing & Spacing
                     "mb-3"
                   )}
                 >
-                  Try hexbuffer on your next target.
+                  Try Hexbuffer on your next target.
                 </h2>
                 <p
                   className={cn(
@@ -67,7 +68,7 @@ export function CtaSection() {
                     "text-base text-muted-foreground leading-relaxed"
                   )}
                 >
-                  A fast desktop app for HTTP traffic inspection, request interception, and endpoint testing.
+                  A lightweight desktop workspace for HTTP inspection, request interception, payload testing, and API debugging.
                 </p>
 
                 <div
@@ -104,19 +105,19 @@ export function CtaSection() {
                 </div>
               </div>
 
-              {/* Right: actions */}
+              {/* Right Column: Actions */}
               <div
                 className={cn(
                   // Layout & Positioning
                   "flex flex-col items-stretch",
                   // Sizing & Spacing
-                  "gap-3 min-w-[240px]"
+                  "gap-2.5 min-w-[220px]"
                 )}
               >
                 <Button
                   size="lg"
                   render={
-                    <a href="/downloads" />
+                    <Link href="/downloads" />
                   }
                 >
                   Download for macOS
@@ -137,7 +138,7 @@ export function CtaSection() {
                     "text-[11px] text-muted-foreground"
                   )}
                 >
-                  macOS available now — Windows coming soon
+                  macOS available now
                 </p>
               </div>
             </div>

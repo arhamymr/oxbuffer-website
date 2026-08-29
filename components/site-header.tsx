@@ -22,7 +22,7 @@ export function SiteHeader() {
         // Layout & Positioning
         "fixed top-0 z-50 w-full",
         // Backgrounds & Borders
-        "border-b border-border border-t-neutral-800/40 bg-background backdrop-blur-xl",
+        "border-b border-border bg-background backdrop-blur-xl",
         // Interactive & States
         "transition-colors duration-200"
       )}
@@ -40,7 +40,7 @@ export function SiteHeader() {
             // Layout & Positioning
             "flex min-h-13 items-center justify-between",
             // Sizing & Spacing
-            "px-4 py-2"
+            "py-2.5"
           )}
         >
           <Link
@@ -62,7 +62,7 @@ export function SiteHeader() {
           <nav
             className={cn(
               // Layout & Positioning
-              "hidden items-center gap-6 md:flex"
+              "hidden items-center gap-5 md:flex"
             )}
           >
             {NAV_ITEMS.map((item) => (
@@ -146,7 +146,7 @@ export function SiteHeader() {
                 // Layout & Positioning
                 "overflow-hidden md:hidden",
                 // Sizing & Spacing
-                "px-4 py-3",
+                "px-2 py-3",
                 // Backgrounds & Borders
                 "border-t border-border bg-background"
               )}
@@ -177,7 +177,7 @@ export function SiteHeader() {
                   </Link>
                 ))}
                 <a
-                  href="https://github.com/arhamymr/hexbuffer"
+                  href="https://github.com/dev-celestia/hexbuffer"
                   target="_blank"
                   rel="noreferrer"
                   className={cn(
