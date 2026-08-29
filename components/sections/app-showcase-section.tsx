@@ -72,7 +72,7 @@ const SHOWCASE_ITEMS: readonly ShowcaseItem[] = [
   {
     id: "repeater",
     title: "Repeater",
-    tagline: "Iterative Request Replay & Side-by-Side Diff",
+    tagline: "Iterative Request Replay",
     description:
       "Fine-tune HTTP requests and reissue them instantaneously. Compare response bodies, status changes, and response times side-by-side across test iterations.",
     iconSrc: "/assets/app/repeater.png",
