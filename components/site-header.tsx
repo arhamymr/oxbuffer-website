@@ -22,7 +22,7 @@ export function SiteHeader() {
         // Layout & Positioning
         "fixed top-0 z-50 w-full",
         // Backgrounds & Borders
-        "border-b border-border bg-background backdrop-blur-xl",
+        "border-b border-border backdrop-blur-xl",
         // Interactive & States
         "transition-colors duration-200"
       )}
@@ -95,9 +95,6 @@ export function SiteHeader() {
             >
               <GithubLogoIcon className="size-4" weight="fill" />
               <span>Star on GitHub</span>
-            </Button>
-            <Button size="sm" render={<Link href="/downloads" />}>
-              Download
             </Button>
           </nav>
 
