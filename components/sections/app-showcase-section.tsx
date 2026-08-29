@@ -74,13 +74,13 @@ const SHOWCASE_ITEMS: readonly ShowcaseItem[] = [
     title: "Repeater",
     tagline: "Iterative Request Replay",
     description:
-      "Fine-tune HTTP requests and reissue them instantaneously. Compare response bodies, status changes, and response times side-by-side across test iterations.",
+      "Fine-tune HTTP requests and reissue them instantaneously. Analyze response status, headers, and body payloads across test iterations.",
     iconSrc: "/assets/app/repeater.png",
     category: "Testing",
     badge: "Analysis",
     features: [
       "Multi-tab request workspace",
-      "Side-by-side visual response diffing",
+      "Real-time response inspection",
       "Instant parameter mutations",
     ],
     route: "/repeater",

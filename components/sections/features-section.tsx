@@ -30,7 +30,7 @@ const FEATURES = [
     icon: InfinityIcon,
     title: "Request Repeater",
     description:
-      "Modify HTTP requests, reissue them instantly, and analyze response status, headers, and bodies side-by-side.",
+      "Modify HTTP requests, reissue them instantly, and analyze response status, headers, and body payloads.",
   },
   {
     icon: CubeFocusIcon,
