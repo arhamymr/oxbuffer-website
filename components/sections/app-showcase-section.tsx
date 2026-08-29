@@ -461,7 +461,7 @@ export function AppShowcaseSection() {
                             height={36}
                             className={cn(
                               // Sizing & Spacing
-                              "size-8 object-contain rounded-md"
+                              "size-8 object-contain rounded-sm"
                             )}
                           />
                         <div
